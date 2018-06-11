@@ -84,12 +84,12 @@
                 </div>
 
                 <div class="links" id="app">
-                    <a >@{{msg1}}</a>
+                    <a v-bind:href='url1'>@{{msg1}}</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
-                     <input v-model="msg1">
+                     {{--<input v-model="msg1">--}}
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
           el: '#app',
           data: {
               msg1: 'baidu',
-              message:'123'
+              url1:'/baidu'
           }
       })
  </script>
