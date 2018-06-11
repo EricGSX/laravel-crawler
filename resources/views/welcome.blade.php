@@ -9,7 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        {{--VUE--}}
+<script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -79,16 +80,27 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Spider
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="./baidu">baidu</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+<div id="app">
+  <p>@{{message}}</p>
+    <script type="text/javascript">
+      new Vue({
+          el: '#app',
+          data: {
+              message: 'Hello Laravel!'
+          }
+      })
+ </script>
+</div>
             </div>
         </div>
     </body>
