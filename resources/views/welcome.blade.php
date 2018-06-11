@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang = "{{ app()->getLocale() }}" xmlns:v-bind = "http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,25 +83,24 @@
                     Spider
                 </div>
 
-                <div class="links">
-                    <a href="./baidu">baidu</a>
+                <div class="links" id="app">
+                    <a >@{{msg1}}</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                     <input v-model="msg1">
                 </div>
-<div id="app">
-  <p>@{{message}}</p>
-    <script type="text/javascript">
-      new Vue({
-          el: '#app',
-          data: {
-              message: 'Hello Laravel!'
-          }
-      })
- </script>
-</div>
             </div>
         </div>
     </body>
 </html>
+    <script type="text/javascript">
+      new Vue({
+          el: '#app',
+          data: {
+              msg1: 'baidu',
+              message:'123'
+          }
+      })
+ </script>
