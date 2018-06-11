@@ -17,4 +17,8 @@ Route::get('/', function () {
 //定义路由组
 Route::get('/test','WebCrawlerController@test');
 
+
 Route::get('/baidu','WebCrawlerController@baidu');
+
+Route::get('/wxarticle','WebCrawlerController@article');
+
