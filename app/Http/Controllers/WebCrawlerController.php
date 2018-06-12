@@ -159,4 +159,25 @@ class WebCrawlerController extends Controller
 
         var_dump($snoopy->results);//输出结果，登陆成功
     }
+
+    /**
+     * TODO AmazonBest Sellers
+     *
+     * @return array
+     */
+    public function amazon()
+    {
+        $url = 'https://www.amazon.com/gp/bestsellers/books?pd_rd_wg=h7RpR&pd_rd_r=06159414-17e8-4c7c-87ab-2a1353007c2b&pd_rd_w=63F0s&ref_=pd_gw_ri&pf_rd_r=DYCZEKVE1R7E7GCTEKNM&pf_rd_p=a76d819d-d46f-5d89-be3e-dc07c7b5bb0c';
+        $rules = [
+            //'title'   => ['p13n-sc-truncated','text'],
+            'user' => ['.a-size-small>a','text'],
+            //'price'  => ['.p13n-sc-price','html'],
+            'img'     => ['.a-spacing-mini>img','src'],
+        ];
+        $ql = QueryList::get($url)->rules($rules)->query();
+        $data = $ql->getData();
+        $return = $data->all();
+        dd($return);
+        return $return;
+    }
 }
