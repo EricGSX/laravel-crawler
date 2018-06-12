@@ -46,4 +46,52 @@ class WebCrawlerController extends Controller
         $return = $data->all();
         return $return;
     }
+
+    /**
+     * TODO 模拟登陆github
+     */
+    public function github()
+    {
+        $ql = QueryList::getInstance();
+        //手动设置cookie
+        $jar = new \GuzzleHttp\Cookie\CookieJar();
+        //获取到登录表单
+        $form = $ql->get('https://github.com/login',[],[
+            'cookies' => $jar
+        ])->find('form');
+        //填写GitHub用户名和密码
+        $form->find('input[name=login]')->val('EricGSX');
+        $form->find('input[name=password]')->val('EricGSX2016222');
+        //序列化表单数据
+        $fromData = $form->serializeArray();
+        $postData = [];
+        foreach ($fromData as $item) {
+            $postData[$item['name']] = $item['value'];
+        }
+        //提交登录表单
+        $actionUrl = 'https://github.com'.$form->attr('action');
+        $ql->post($actionUrl,$postData,[
+            'cookies' => $jar
+        ]);
+        //判断登录是否成功
+        // echo $ql->getHtml();
+        $userName = $ql->find('.header-nav-current-user>.css-truncate-target')->text();
+        if($userName)
+        {
+            echo '登录成功!欢迎你:'.$userName;
+            $content_url = "https://github.com/settings/profile";
+            $rules=[
+                'name' => ['h2','text'],
+                //'img'  => ['.avatar-upload-container>img','src'],
+            ];
+            $ql = (new QueryList)->get($content_url);
+            echo $ql->getHtml();die;
+            $ql = (new QueryList)->get($content_url)->rules($rules)->query();
+            $data = $ql->getData();
+            $return = $data->all();
+            return $return;
+        }else{
+            echo '登录失败!';
+        }
+    }
 }

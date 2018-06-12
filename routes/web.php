@@ -22,3 +22,5 @@ Route::get('/baidu','WebCrawlerController@baidu');
 
 Route::get('/wxarticle','WebCrawlerController@article');
 
+Route::get('/github','WebCrawlerController@github');
+
