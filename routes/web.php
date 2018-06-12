@@ -34,3 +34,5 @@ Route::get('/cookie','WebCrawlerController@cookie');
 
 Route::get('/checkcurl','WebCrawlerController@checkcurl');
 
+Route::get('/zhihu','WebCrawlerController@zhihu');
+

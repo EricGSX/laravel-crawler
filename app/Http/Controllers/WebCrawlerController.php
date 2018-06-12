@@ -237,4 +237,30 @@ class WebCrawlerController extends Controller
 
         dd($res);
     }
+
+    /**
+     * TODO 爬取知乎信息
+     */
+    public function zhihu()
+    {
+        $username = 'Guo_ShiXin';
+        $cookie = 'q_c1=5f1cf0c484dc4602acc55a9ad251d150|1528795371000|1520322132000; _zap=cc130f68-9308-48de-99ac-3d93a2afc03f; __DAYU_PP=2V26urVRjNRaNQeBrYeq2cc9c91f7786; d_c0=\"AABg-4JZjg2PTnNF6CamCrDUztLgt4k43TI=|1525671223\"; __utma=51854390.651866715.1526024126.1526024126.1526024126.1; __utmz=51854390.1526024126.1.1.utmcsr=zhihu.com|utmccn=(referral)|utmcmd=referral|utmcct=/people/Guo_ShiXin/activities; __utmv=51854390.100--|2=registration_date=20170606=1^3=entry_date=20170606=1; tgw_l7_route=8605c5a961285724a313ad9c1bbbc186; _xsrf=208a6e97-d82a-4aca-a3e7-2b95ca595896';
+        $url_info = 'http://www.zhihu.com/people/' . $username; //此处cui-xiao-zhuai代表用户ID,可以直接看url获取本人id
+        $ch = curl_init($url_info); //初始化会话
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  //取消SSL验证
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_COOKIE, $cookie);  //设置请求COOKIE
+        curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  //将curl_exec()获取的信息以文件流的形式返回，而不是直接输出。
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        //curl_setopt($ch, CURLOPT_ENCODING, "");
+        $result = curl_exec($ch);
+        curl_close($ch);          // 关闭cURL
+//var_dump($result);die;// var_dump(curl_errno($ch));
+        // $info = curl_getinfo($ch);
+        // var_dump(curl_error($ch));
+        //file_put_contents('./'.$username.'.html',$result);
+        dd($result);
+        return true;
+    }
 }
