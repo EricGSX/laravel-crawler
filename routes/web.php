@@ -32,3 +32,5 @@ Route::get('/amazon','WebCrawlerController@amazon');
 
 Route::get('/cookie','WebCrawlerController@cookie');
 
+Route::get('/checkcurl','WebCrawlerController@checkcurl');
+
