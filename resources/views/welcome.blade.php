@@ -88,6 +88,7 @@
                     <a :href='url2'>@{{msg2}}</a>
                     <a :href='url3'>@{{msg3}}</a>
                     <a :href='url4'>@{{msg4}}</a>
+                    <a :href='url5'>@{{msg5}}</a>
                     <a href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
                 </div>
 
@@ -107,6 +108,8 @@
               url3:'/gitee',
               msg4:'snoopy',
               url4:'/snoopy',
+              msg5:'amazon',
+              url5:'/amazon',
           }
       })
  </script>
