@@ -84,11 +84,8 @@
                 </div>
 
                 <div class="links" id="app">
-                    <a v-bind:href='url1'>@{{msg1}}</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a :href='url1'>@{{msg1}}</a>
+                    <a :href='url2'>@{{msg2}}</a>
                     <a href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
                 </div>
 
@@ -101,7 +98,9 @@
           el: '#app',
           data: {
               msg1: 'baidu',
-              url1:'/baidu'
+              url1:'/baidu',
+              msg2:'github',
+              url2:'/github',
           }
       })
  </script>
