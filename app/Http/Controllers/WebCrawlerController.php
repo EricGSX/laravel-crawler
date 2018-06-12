@@ -254,6 +254,7 @@ class WebCrawlerController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  //将curl_exec()获取的信息以文件流的形式返回，而不是直接输出。
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         //curl_setopt($ch, CURLOPT_ENCODING, "");
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727;http://www.baidu.com)');
         $result = curl_exec($ch);
         curl_close($ch);          // 关闭cURL
 //var_dump($result);die;// var_dump(curl_errno($ch));
