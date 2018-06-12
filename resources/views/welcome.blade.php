@@ -89,7 +89,8 @@
                     <a :href='url3'>@{{msg3}}</a>
                     <a :href='url4'>@{{msg4}}</a>
                     <a :href='url5'>@{{msg5}}</a>
-                    <a href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
+                    <a :href='url6'>@{{msg6}}</a>
+                    <a style="overflow:hidden;position: relative;top:-100px;left:-50px;" href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
                 </div>
 
             </div>
@@ -108,8 +109,11 @@
               url3:'/gitee',
               msg4:'snoopy',
               url4:'/snoopy',
+              url4:'/snoopy',
               msg5:'amazon',
               url5:'/amazon',
+              msg6:'zhihu',
+              url6:'/zhihu',
           }
       })
  </script>
