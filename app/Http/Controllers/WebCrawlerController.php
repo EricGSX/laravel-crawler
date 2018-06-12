@@ -260,7 +260,8 @@ class WebCrawlerController extends Controller
         // $info = curl_getinfo($ch);
         // var_dump(curl_error($ch));
         //file_put_contents('./'.$username.'.html',$result);
+        $result = html_entity_decode($result);
         dd($result);
-        return true;
+//        return true;
     }
 }
