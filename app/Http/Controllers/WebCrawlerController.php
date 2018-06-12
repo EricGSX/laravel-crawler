@@ -180,4 +180,16 @@ class WebCrawlerController extends Controller
         dd($return);
         return $return;
     }
+
+    public function cookie()
+    {
+        $url = 'https://gitee.com/EricGuosx/events';
+        $cookie = 'user_locale=zh-CN; remote_way=http; Hm_lvt_7783e85c2ed70224593599fbefdc168a=1521093352,1521093434; oschina_new_user=false; aliyungf_tc=AQAAAC/nJUt46gsAGUBMLdE0nsVKX616; tz=Asia%2FShanghai; Hm_lvt_24f17767262929947cc3631f99bfd274=1528789358; __lnkrntdmcvrd=-1; Hm_lpvt_24f17767262929947cc3631f99bfd274=1528789590; gitee-session-n=BAh7CkkiD3Nlc3Npb25faWQGOgZFVEkiJTAxNzlhMDY0OTYzZDE2OWY3MDljZDgyNjA3NTRiMGUzBjsAVEkiF21vYnlsZXR0ZV9vdmVycmlkZQY7AEY6CG5pbEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsHWwZpAzXhEkkiIiQyYSQxMCRvaFpJVG9vaWJ2cTZ6VXdUeWNKTTAuBjsAVEkiHXdhcmRlbi51c2VyLnVzZXIuc2Vzc2lvbgY7AFR7BkkiFGxhc3RfcmVxdWVzdF9hdAY7AFRJdToJVGltZQ2HlR3AlUMAsgk6DW5hbm9fbnVtaQHJOg1uYW5vX2RlbmkGOg1zdWJtaWNybyIHIBA6CXpvbmVJIghVVEMGOwBUSSIQX2NzcmZfdG9rZW4GOwBGSSIxVGs1OWRpOFNnRTMvOTMzU0Y0WFVSSUtHRG1zWHBvRWtvQ09QNGo4cldIZz0GOwBG--aa060bacacef04a3a223d4e2750422262c03328a';
+        $ql = QueryList::get($url,[],[
+            'headers'=>[
+                'Cookie'    => $cookie,
+            ]
+        ]);
+        echo $ql->getHtml();
+    }
 }
