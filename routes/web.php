@@ -26,3 +26,5 @@ Route::get('/github','WebCrawlerController@github');
 
 Route::get('/gitee','WebCrawlerController@gitee');
 
+Route::get('/snoopy','WebCrawlerController@snooy');
+

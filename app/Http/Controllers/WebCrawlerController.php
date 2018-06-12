@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use QL\QueryList;
+use App\Libs\Snoopy;
 
 class WebCrawlerController extends Controller
 {
@@ -132,5 +133,30 @@ class WebCrawlerController extends Controller
         }else{
             echo '登录失败!';
         }
+    }
+
+    /**
+     * TODO 测试snoopy是否引入
+     */
+    public function snooy()
+    {
+        $snoopy=new Snoopy();
+
+        $snoopy->referer='https://github.com';//例如：http://www.baidu.com/你要模拟登陆的域名
+
+        // $snoopy->agent="Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0"; //定义浏览器根
+        $snoopy->agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36"; //定义浏览器根
+
+        $post['login'] ='EricGSX';//根据你要模拟登陆的网站具体的传值 名称来定
+
+        $post['password'] ='EricGSX2016222';//根据你要模拟登陆的网站具体的传值 名称来定
+
+        $url='https://github.com/login';//登陆数据提交的URL地址
+
+        $snoopy->submit($url,$post);
+
+        $snoopy->fetch("https://github.com/settings/profile");//希望获取的页面数据
+
+        var_dump($snoopy->results);//输出结果，登陆成功
     }
 }
