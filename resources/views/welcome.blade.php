@@ -86,6 +86,7 @@
                 <div class="links" id="app">
                     <a :href='url1'>@{{msg1}}</a>
                     <a :href='url2'>@{{msg2}}</a>
+                    <a :href='url3'>@{{msg3}}</a>
                     <a href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
                 </div>
 
@@ -101,6 +102,8 @@
               url1:'/baidu',
               msg2:'github',
               url2:'/github',
+              msg3:'gitee',
+              url3:'/gitee',
           }
       })
  </script>

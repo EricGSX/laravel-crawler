@@ -24,3 +24,5 @@ Route::get('/wxarticle','WebCrawlerController@article');
 
 Route::get('/github','WebCrawlerController@github');
 
+Route::get('/gitee','WebCrawlerController@gitee');
+

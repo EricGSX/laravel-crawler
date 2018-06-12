@@ -69,6 +69,7 @@ class WebCrawlerController extends Controller
             $postData[$item['name']] = $item['value'];
         }
         //提交登录表单
+        //dd($postData);die;
         $actionUrl = 'https://github.com'.$form->attr('action');
         $ql->post($actionUrl,$postData,[
             'cookies' => $jar
@@ -90,6 +91,44 @@ class WebCrawlerController extends Controller
             $data = $ql->getData();
             $return = $data->all();
             return $return;
+        }else{
+            echo '登录失败!';
+        }
+    }
+
+    /**
+     * TODO 码云模拟登陆
+     */
+    public function gitee()
+    {
+        $ql = QueryList::getInstance();
+        //手动设置cookie
+        $jar = new \GuzzleHttp\Cookie\CookieJar();
+        //获取到登录表单
+        $form = $ql->get('https://gitee.com/login',[],[
+            'cookies' => $jar
+        ])->find('form');
+        //填写GitHub用户名和密码
+        $form->find('input[name=user[login]]')->val('3234655977@qq.com');
+        $form->find('input[name=user[password]]')->val('18337177020');
+        //序列化表单数据
+        $fromData = $form->serializeArray();
+        $postData = [];
+        foreach ($fromData as $item) {
+            $postData[$item['name']] = $item['value'];
+        }
+        //dd($postData);die;
+        //提交登录表单
+        $actionUrl = 'https://gitee.com/login';
+        $ql->post($actionUrl,$postData,[
+            'cookies' => $jar
+        ]);
+        //判断登录是否成功
+         echo $ql->getHtml();
+        $userName = $ql->find('.header-nav-current-user>.css-truncate-target')->text();
+        if($userName)
+        {
+            echo '登录成功!欢迎你:'.$userName;
         }else{
             echo '登录失败!';
         }
