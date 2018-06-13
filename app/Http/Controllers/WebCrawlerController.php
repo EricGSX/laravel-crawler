@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use QL\QueryList;
 use App\Libs\Snoopy;
+use App\Libs\Spider;
 
 class WebCrawlerController extends Controller
 {
@@ -289,5 +290,17 @@ class WebCrawlerController extends Controller
         //print_r($json);
         $arr = json_decode($json,true);
         dd($arr);
+    }
+
+    /**
+     * 测试自动引入的类是否执行
+     *
+     * @return string
+     */
+    public function test_spider()
+    {
+        $test =new Spider();
+        $result = $test->test();
+        return $result;
     }
 }
