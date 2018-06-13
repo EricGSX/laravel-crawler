@@ -36,3 +36,9 @@ Route::get('/checkcurl','WebCrawlerController@checkcurl');
 
 Route::get('/zhihu','WebCrawlerController@zhihu');
 
+//TODO 开始爬虫
+Route::group(['prefix'=>'spider'],function (){
+    Route::get('/','SpiderController@index');
+    Route::get('/gitee','SpiderController@gitee');
+});
+
