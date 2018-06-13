@@ -28,6 +28,6 @@ class SpiderController extends Controller
 
     public function gitee()
     {
-        return 'You Are Right';
+
     }
 }
