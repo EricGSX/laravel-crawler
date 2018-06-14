@@ -25,20 +25,16 @@ class Spider
     /**
      * TODO 伪造登陆信息获取登陆后才能看到的界面信息
      *
-     * 默认使用的是get
+     * 默认使用的是GET
      *
      * @param string $curlurl
      * @param string $referurl
      * @param string $ip
      * @return mixed
      */
-    public function fakelogin($curlurl='',$referurl='',$ip='')
+    public function fakelogin($cookie='',$curlurl='',$referurl='',$ip='')
     {
-        $ch = curl_init();
-        if(!$curlurl){
-            return 403;
-        }
-        if(!$referurl){
+        if(!$cookie || !$curlurl || $referurl){
             return 403;
         }
         if(!$ip){
@@ -85,19 +81,23 @@ class Spider
 
         ];
         //$useragent="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11";  //要得到类似这样useranget 可以自定义
-        $useragent=$agentarry[array_rand($agentarry,1)];  //随机浏览器useragent
+        $useragent=$agentarry[array_rand($agentarry,1)];    //随机浏览器useragent
         $header = array(
             'CLIENT-IP:'.$ip,
             'X-FORWARDED-FOR:'.$ip,
         );    //构造ip
-        curl_setopt($ch, CURLOPT_URL, $curlurl); //要抓取的网址
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-        curl_setopt($ch, CURLOPT_REFERER, $referurl);  //模拟来源网址
-        curl_setopt($ch, CURLOPT_USERAGENT, $useragent); //模拟常用浏览器的useragent
-
-        $page_content = curl_exec($ch);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $curlurl);                //要抓取的网址
+        curl_setopt($ch, CURLOPT_HEADER, 0);              //include the header in the output.
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);          //An array of HTTP header fields to set, in the format array('Content-type: text/plain', 'Content-length: 100')
+        curl_setopt($ch, CURLOPT_REFERER, $referurl);           //模拟来源网址
+        curl_setopt($ch, CURLOPT_USERAGENT, $useragent);        //模拟常用浏览器的useragent
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  //取消SSL验证
+        curl_setopt($ch, CURLOPT_COOKIE, $cookie);              //设置请求COOKIE
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);      //将curl_exec()获取的信息以文件流的形式返回，而不是直接输出。
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);      //可以跟踪爬取重定向界面
+        $result = curl_exec($ch);
         curl_close($ch);
-        return $page_content;
+        return $result;
     }
 }
