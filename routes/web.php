@@ -42,5 +42,6 @@ Route::get('/test_spider','WebCrawlerController@test_spider');
 Route::group(['prefix'=>'spider'],function (){
     Route::get('/','SpiderController@index');
     Route::get('/gitee','SpiderController@gitee');
+    Route::get('/zhihu','SpiderController@zhihu');
 });
 

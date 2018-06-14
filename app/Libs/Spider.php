@@ -27,14 +27,15 @@ class Spider
      *
      * 默认使用的是GET
      *
-     * @param string $curlurl
-     * @param string $referurl
+     * @param string $cookie   待抓取网站COOKIE
+     * @param string $curlurl  待抓取界面url
+     * @param string $referurl 来源网站
      * @param string $ip
-     * @return mixed
+     * @return int|mixed
      */
     public function fakelogin($cookie='',$curlurl='',$referurl='',$ip='')
     {
-        if(!$cookie || !$curlurl || $referurl){
+        if((!$cookie) || (!$curlurl) || (!$referurl)){
             return 403;
         }
         if(!$ip){
