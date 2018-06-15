@@ -64,4 +64,16 @@ class SpiderController extends Controller
         $data = $spider->fakelogin($cookie,$curl_url,$referurl);
         dd($data);
     }
+
+
+    public function sina()
+    {
+        $ql = QueryList::get('https://weibo.com/u/2980765271/home?wvr=5&lf=reg',[],[
+            'headers' => [
+                //填写从浏览器获取到的cookie
+                'Cookie' => "UOR=www.diyzhan.com,widget.weibo.com,www.techug.com; SINAGLOBAL=1902345602967.4768.1520393521841; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WW1SC7qpqn8HEN9fG9ZQ3Cr5JpX5K2hUgL.Foz41h5NSo-ES022dJLoI0qLxK-L1KzL1KqLxK-L1K-LBK2LxKqLBoeLBK2LxKqL1-qLBK5LxKqLB-2LB-eLxKBLBonLBoqt; SUHB=0N219WyVpybB-C; wvr=6; YF-Ugrow-G0=8751d9166f7676afdce9885c6d31cd61; login_sid_t=61472b580b557a9ee1edd434b5219523; cross_origin_proto=SSL; YF-V5-G0=d8809959b4934ec568534d2b6c204def; WBStorage=5548c0baa42e6f3d|undefined; _s_tentry=passport.weibo.com; Apache=5431377752219.283.1529035092559; ULV=1529035092590:9:2:2:5431377752219.283.1529035092559:1528787999458; wb_view_log=1536*8641.25; SSOLoginState=1529035015; un=tiankong93913@sina.com; YF-Page-G0=324e50a7d7f9947b6aaff9cb1680413f"
+            ]
+        ]);
+        dd($ql->getHtml());
+    }
 }

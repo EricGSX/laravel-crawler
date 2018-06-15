@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/test','WebCrawlerController@test');
 
 
+//TODO TEST
 Route::get('/baidu','WebCrawlerController@baidu');
 
 Route::get('/wxarticle','WebCrawlerController@article');
@@ -44,5 +45,6 @@ Route::group(['prefix'=>'spider'],function (){
     Route::get('/gitee','SpiderController@gitee');
     Route::get('/zhihu','SpiderController@zhihu');
     Route::get('/sf','SpiderController@sf');
+    Route::get('/sina','SpiderController@sina');
 });
 
