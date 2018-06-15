@@ -43,5 +43,6 @@ Route::group(['prefix'=>'spider'],function (){
     Route::get('/','SpiderController@index');
     Route::get('/gitee','SpiderController@gitee');
     Route::get('/zhihu','SpiderController@zhihu');
+    Route::get('/sf','SpiderController@sf');
 });
 

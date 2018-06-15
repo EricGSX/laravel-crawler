@@ -51,4 +51,17 @@ class SpiderController extends Controller
         $data = trim($data,'\"');
         dd($data);
     }
+
+    /**
+     * TODO segmentfault
+     */
+    public function sf()
+    {
+        $curl_url = 'https://segmentfault.com/u/huiwushudedigua/about';
+        $referurl = 'https://segmentfault.com/u/huiwushudedigua';
+        $cookie = "profile__init--hide=1; PHPSESSID=web2~3bnicjvd6flrlmhivbetj8ckoi; afpCT=1; sf_remember=57e067648103cb08e44d166638b07243; Hm_lvt_e23800c454aa573c0ccb16b52665ac26=1528882490,1528882509,1528939197,1529024942; Hm_lpvt_e23800c454aa573c0ccb16b52665ac26=1529034234; _ga=GA1.2.1252986435.1520478251; _gid=GA1.2.599720607.1528681493; _gat=1";
+        $spider = new Spider();
+        $data = $spider->fakelogin($cookie,$curl_url,$referurl);
+        dd($data);
+    }
 }
