@@ -33,9 +33,9 @@ class Spider
      * @param string $ip
      * @return int|mixed
      */
-    public function fakelogin($cookie='',$curlurl='',$referurl='',$ip='')
+    public function fakelogin($cookie='',$curlurl='',$referurl='',$ip='',$ua='')
     {
-        if((!$cookie) || (!$curlurl) || (!$referurl)){
+        if((!$curlurl) || (!$referurl)){
             return 403;
         }
         if(!$ip){
@@ -92,9 +92,13 @@ class Spider
         curl_setopt($ch, CURLOPT_HEADER, 0);              //include the header in the output.
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);          //An array of HTTP header fields to set, in the format array('Content-type: text/plain', 'Content-length: 100')
         curl_setopt($ch, CURLOPT_REFERER, $referurl);           //模拟来源网址
-        curl_setopt($ch, CURLOPT_USERAGENT, $useragent);        //模拟常用浏览器的useragent
+        if($ua){
+            curl_setopt($ch, CURLOPT_USERAGENT, $useragent);        //模拟常用浏览器的useragent
+        }
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  //取消SSL验证
-        curl_setopt($ch, CURLOPT_COOKIE, $cookie);              //设置请求COOKIE
+        if($cookie){
+            curl_setopt($ch, CURLOPT_COOKIE, $cookie);              //设置请求COOKIE
+        }
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);      //将curl_exec()获取的信息以文件流的形式返回，而不是直接输出。
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);      //可以跟踪爬取重定向界面
         $result = curl_exec($ch);

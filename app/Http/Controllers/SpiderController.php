@@ -65,7 +65,9 @@ class SpiderController extends Controller
         dd($data);
     }
 
-
+    /**
+     * TODO 新浪
+     */
     public function sina()
     {
         $ql = QueryList::get('https://weibo.com/u/2980765271/home?wvr=5&lf=reg',[],[
@@ -75,5 +77,30 @@ class SpiderController extends Controller
             ]
         ]);
         dd($ql->getHtml());
+    }
+
+    public function baidu()
+    {
+        $curl_url = 'http://www.baidu.com';
+        $referurl = 'http://www.baidu.com';
+        $spider = new Spider();
+        $data = $spider->fakelogin('',$curl_url,$referurl);
+        echo $data;
+        //$curlobj = curl_init();
+        //curl_setopt($curlobj,CURLOPT_URL,"http://www.baidu.com");
+        //curl_setopt($curlobj,CURLOPT_RETURNTRANSFER,true); //请求结果不直接打印
+        //$output = curl_exec($curlobj);
+        //curl_close($curlobj);
+
+        //将请求结果写入文件
+        // $myfile = fopen("curl_html.html", "w") or die("Unable to open file!");
+
+        // //$txt = $output;  直接存储到文件
+        // $txt = str_replace("百度","屌丝",$output); //处理结果集后存储到文件
+
+        // fwrite($myfile, $txt);
+        // fclose($myfile);
+       /* echo '<pre>';
+        print_r($output);*/
     }
 }
