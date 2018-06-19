@@ -86,6 +86,9 @@
                 <div class="links" id="app" style='position: relative;'>
                     <a :href='url1'>@{{msg1}}</a>
                     <a :href='url2'>@{{msg2}}</a>
+                    <a :href='url3'>@{{msg3}}</a>
+                    <a :href='url4'>@{{msg4}}</a>
+                    <a :href='url5'>@{{msg5}}</a>
                     <a style="position: absolute; right: -150px;bottom: 118px;" href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
                 </div>
 
@@ -101,6 +104,12 @@
               url1:'spider/gitee',
               msg2: 'zhihu',
               url2:'spider/zhihu',
+              msg3: 'segmentfault',
+              url3:'spider/sf',
+              msg4: 'sina',
+              url4:'spider/sina',
+              msg5: 'baidu',
+              url5:'spider/baidu',
           }
       })
  </script>
