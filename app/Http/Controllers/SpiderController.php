@@ -20,10 +20,14 @@ class SpiderController extends Controller
      */
     public function index()
     {
-        $return = [
-
+        $data = [
+            ['name'=>'1','url'=>'2'],
+            ['name'=>'1','url'=>'2'],
+            ['name'=>'1','url'=>'2'],
+            ['name'=>'1','url'=>'2'],
         ];
-        return view('spider.index');
+        $return = json_encode($data);
+        return view('spider.index',compact('return'));
     }
 
 
