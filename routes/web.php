@@ -49,5 +49,11 @@ Route::group(['prefix'=>'spider'],function (){
     Route::get('/baidu','SpiderController@baidu');
 });
 
-//TODO 界面
+//TODO 前台界面
+
+Route::get();
+Route::post();
+
+//TODO 后台界面
+
 
