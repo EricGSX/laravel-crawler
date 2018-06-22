@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="links" id="app">
-                    {{$html}}
+                    {{!! $html !!}}
                 </div>
 
             </div>

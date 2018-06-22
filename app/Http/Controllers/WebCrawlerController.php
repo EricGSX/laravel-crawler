@@ -44,10 +44,11 @@ class WebCrawlerController extends Controller
         //return $return;
         $parser = new Parser();
         $test = '## About US
-contect
+Laravel5.5+Bootstrop3.0开发的SPIDER框架
 ## Follow me
-* github：
-* gitee：';
+开源是一种精神
+* github：https://github.com/EricGSX/spider.git
+* gitee：https://gitee.com/EricGuosx/spider.git';
         $html = $parser->makeHtml($test);
         //dd($html);
         return view('welcome',compact('html'));
