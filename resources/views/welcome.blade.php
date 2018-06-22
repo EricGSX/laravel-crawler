@@ -10,7 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         {{--VUE--}}
-<script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
+{{--<script type="text/javascript" src="{{asset('js/vue.js')}}"></script>--}}
         <!-- Styles -->
         <style>
             html, body {
@@ -84,40 +84,10 @@
                 </div>
 
                 <div class="links" id="app">
-                    <a :href='url1'>@{{msg1}}</a>
-                    <a :href='url2'>@{{msg2}}</a>
-                    <a :href='url3'>@{{msg3}}</a>
-                    <a :href='url4'>@{{msg4}}</a>
-                    <a :href='url5'>@{{msg5}}</a>
-                    <a :href='url6'>@{{msg6}}</a>
-                    <a :href='url7'>@{{msg7}}</a>
-                    <a style="overflow:hidden;position: relative;top:-100px;left:-50px;" href='https://gitee.com/EricGuosx/laravel-crawler'><img src='https://gitee.com/EricGuosx/laravel-crawler/widgets/widget_3.svg' alt='Fork me on Gitee'></img></a>
+                    {{$html}}
                 </div>
 
             </div>
         </div>
     </body>
 </html>
-    <script type="text/javascript">
-      new Vue({
-          el: '#app',
-          data: {
-              msg1: 'baidu',
-              url1:'/baidu',
-              msg2:'github',
-              url2:'/github',
-              msg3:'gitee',
-              url3:'/gitee',
-              msg4:'snoopy',
-              url4:'/snoopy',
-              url4:'/snoopy',
-              msg5:'amazon',
-              url5:'/amazon',
-              msg6:'zhihu',
-              url6:'/zhihu',
-              msg7:'Spider',
-              url7:'/spider',
-
-          }
-      })
- </script>

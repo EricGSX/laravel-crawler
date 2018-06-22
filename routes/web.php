@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 //定义路由组
-//Route::get('/test','WebCrawlerController@test');
+Route::get('/test','WebCrawlerController@test');
 
 
 //TODO TEST
@@ -51,8 +51,8 @@ Route::group(['prefix'=>'spider'],function (){
 
 //TODO 前台界面
 
-Route::get();
-Route::post();
+//Route::get();
+//Route::post();
 
 //TODO 后台界面
 
