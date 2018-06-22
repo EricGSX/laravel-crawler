@@ -76,8 +76,8 @@ class WebCrawlerController extends Controller
             'cookies' => $jar
         ])->find('form');
         //填写GitHub用户名和密码
-        $form->find('input[name=login]')->val('EricGSX');
-        $form->find('input[name=password]')->val('EricGSX2016222');
+        $form->find('input[name=login]')->val('...');
+        $form->find('input[name=password]')->val('...');
         //序列化表单数据
         $fromData = $form->serializeArray();
         $postData = [];
@@ -162,9 +162,9 @@ class WebCrawlerController extends Controller
         // $snoopy->agent="Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0"; //定义浏览器根
         $snoopy->agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36"; //定义浏览器根
 
-        $post['login'] ='EricGSX';//根据你要模拟登陆的网站具体的传值 名称来定
+        $post['login'] ='...';//根据你要模拟登陆的网站具体的传值 名称来定
 
-        $post['password'] ='EricGSX2016222';//根据你要模拟登陆的网站具体的传值 名称来定
+        $post['password'] ='...';//根据你要模拟登陆的网站具体的传值 名称来定
 
         $url='https://github.com/login';//登陆数据提交的URL地址
 
@@ -220,9 +220,9 @@ class WebCrawlerController extends Controller
     {
         $curl = curl_init();// 初始化
         // 准备提交的表单数据之账号和密码。（这个是根据表单选项来的）
-        $data = "login=EricGSX&password=6481485" ;
+        $data = "login=...&password=6481485" ;
         // 这个配置是为了防盗链，
-        curl_setopt($curl,CURLOPT_REFERER,"EricGSX2016222");
+        curl_setopt($curl,CURLOPT_REFERER,"...");
         // 基本配置
         curl_setopt($curl, CURLOPT_URL, 'https://github.com/login');// 网址
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);// 不输出
