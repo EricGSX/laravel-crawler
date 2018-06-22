@@ -50,8 +50,8 @@ Route::group(['prefix'=>'spider'],function (){
 });
 
 //TODO 前台界面
-
-//Route::get();
+//文章列表页
+//Route::get('/posts','Post');
 //Route::post();
 
 //TODO 后台界面
