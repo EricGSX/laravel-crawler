@@ -3,7 +3,7 @@
 * 个人博客、后台集成Spider系统
 * 支持Markdown文本编辑
 ## *Install Active*
-1. ```git clone https://gitee.com/EricGuosx/spider.git```
+1. `git clone https://gitee.com/EricGuosx/spider.git`
 2. ``` composer update ```
 3. OK 就是这么简单
 ## __Follow me__
