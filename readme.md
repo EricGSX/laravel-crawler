@@ -10,3 +10,4 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
 2. gitee：https://gitee.com/EricGuosx/spider.git
 
 ###### Write Less Do More
+    Eric.Guo
