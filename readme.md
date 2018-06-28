@@ -1,5 +1,7 @@
 ## _About US_
-Laravel5.5+Bootstrop3.0开发的SPIDER框架
+* Laravel5.5.*+Bootstrop3.0
+* 个人博客、后台集成Spider系统
+* 支持Markdown文本编辑
 ## *Install Active*
 1. ```git clone https://gitee.com/EricGuosx/spider.git```
 2. ``` composer update ```
