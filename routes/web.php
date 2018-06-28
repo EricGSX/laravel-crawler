@@ -64,7 +64,6 @@ Route::group(['prefix'=>'posts'],function(){
     //删除文章
     Route::get('/delete','Home\PostController@delete');
 });
-//Route::post();
 
 //TODO 后台界面
 
