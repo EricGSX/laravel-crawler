@@ -50,8 +50,20 @@ Route::group(['prefix'=>'spider'],function (){
 });
 
 //TODO 前台界面
-//文章列表页
-//Route::get('/posts','Post');
+Route::group(['prefix'=>'posts'],function(){
+    //文章列表页
+    Route::get('/','\App\Http\Controllers\Home\PostController@index');
+    //创建文章
+    Route::get('/create','\App\Http\Controllers\Home\PostController@create');
+    Route::post('/','\App\Http\Controllers\Home\PostController@stroe');
+    //文章详情页
+    Route::get('/{post}','\App\Http\Controllers\Home\PostController@show');
+    //编辑文章
+    Route::get('/{post}/edit','\App\Http\Controllers\Home\PostController@edit');
+    Route::put('/{post}','\App\Http\Controllers\Home\PostController@update');
+    //删除文章
+    Route::get('/delete','\App\Http\Controllers\Home\PostController@delete');
+});
 //Route::post();
 
 //TODO 后台界面
