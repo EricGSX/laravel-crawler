@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/','Home\PostController@index');
 //定义路由组
 Route::get('/test','WebCrawlerController@test');
 
