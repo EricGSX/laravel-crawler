@@ -58,10 +58,10 @@ Route::group(['prefix'=>'posts'],function(){
     Route::get('/create','Home\PostController@create');
     Route::post('/','Home\PostController@stroe');
     //文章详情页
-    Route::get('/{post}','Home\PostController@show');
+    Route::get('/{id}','Home\PostController@show');
     //编辑文章
-    Route::get('/{post}/edit','Home\PostController@edit');
-    Route::put('/{post}','Home\PostController@update');
+    Route::get('/{id}/edit','Home\PostController@edit');
+    Route::put('/{id}','Home\PostController@update');
     //删除文章
     Route::get('/delete','Home\PostController@delete');
 });
