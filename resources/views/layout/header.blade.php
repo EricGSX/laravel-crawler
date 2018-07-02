@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="4BfTBDF90Mjp8hdoie6QGDPJF2J5AgmpsC9ddFHD">
 
 
-    <title>Eric.Guo</title>
+    <title>会武术的地瓜(Eric.Guo)</title>
     <script src="{{asset('js/eric.guo.jq3.0.js')}}"></script>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
