@@ -33,49 +33,15 @@
 </div>        <div style="height: 20px;">
         </div>
         <div>
+            @foreach($posts as $post)
                         <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/62" >你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
+                <h2 class="blog-post-title"><a href="/posts/{{$post->id}}" >{{$post->title}}</a></h2>
+                <p class="blog-post-meta">{{$post->created_at}} <a href="/user/5">Kassandra Ankunding2</a></p>
 
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
+                <p>{{$post->content}}...
                 <p class="blog-post-meta">赞 0  | 评论 0</p>
             </div>
-                        <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/61" >你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0  | 评论 0</p>
-            </div>
-                        <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/60" >你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0  | 评论 0</p>
-            </div>
-                        <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/59" >你好你好</a></h2>
-                <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
-                <p class="blog-post-meta">赞 0  | 评论 0</p>
-            </div>
-                        <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/58" >自动放大舒服的撒</a></h2>
-                <p class="blog-post-meta">May 11, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                我们坚持一个中国我们坚持一个中国我们坚持一个中国我们坚持一个中国我们坚持一个中国我们坚持一个中国我们...
-                <p class="blog-post-meta">赞 0  | 评论 0</p>
-            </div>
-                        <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/57" >反对撒发的撒风反对撒发的撒风反对撒发的撒风</a></h2>
-                <p class="blog-post-meta">May 7, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
-
-                反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反对撒发的撒风反...
-                <p class="blog-post-meta">赞 0  | 评论 0</p>
-            </div>
-
+@endforeach
             <ul class="pagination">
 
                     <li class="disabled"><span>&laquo;</span></li>
