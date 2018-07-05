@@ -1,3 +1,12 @@
+<style>
+    .nav>li>a:hover{
+        background-color: #2e6da4!important;
+    }
+    .nav>li>a{
+        font-weight: bold!important;
+        color: white!important;
+    }
+</style>
 <div class="blog-masthead">
     <div class="container">
         <form action="/posts/search" method="GET">
