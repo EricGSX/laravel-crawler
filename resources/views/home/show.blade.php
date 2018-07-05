@@ -4,10 +4,10 @@
             <div class="blog-post">
                 <div style="display:inline-flex">
                     <h2 class="blog-post-title">{{$id->title}}</h2>
-                    <a style="margin: auto"  href="/posts/62/edit">
+                    <a style="margin: auto"  href="/posts/{{$id->id}}/edit">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                     </a>
-                    <a style="margin: auto"  href="/posts/62/delete">
+                    <a style="margin: auto"  href="/posts/{{$id->id}}/delete">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </a>
                 </div>
@@ -16,7 +16,7 @@
 
                 <p>{{$id->content}}</p>
                 <div>
-                    <a href="/posts/62/zan" type="button" class="btn btn-primary btn-lg">赞</a>
+                    <a href="/posts/{{$id->id}}/zan" type="button" class="btn btn-primary btn-lg">赞</a>
 
                 </div>
             </div>
