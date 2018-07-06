@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-        <div class="col-sm-10 blog-main">
+        <div class="col-sm-8 blog-main">
         <div>
     <div id="carousel-example" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
