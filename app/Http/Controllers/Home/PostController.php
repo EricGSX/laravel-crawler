@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at','desc')->get();
+        $posts = Post::orderBy('created_at','desc')->paginate(6);
         return view('home.index',compact('posts'));
     }
 
@@ -46,9 +46,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $id)
     {
-        return view('home.show');
+        return view('home.show',compact('id'));
     }
 
     /**
