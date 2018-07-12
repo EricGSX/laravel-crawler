@@ -47,9 +47,11 @@ class PostController extends Controller
         $this->validate(request(),[
             'title' => 'required|string:max:100|min:5',
             'content'=> 'required|string|min:10',
-        ],[
-            'title.min' => '文章标题过短'
-        ]);
+        ]
+//            [
+//            'title.min' => '文章标题过短'
+//        ]
+        );
         $post = Post::create(request(['title','content']));
 //        dd($post);
         return redirect('/posts');
