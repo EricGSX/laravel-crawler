@@ -21,6 +21,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{asset('js/eric.guo.editor.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/eric.js')}}"></script>
 
 </body>
 </html>

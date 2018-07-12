@@ -101,4 +101,17 @@ class PostController extends Controller
     {
         //
     }
+
+    /**
+     * TODO 存储图片
+     *
+     * @param Request $request
+     * @return string
+     */
+    public function imageUpload(Request $request)
+    {
+        $path = $request->file('wangEditorH5File')->storePublicly(md5(time()));
+        return asset('storage/'.$path);
+        //dd(request()->all());
+    }
 }

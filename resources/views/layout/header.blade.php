@@ -7,7 +7,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="csrf-token" content="4BfTBDF90Mjp8hdoie6QGDPJF2J5AgmpsC9ddFHD">
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
 
     <title>会武术的地瓜(Eric.Guo)</title>

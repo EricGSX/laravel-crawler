@@ -64,6 +64,8 @@ Route::group(['prefix'=>'posts'],function(){
     Route::put('/{id}','Home\PostController@update');
     //删除文章
     Route::get('/delete','Home\PostController@delete');
+    //图片上传
+    Route::post('/image/upload','Home\PostController@imageUpload');
 });
 
 //TODO 后台界面
