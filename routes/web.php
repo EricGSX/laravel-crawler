@@ -63,7 +63,7 @@ Route::group(['prefix'=>'posts'],function(){
     Route::get('/{id}/edit','Home\PostController@edit');
     Route::put('/{post}','Home\PostController@update');
     //删除文章
-    Route::get('/delete','Home\PostController@delete');
+    Route::get('/{id}/delete','Home\PostController@delete');
     //图片上传
     Route::post('/image/upload','Home\PostController@imageUpload');
 });

@@ -122,4 +122,11 @@ class PostController extends Controller
         return asset('storage/'.$path);
         //dd(request()->all());
     }
+
+    public function delete(Post $id)
+    {
+        $id->delete();
+
+        return redirect('/posts');
+    }
 }
