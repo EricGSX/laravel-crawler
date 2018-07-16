@@ -61,7 +61,7 @@ Route::group(['prefix'=>'posts'],function(){
     Route::get('/{id}','Home\PostController@show');
     //编辑文章
     Route::get('/{id}/edit','Home\PostController@edit');
-    Route::put('/{id}','Home\PostController@update');
+    Route::put('/{post}','Home\PostController@update');
     //删除文章
     Route::get('/delete','Home\PostController@delete');
     //图片上传

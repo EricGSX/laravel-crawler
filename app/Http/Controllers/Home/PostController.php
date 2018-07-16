@@ -74,9 +74,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $id)
     {
-        return view('home.edit');
+        return view('home.edit',compact('id'));
     }
 
     /**
@@ -86,9 +86,17 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Post $post)
     {
-        //
+        $this->validate(request(),[
+            'title'=>'required|string|max:100|min:5',
+            'content' => 'required|string|min:10'
+        ]);
+        $post->title = request('title');
+        $post->content = request('content');
+        $post->save();
+
+        return redirect("/posts/{$post->id}");
     }
 
     /**
