@@ -16,10 +16,13 @@ class PostController extends Controller
     public function index()
     {
 /*
-        TODO:测试log类
+        TODO:容器测试
         $app = app();
         $log = $app->make('log');
-        $log->info('post_index',['data'=>'post test']);*/
+        $log->info('post_index',['data'=>'post test']);
+        TODO:依赖注入
+        TODO:门脸
+*/
         $posts = Post::orderBy('created_at','desc')->paginate(6);
         return view('home.index',compact('posts'));
     }
