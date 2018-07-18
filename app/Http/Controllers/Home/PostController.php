@@ -15,6 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
+/*
+        TODO:测试log类
+        $app = app();
+        $log = $app->make('log');
+        $log->info('post_index',['data'=>'post test']);*/
         $posts = Post::orderBy('created_at','desc')->paginate(6);
         return view('home.index',compact('posts'));
     }
