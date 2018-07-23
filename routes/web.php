@@ -70,4 +70,19 @@ Route::group(['prefix'=>'posts'],function(){
 
 //TODO 后台界面
 
+//TODO 用户模块
+Route::group(['prefix'=>'user'],function(){
+    //注册
+    Route::get('/register','User\RegisterController@index');
+    Route::post('/register','User\RegisterController@register');
+    //登陆
+    Route::get('/login','User\LoginController@index');
+    Route::post('/login','User\LoginController@login');
+    //登出
+    Route::get('/logout','User\LoginController@logout');
+    //个人设置
+    Route::get('/me/setting','User\UserController@setting');
+    Route::post('/me/setting','User\UserController@settingStore');
+});
+
 
