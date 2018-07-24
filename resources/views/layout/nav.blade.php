@@ -6,6 +6,12 @@
         font-weight: bold!important;
         color: white!important;
     }
+    .blog-nav-item {
+        color:white!important;
+    }
+    .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+        background-color: #2e6da4!important;
+    }
 </style>
 <div class="blog-masthead">
     <div class="container">
