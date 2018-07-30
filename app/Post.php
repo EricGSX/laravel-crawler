@@ -11,4 +11,9 @@ class Post extends Model
 
 //    protected $guarded = [];//不可注入字段
 //    protected $fillable = ['title','content'];//可注入字段
+    //TODO 文章关联用户
+    public function user()
+    {
+        return $this->belongsTo('\App\User','user_id','id');
+    }
 }

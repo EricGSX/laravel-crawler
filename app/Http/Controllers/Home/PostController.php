@@ -45,12 +45,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-//        dd(\Request::all());
-//        dd(request()->all());
-//        $post = new Post();
-//        $post->title = request('title');
-//        $post->content = request('content');
-//        $post->save();
         //TODO 验证
         $this->validate(request(),[
             'title' => 'required|string:max:100|min:5',
@@ -60,8 +54,9 @@ class PostController extends Controller
 //            'title.min' => '文章标题过短'
 //        ]
         );
-        $post = Post::create(request(['title','content']));
-//        dd($post);
+        $user_id = \Auth::id();
+        $params = array_merge(request(['title','content']),compact('user_id'));
+        $post = Post::create($params);
         return redirect('/posts');
     }
 
