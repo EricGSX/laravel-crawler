@@ -95,6 +95,7 @@ class PostController extends Controller
             'title'=>'required|string|max:100|min:5',
             'content' => 'required|string|min:10'
         ]);
+        $this->authorize('update',$post);
         $post->title = request('title');
         $post->content = request('content');
         $post->save();
@@ -128,6 +129,7 @@ class PostController extends Controller
 
     public function delete(Post $id)
     {
+        $this->authorize('delete',$id);
         $id->delete();
 
         return redirect('/posts');
