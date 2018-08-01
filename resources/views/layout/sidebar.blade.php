@@ -59,9 +59,9 @@
     </aside>
 
     <a tabindex="0" class="btn btn-lg btn-primary" role="button" data-toggle="popover" data-trigger="hover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">可消失的弹出框</a>
+</div>
     <script>
 	$(function () {
         $('[data-toggle="popover"]').popover()
     })
 	</script>
-</div>
