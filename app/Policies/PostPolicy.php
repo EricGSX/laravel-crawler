@@ -21,7 +21,7 @@ class PostPolicy
     }
 
     /**
-     * 修改权限
+     * 判断指定博客能否被用户更新
      *
      * @param User $user
      * @param Post $post
@@ -33,7 +33,7 @@ class PostPolicy
     }
 
     /**
-     * 删除权限
+     * 判断指定博客能否被用户删除
      *
      * @param User $user
      * @param Post $post
@@ -42,5 +42,16 @@ class PostPolicy
     public function delete(User $user,Post $post)
     {
         return $user->id == $post->user_id;
+    }
+
+    /**
+     * 判断指定用户是否可以创建博客
+     *
+     * @param \App\User $user
+     * @return mixed
+     */
+    public function create(User $user)
+    {
+        return $user->id;
     }
 }
