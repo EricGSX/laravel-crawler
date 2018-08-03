@@ -43,11 +43,12 @@
                 <a href="/topic/1">SSL证书申请
                 </a>
             </li>
-
+            <li class="list-group-item">
+                <a tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-content="<p style='color:red;'>Test</p>">Contact US</a>
+            </li>
         </ul>
     </aside>
 
-    <a tabindex="0" class="btn btn-lg btn-primary" role="button" data-toggle="popover" data-trigger="hover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">可消失的弹出框</a>
 </div>
     <script>
 	$(function () {
