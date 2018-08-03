@@ -37,17 +37,29 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <div>
-                        @if (\Auth::id())
-                        <img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px">
-                        <a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Auth::user()->name}}<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/user/5">我的主页</a></li>
-                            <li><a href="/user/5/setting">个人设置</a></li>
-                            <li><a href="/user/logout">登出</a></li>
-                        </ul>
-                        @else
-                            <li><a href="/user/login">登陆</a></li>
-                        @endif
+                        {{--@if (\Auth::id())--}}
+                        {{--<img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px">--}}
+                        {{--<a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Auth::user()->name}}<span class="caret"></span></a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="/user/5">我的主页</a></li>--}}
+                            {{--<li><a href="/user/5/setting">个人设置</a></li>--}}
+                            {{--<li><a href="/user/logout">登出</a></li>--}}
+                        {{--</ul>--}}
+                        {{--@else--}}
+                            {{--<a href="/user/login">登陆</a>--}}
+                        {{--@endif--}}
+                @auth
+                    <img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px">
+                    <a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Auth::user()->name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/user/5">我的主页</a></li>
+                        <li><a href="/user/5/setting">个人设置</a></li>
+                        <li><a href="/user/logout">登出</a></li>
+                    </ul>
+                @endauth
+                @guest
+                                <a href="/user/login">登陆</a>
+                 @endguest
                     </div>
                 </li>
             </ul>
