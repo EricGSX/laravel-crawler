@@ -1,9 +1,9 @@
 <div id="sidebar" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 
 
-    <aside id="widget-welcome" class="widget panel panel-default">
+    <aside id="widget-welcome" class="widget panel panel-primary">
         <div class="panel-heading">
-            欢迎！
+            Welcome
         </div>
         <div class="panel-body">
             <p>
@@ -16,43 +16,31 @@
             <script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"120473611"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["tsina","renren","douban","weixin","qzone","tqq","bdhome"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","renren","douban","weixin","qzone","tqq","bdhome"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
         </div>
     </aside>
-    <aside id="widget-categories" class="widget panel panel-default">
+    <aside id="widget-categories" class="widget panel panel-primary">
         <div class="panel-heading">
-            专题
+            公告
         </div>
 
         <ul class="category-root list-group">
             <li class="list-group-item">
-                <a href="/topic/1">旅游
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="/topic/2">轻松
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="/topic/5">测试专题
+                <a href="/topic/1">近期将开通本站SSL证书免费申请入口
                 </a>
             </li>
         </ul>
 
     </aside>
-    <aside id="widget-categories" class="widget panel panel-default">
+    <aside id="widget-categories" class="widget panel panel-primary">
         <div class="panel-heading">
-            专题
+            特色功能
         </div>
 
         <ul class="category-root list-group">
             <li class="list-group-item">
-                <a href="/topic/1">旅游
+                <a href="/topic/1">CSR在线生成
                 </a>
             </li>
             <li class="list-group-item">
-                <a href="/topic/2">轻松
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="/topic/5">测试专题
+                <a href="/topic/1">SSL证书申请
                 </a>
             </li>
         </ul>
