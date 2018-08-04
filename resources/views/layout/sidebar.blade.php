@@ -10,9 +10,6 @@
     @endauth
 
     <aside id="widget-welcome" class="widget panel panel-primary">
-        <div class="panel-heading">
-            Welcome
-        </div>
         <div class="panel-body">
             <p>
                 欢迎来到我的博客
@@ -49,9 +46,6 @@
             <li class="list-group-item">
                 <a href="/topic/1">SSL证书申请
                 </a>
-            </li>
-            <li class="list-group-item">
-                <a tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-content="<p style='color:red;'>Test</p>">Contact US</a>
             </li>
         </ul>
     </aside>
