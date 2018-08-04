@@ -17,3 +17,12 @@
         }
     });
 </script>
+<div style="position: fixed;left:1%;top:15%;">
+    <img style="width:50px;height:50px;" src="{{asset('image/contact-me.jpg')}}" tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-content='    <aside id="widget-fature" class="widget panel panel-primary">
+        <div class="panel-heading">
+            特色功能
+        </div>
+        <img src="/image/contact-me.jpg">
+    </ul>
+    </aside>'/>
+</div>
