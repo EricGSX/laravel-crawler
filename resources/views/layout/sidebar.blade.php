@@ -1,5 +1,13 @@
 <div id="sidebar" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 
+    @auth
+    <aside id="widget-header" class="widget panel panel-primary">
+        <div>
+            <img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px">
+            {{\Auth::user()->name}}
+        </div>
+    </aside>
+    @endauth
 
     <aside id="widget-welcome" class="widget panel panel-primary">
         <div class="panel-heading">
@@ -27,9 +35,8 @@
                 </a>
             </li>
         </ul>
-
     </aside>
-    <aside id="widget-categories" class="widget panel panel-primary">
+    <aside id="widget-fature" class="widget panel panel-primary">
         <div class="panel-heading">
             特色功能
         </div>
