@@ -18,10 +18,8 @@
     });
 </script>
 <div style="position: fixed;left:1%;top:20%;" tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-content='    <aside id="widget-fature" class="widget panel panel-primary">
-        <div class="panel-heading">
-            特色功能
-        </div>
-        <img src="/image/contact-me.jpg">
+    <ul>
+        <img style="200px;height:200px;" src="/image/wechat.jpg">
     </ul>
     </aside>'>
     <div><img style="width:50px;height:50px;" src="{{asset('image/contact-me.jpg')}}" /></div>
