@@ -25,6 +25,8 @@
  *
  * The latest version of Snoopy can be obtained from:
  * http://snoopy.sourceforge.net/
+ *
+ * TODO:模拟登陆
  *************************************************/
 namespace App\Libs;
 class Snoopy
