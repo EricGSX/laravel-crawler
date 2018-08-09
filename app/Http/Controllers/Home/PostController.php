@@ -21,7 +21,7 @@ class PostController extends Controller
         $log = $app->make('log');
         $log->info('post_index',['data'=>'post test']);
         TODO:依赖注入
-        TODO:门脸
+        TODO:Facade门面模式
 */
         $posts = Post::orderBy('created_at','desc')->paginate(6);
         return view('home.index',compact('posts'));
@@ -47,7 +47,7 @@ class PostController extends Controller
     {
         //TODO 验证
         $this->validate(request(),[
-            'title' => 'required|string:max:100|min:5',
+            'title' => 'required|string|max:100|min:5',
             'content'=> 'required|string|min:10',
         ]
 //            [
