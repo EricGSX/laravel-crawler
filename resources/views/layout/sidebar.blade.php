@@ -8,7 +8,6 @@
         </div>
     </aside>
     @endauth
-
     <aside id="widget-welcome" class="widget panel panel-primary">
         <div class="panel-body">
             <p>
