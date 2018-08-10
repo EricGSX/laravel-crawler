@@ -54,6 +54,8 @@ Route::group(['prefix'=>'spider'],function (){
 Route::group(['prefix'=>'posts'],function(){
     //文章列表页
     Route::get('/','Home\PostController@index');
+    //天气
+    Route::get('/weather','Home\PostController@weather');
     //创建文章
     Route::get('/create','Home\PostController@create');
     Route::post('/','Home\PostController@store');

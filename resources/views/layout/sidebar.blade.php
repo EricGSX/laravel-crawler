@@ -46,6 +46,10 @@
                 <a href="/topic/1">SSL证书申请
                 </a>
             </li>
+            <li class="list-group-item">
+                <a href="/posts/weather">天气查询
+                </a>
+            </li>
         </ul>
     </aside>
 

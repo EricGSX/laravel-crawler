@@ -134,4 +134,14 @@ class PostController extends Controller
 
         return redirect('/posts');
     }
+
+    /**
+     * 天气预报
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function weather()
+    {
+        return view('home.weather');
+    }
 }
