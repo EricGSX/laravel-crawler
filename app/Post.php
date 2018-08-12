@@ -16,4 +16,14 @@ class Post extends Model
     {
         return $this->belongsTo('\App\User','user_id','id');
     }
+
+    /**
+     * TODO 一对多评论模型
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('\App\Comment','post_id','id')->orderBy('created_at','desc');
+    }
 }

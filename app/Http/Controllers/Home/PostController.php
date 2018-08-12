@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \App\Post;
+use \App\Comment;
 
 class PostController extends Controller
 {
@@ -68,6 +69,7 @@ class PostController extends Controller
      */
     public function show(Post $id)
     {
+        $id->load('comments'); //写了就是预加载，不写就是逻辑直接在view层里面处理了，不符合MVC的模式思想，但是也是正确的
         return view('home.show',compact('id'));
     }
 
@@ -143,5 +145,19 @@ class PostController extends Controller
     public function weather()
     {
         return view('home.weather');
+    }
+
+
+    public function comment(Post $post)
+    {
+        $this->validate(request(),[
+            'content'=>'required|min:3',
+        ]);
+        $comment = new Comment();
+        $comment->user_id = \Auth::id();
+        $comment->content = request('content');
+        $post->comments()->save($comment);
+        //直接返回详情页
+        return back();
     }
 }
