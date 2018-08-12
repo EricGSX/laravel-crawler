@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>纯CSS僵尸</title>
+<title>会武术的地瓜</title>
 
 <style>
 html, body {

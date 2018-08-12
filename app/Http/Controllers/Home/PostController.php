@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use \App\Post;
 use \App\Comment;
+use \App\Zan;
 
 class PostController extends Controller
 {
@@ -24,7 +25,7 @@ class PostController extends Controller
         TODO:依赖注入
         TODO:Facade门面模式
 */
-        $posts = Post::orderBy('created_at','desc')->withCount('comments')->paginate(6);
+        $posts = Post::orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
         return view('home.index',compact('posts'));
     }
 
@@ -158,6 +159,33 @@ class PostController extends Controller
         $comment->content = request('content');
         $post->comments()->save($comment);
         //直接返回详情页
+        return back();
+    }
+
+    /**
+     * TODO 点赞
+     *
+     * @param Post $post
+     */
+    public function zan(Post $post)
+    {
+        $params = [
+            'user_id' => \Auth::id(),
+            'post_id' => $post->id,
+        ];
+        Zan::firstOrCreate($params);
+        return back();
+    }
+
+    /**
+     * TODO 取消赞
+     *
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function unzan(Post $post)
+    {
+        $post->zan(\Auth::id())->delete();
         return back();
     }
 }

@@ -26,4 +26,25 @@ class Post extends Model
     {
         return $this->hasMany('\App\Comment','post_id','id')->orderBy('created_at','desc');
     }
+
+    /**
+     * TODO 和用户进行关联
+     *
+     * @param $user_id
+     * @return $this
+     */
+    public function zan($user_id)
+    {
+        return $this->hasOne(\App\Zan::class)->where('user_id',$user_id);
+    }
+
+    /**
+     * TODO 文章的所有赞
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function zans()
+    {
+        return $this->hasMany(\App\Zan::class);
+    }
 }

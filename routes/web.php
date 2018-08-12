@@ -61,6 +61,9 @@ Route::group(['prefix'=>'posts'],function(){
     Route::post('/','Home\PostController@store');
     //提交评论
     Route::post('/{post}/comment','Home\PostController@comment');
+    //赞
+    Route::get('/{post}/zan','Home\PostController@zan');
+    Route::get('/{post}/unzan','Home\PostController@unzan');
     //文章详情页
     Route::get('/{id}','Home\PostController@show');
     //编辑文章
