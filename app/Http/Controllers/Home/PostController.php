@@ -24,7 +24,7 @@ class PostController extends Controller
         TODO:依赖注入
         TODO:Facade门面模式
 */
-        $posts = Post::orderBy('created_at','desc')->paginate(6);
+        $posts = Post::orderBy('created_at','desc')->withCount('comments')->paginate(6);
         return view('home.index',compact('posts'));
     }
 
