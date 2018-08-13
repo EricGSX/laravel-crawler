@@ -14,7 +14,7 @@ class Post extends Model
     //TODO 文章关联用户
     public function user()
     {
-        return $this->belongsTo('\App\User','user_id','id');
+        return $this->belongsTo('\App\User','user_id','id')->withDefault(['name'=>'游客']);
     }
 
     /**
