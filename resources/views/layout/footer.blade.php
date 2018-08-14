@@ -16,6 +16,7 @@
             $('#scroll-to-top').hide()
         }
     });
+
 </script>
 <div style="position: fixed;left:1%;top:20%;" tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-content='    <aside id="widget-fature" class="widget panel panel-primary">
     <ul>
