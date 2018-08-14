@@ -26,30 +26,12 @@
             标签云
         </div>
         <ul>
-    <a href="http://www.17sucai.com/" class="tagc1" style="left: 102.163px; top: 31.854px; z-index: 101; opacity: 0.103406; display: none;">银行存款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 114.126px; top: 31.8505px; z-index: 102; opacity: 0.108182; display: none;">银行利率</a>
-    <a href="http://www.17sucai.com/" class="tagc5" style="left: 43.5143px; top: 39.629px; z-index: 102; opacity: 0.1098; display: none;">银行贷款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 27.1457px; top: 50.2335px; z-index: 101; opacity: 0.101502; display: none;">银行存款利率</a><a style="left: 105.34px; top: 40.2239px; z-index: 102; opacity: 0.118969; display: none;">
-    </a><a href="http://www.17sucai.com/" class="tagc2" style="left: 141.419px; top: 42.3097px; z-index: 102; opacity: 0.109282; display: none;">银行利率</a>
-    <a href="http://www.17sucai.com/" class="tagc1" style="left: 173.698px; top: 74.586px; z-index: 101; opacity: 0.104379; display: none;">不孕不育</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 146.108px; top: 54.8797px; z-index: 102; opacity: 0.11206; display: none;">银行存款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc5" style="left: 93.4635px; top: 30.5021px; z-index: 101; opacity: 0.10476; display: none;">银行贷款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 45.736px; top: 45.3448px; z-index: 101; opacity: 0.100267; display: none;">银行利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: -3.34148px; top: 92.9687px; z-index: 101; opacity: 0.104651; display: none;">房贷利率2013</a>
-    <a href="http://www.17sucai.com/" class="tagc5" style="left: -1.85413px; top: 78.4996px; z-index: 102; opacity: 0.107787; display: none;">银行存款利率表</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 42.3966px; top: 37.3619px; z-index: 102; opacity: 0.11726; display: none;">银行贷款利率表</a>
-    <a href="http://www.17sucai.com/" class="tagc1" style="left: 109.575px; top: 33.7254px; z-index: 102; opacity: 0.114836; display: none;">银行存款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 170.534px; top: 69.8099px; z-index: 106; opacity: 0.157939;">银行利率</a>
-    <a href="http://www.17sucai.com/" class="tagc5" style="left: 171.698px; top: 128.565px; z-index: 119; opacity: 0.38169;">银行贷款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 142.271px; top: 181.222px; z-index: 131; opacity: 0.716915;">银行存款利率</a><a style="left: 120.537px; top: 209.638px; z-index: 140; opacity: 1.06983;">
-    </a><a href="http://www.17sucai.com/" class="tagc2" style="left: 40.5857px; top: 175.435px; z-index: 145; opacity: 1.28116;">银行利率</a>
-    <a href="http://www.17sucai.com/" class="tagc1" style="left: 18.1187px; top: 118.274px; z-index: 146; opacity: 1.32701;">不孕不育</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 32.0564px; top: 62.7502px; z-index: 147; opacity: 1.38432;">银行存款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc5" style="left: 90.6836px; top: 46.3528px; z-index: 152; opacity: 1.71406;">银行贷款利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 149.698px; top: 83.3194px; z-index: 163; opacity: 2.65893;">银行利率</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 126.763px; top: 141.364px; z-index: 176; opacity: 4.50045;">房贷利率2013</a>
-    <a href="http://www.17sucai.com/" class="tagc5" style="left: 64.4832px; top: 151.031px; z-index: 184; opacity: 6.22033;">银行存款利率表</a>
-    <a href="http://www.17sucai.com/" class="tagc2" style="left: 57.9797px; top: 96.3687px; z-index: 185; opacity: 6.50931;">银行贷款利率表</a>
+    <a href="#" class="tagc1">这是一个美丽的测试</a>
+    <a href="#" class="tagc2">这是一个美丽的测试</a>
+    <a href="#" class="tagc3">这是一个美丽的测试</a>
+    <a href="#" class="tagc1">这是一个美丽的测试</a>
+    <a href="#" class="tagc5">这是一个美丽的测试</a>
+    <a href="#" class="tagc5">这是一个美丽的测试</a>
             </ul>
     </aside>
         {{--标签云--}}
@@ -95,6 +77,7 @@
     #tagscloud a{position:absolute;top:0px;left:0px;color:#333;font-family:Arial;text-decoration:none;margin:0 10px 15px 0;line-height:18px;text-align:center;font-size:12px;padding:1px 5px;display:inline-block;border-radius:3px;}
     #tagscloud a.tagc1{background:#666;color:#fff;}
     #tagscloud a.tagc2{background:#F16E50;color:#fff;}
+    #tagscloud a.tagc3{background:blue;color:#fff;}
     #tagscloud a.tagc5{background:#006633;color:#fff;}
     #tagscloud a:hover{color:#fff;background:#0099ff;}
 </style>
