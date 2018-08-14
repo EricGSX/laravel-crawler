@@ -11,6 +11,7 @@
 
 
     <title>会武术的地瓜(Eric.Guo)</title>
+    <script src="{{asset('js/tagscloud.js')}}"></script>
     <script src="{{asset('js/eric.guo.jq3.0.js')}}"></script>
     <script src="{{asset('js/effects.js')}}"></script>
     <!-- Bootstrap core CSS -->
