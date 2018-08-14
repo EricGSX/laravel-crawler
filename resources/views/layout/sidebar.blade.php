@@ -30,6 +30,9 @@
                 <a href="/topic/1">近期将开通本站SSL证书免费申请入口
                 </a>
             </li>
+            <li class="list-group-item">
+                <a href="javascript:void(0)">发布鼠标点击特效</a>
+            </li>
         </ul>
     </aside>
     <aside id="widget-fature" class="widget panel panel-primary">
