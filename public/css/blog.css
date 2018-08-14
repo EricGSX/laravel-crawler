@@ -5,6 +5,7 @@
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
+    cursor: url("../image/mouse.png"), auto;
 }
 
 h1, .h1,
