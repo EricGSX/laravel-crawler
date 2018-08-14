@@ -9,8 +9,8 @@
     </div>
 
     <div class="row">
-@include('layout.sidebar')
 @yield('content')
+        @include('layout.sidebar')
 
     </div>    </div><!-- /.row -->
 </div><!-- /.container -->
