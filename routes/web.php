@@ -56,6 +56,8 @@ Route::group(['prefix'=>'posts'],function(){
     Route::get('/','Home\PostController@index');
     //天气
     Route::get('/weather','Home\PostController@weather');
+    //搜索
+    Route::get('/search','Home\PostController@search');
     //创建文章
     Route::get('/create','Home\PostController@create');
     Route::post('/','Home\PostController@store');
