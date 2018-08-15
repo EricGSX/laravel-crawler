@@ -189,9 +189,20 @@ class PostController extends Controller
         return back();
     }
 
-
+    /**
+     * TODO Search
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function search()
     {
-        dd(request('query2'));
+        $this->validate(request(),[
+            'query2' => "required",
+        ]);
+        $query = request('query2');
+        $posts = Post::where('title', 'like', "%$query%")
+            ->orWhere('content','like',"%$query%")
+            ->orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
+        return view('home.index',compact('posts'));
     }
 }
