@@ -197,12 +197,12 @@ class PostController extends Controller
     public function search()
     {
         $this->validate(request(),[
-            'query2' => "required",
+            's' => "required",
         ]);
-        $query = request('query2');
-        $posts = Post::where('title', 'like', "%$query%")
-            ->orWhere('content','like',"%$query%")
+        $s = request('s');
+        $posts = Post::where('title', 'like', "%$s%")
+            ->orWhere('content','like',"%$s%")
             ->orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
-        return view('home.search',compact('posts'));
+        return view('home.search',compact('posts','s'));
     }
 }

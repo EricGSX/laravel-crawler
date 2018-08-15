@@ -18,6 +18,7 @@
             <br>
 
         </div><!-- /.blog-main -->
+        <script type="text/javascript" src="{{asset('js/eric.js')}}"></script>
 @endsection
 
 

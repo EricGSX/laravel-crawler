@@ -20,21 +20,6 @@
             <script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"120473611"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["tsina","renren","douban","weixin","qzone","tqq","bdhome"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","renren","douban","weixin","qzone","tqq","bdhome"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
         </div>
     </aside>
-        {{--标签云--}}
-        <aside id="tagscloud" class="widget panel panel-primary">
-        <div class="panel-heading">
-            标签云
-        </div>
-        <ul>
-    <a href="#" class="tagc1">这是一个美丽的测试</a>
-    <a href="#" class="tagc2">这是一个美丽的测试</a>
-    <a href="#" class="tagc3">这是一个美丽的测试</a>
-    <a href="#" class="tagc1">这是一个美丽的测试</a>
-    <a href="#" class="tagc5">这是一个美丽的测试</a>
-    <a href="#" class="tagc5">这是一个美丽的测试</a>
-            </ul>
-    </aside>
-        {{--标签云--}}
     <aside id="widget-categories" class="widget panel panel-primary">
         <div class="panel-heading">
             公告
@@ -50,6 +35,21 @@
             </li>
         </ul>
     </aside>
+            {{--标签云--}}
+        <aside id="tagscloud" class="widget panel panel-primary">
+        <div class="panel-heading">
+            标签云
+        </div>
+        <ul>
+    <a href="#" class="tagc1">这是一个美丽的测试</a>
+    <a href="#" class="tagc2">这是一个美丽的测试</a>
+    <a href="#" class="tagc3">这是一个美丽的测试</a>
+    <a href="#" class="tagc1">这是一个美丽的测试</a>
+    <a href="#" class="tagc5">这是一个美丽的测试</a>
+    <a href="#" class="tagc5">这是一个美丽的测试</a>
+            </ul>
+    </aside>
+        {{--标签云--}}
     <aside id="widget-fature" class="widget panel panel-primary">
         <div class="panel-heading">
             特色功能
