@@ -16,4 +16,28 @@ class UserController extends Controller
     {
 
     }
+
+    /**
+     * TODO 个人中心页面
+     */
+    public function show()
+    {
+        return view('user.show');
+    }
+
+    /**
+     * TODO 关注
+     */
+    public function fan()
+    {
+
+    }
+
+    /**
+     * TODO 取消关注
+     */
+    public function unfan()
+    {
+
+    }
 }
