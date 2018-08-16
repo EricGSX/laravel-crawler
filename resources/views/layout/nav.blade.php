@@ -27,6 +27,9 @@
                     <a class="blog-nav-item" href="/notices">通知</a>
                 </li>
                 <li>
+                    <a class="blog-nav-item" href="/posts/tottle">碎碎念</a>
+                </li>
+                <li>
                     <input name="s" type="text" value="" class="form-control" style="margin-top:10px" placeholder="Search...">
                 </li>
                 <li>

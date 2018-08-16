@@ -205,4 +205,14 @@ class PostController extends Controller
             ->orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
         return view('home.search',compact('posts','s'));
     }
+
+    /**
+     * TODO 碎碎念的一些话
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function tottle()
+    {
+        return view('home.tottle');
+    }
 }
