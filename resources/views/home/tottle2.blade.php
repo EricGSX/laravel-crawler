@@ -1,216 +1,195 @@
 
 	<style type="text/css">
-		.main-timeline{
-			overflow: hidden;
-			position: relative;
-		}
-		.main-timeline .timeline{
-			position: relative;
-			margin-top: -79px;
-		}
-		.main-timeline .timeline:first-child{ margin-top: 0; }
-		.main-timeline .timeline:before,
-		.main-timeline .timeline:after{
-			content: "";
-			display: block;
-			width: 100%;
-			clear: both;
-		}
-		.main-timeline .timeline:before{
-			content: "";
-			width: 100%;
-			height: 100%;
-			box-shadow: -8px 0 5px -5px rgba(0, 0, 0, 0.5) inset;
-			position: absolute;
-			top: 0;
-			right: 0;
-			z-index: 2;
-		}
-		.main-timeline .timeline-icon{
-			width: 210px;
-			height: 210px;
-			border-radius: 50%;
-			border: 25px solid transparent;
-			border-top-color: #f44556;
-			border-right-color: #f44556;
-			margin: auto;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			z-index: 1;
-			transform: rotate(45deg);
-		}
-		.main-timeline .year{
-			display: block;
-			width: 110px;
-			height: 110px;
-			line-height: 110px;
-			border-radius: 50%;
-			background: #fff;
-			box-shadow: 0 0 20px rgba(0,0,0,0.4);
-			margin: auto;
-			font-size: 30px;
-			font-weight: bold;
-			color: #f44556;
-			text-align: center;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			transform: rotate(-45deg);
-		}
-		.main-timeline .timeline-content{
-			width: 35%;
-			float: right;
-			background: #f44556;
-			padding: 30px 20px;
-			margin: 50px 0;
-			z-index: 1;
-			position: relative;
-		}
-		.main-timeline .timeline-content:before{
-			content: "";
-			width: 20%;
-			height: 15px;
-			background: #f44556;
-			position: absolute;
-			top: 50%;
-			left: -20%;
-			z-index: -1;
-			transform: translateY(-50%);
-		}
-		.main-timeline .title{
-			font-size: 20px;
-			font-weight: bold;
-			color: #fff;
-			margin: 0 0 10px 0;
-		}
-		.main-timeline .description{
-			font-size: 16px;
-			color: #fff;
-			line-height: 24px;
-			margin: 0;
-		}
-		.main-timeline .timeline:nth-child(2n):before{ box-shadow: 8px 0 5px -5px rgba(0, 0, 0, 0.5) inset; }
-		.main-timeline .timeline:nth-child(2n) .timeline-icon{ transform: rotate(-135deg); }
-		.main-timeline .timeline:nth-child(2n) .year{ transform: rotate(135deg); }
-		.main-timeline .timeline:nth-child(2n) .timeline-content{ float: left; }
-		.main-timeline .timeline:nth-child(2n) .timeline-content:before{
-			left: auto;
-			right: -20%;
-		}
-		.main-timeline .timeline:nth-child(2n) .timeline-icon{
-			border-top-color: #e97e2e;
-			border-right-color: #e97e2e;
-		}
-		.main-timeline .timeline:nth-child(2n) .year{ color: #e97e2e; }
-		.main-timeline .timeline:nth-child(2n) .timeline-content,
-		.main-timeline .timeline:nth-child(2n) .timeline-content:before{ background: #e97e2e; }
-		.main-timeline .timeline:nth-child(3n) .timeline-icon{
-			border-top-color: #13afae;
-			border-right-color: #13afae;
-		}
-		.main-timeline .timeline:nth-child(3n) .year{ color: #13afae; }
-		.main-timeline .timeline:nth-child(3n) .timeline-content,
-		.main-timeline .timeline:nth-child(3n) .timeline-content:before{ background: #13afae; }
-		.main-timeline .timeline:nth-child(4n) .timeline-icon{
-			border-top-color: #105572;
-			border-right-color: #105572;
-		}
-		.main-timeline .timeline:nth-child(4n) .year{ color: #105572; }
-		.main-timeline .timeline:nth-child(4n) .timeline-content,
-		.main-timeline .timeline:nth-child(4n) .timeline-content:before{ background: #105572; }
-		@media only screen and (max-width: 1199px){
-			.main-timeline .timeline{ margin-top: -103px; }
-			.main-timeline .timeline-content:before{ left: -18%; }
-			.main-timeline .timeline:nth-child(2n) .timeline-content:before{ right: -18%; }
-		}
-		@media only screen and (max-width: 990px){
-			.main-timeline .timeline{ margin-top: -127px; }
-			.main-timeline .timeline-content:before{ left: -2%; }
-			.main-timeline .timeline:nth-child(2n) .timeline-content:before{ right: -2%; }
-		}
-		@media only screen and (max-width: 767px){
-			.main-timeline .timeline{
-				margin-top: 0;
-				overflow: hidden;
-			}
-			.main-timeline .timeline:before,
-			.main-timeline .timeline:nth-child(2n):before{
-				box-shadow: none;
-			}
-			.main-timeline .timeline-icon,
-			.main-timeline .timeline:nth-child(2n) .timeline-icon{
-				margin-top: -30px;
-				margin-bottom: 20px;
-				position: relative;
-				transform: rotate(135deg);
-			}
-			.main-timeline .year,
-			.main-timeline .timeline:nth-child(2n) .year{ transform: rotate(-135deg); }
-			.main-timeline .timeline-content,
-			.main-timeline .timeline:nth-child(2n) .timeline-content{
-				width: 100%;
-				float: none;
-				border-radius: 0 0 20px 20px;
-				text-align: center;
-				padding: 25px 20px;
-				margin: 0 auto;
-			}
-			.main-timeline .timeline-content:before,
-			.main-timeline .timeline:nth-child(2n) .timeline-content:before{
-				width: 15px;
-				height: 25px;
-				position: absolute;
-				top: -22px;
-				left: 50%;
-				z-index: -1;
-				transform: translate(-50%,0);
-			}
-		}
+.main-timeline{
+	width: 80%;
+	margin: 20px auto;
+	position: relative;
+}
+.main-timeline:before{
+	content: "";
+	display: block;
+	width: 2px;
+	height: 100%;
+	background: #337ab7;
+	margin: 0 0 0 -1px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+.main-timeline .timeline{
+	width: 100%;
+	margin-bottom: 20px;
+	position: relative;
+}
+.main-timeline .timeline:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.main-timeline .timeline-content{
+	width: 40%;
+	float: left;
+	margin: 5px 0 0 0;
+	border-radius: 6px;
+}
+.main-timeline .date{
+	display: block;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background: #25303b;
+	padding: 5px 0;
+	margin: 0 0 0 -36px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	font-size: 12px;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.5);
+	border: 2px solid rgba(255,255,255,0.2);
+	box-shadow: 0 0 0 7px #25303b;
+}
+.main-timeline .date span{
+	display: block;
+	text-align: center;
+}
+.main-timeline .day,
+.main-timeline .year{
+	font-size: 10px;
+}
+.main-timeline .month{
+	font-size: 18px;
+}
+.main-timeline .title{
+	padding: 15px;
+	margin: 0;
+	font-size: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	border-radius: 6px 6px 0 0;
+	position: relative;
+}
+.main-timeline .title:after{
+	content: "";
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 20px;
+	right: -5px;
+	transform: rotate(-45deg);
+}
+.main-timeline .description{
+	padding: 15px;
+	margin: 0;
+	font-size: 14px;
+	color: #656565;
+	background: #fff;
+	border-radius: 0 0 6px 6px;
+}
+.main-timeline .timeline:nth-child(2n+2) .timeline-content{
+	float: right;
+}
+.main-timeline .timeline:nth-child(2n+2) .title:after{
+	left: -5px;
+}
+.main-timeline .timeline:nth-child(1) .title,
+.main-timeline .timeline:nth-child(1) .title:after{
+	background: #9f84c4;
+}
+.main-timeline .timeline:nth-child(2) .title,
+.main-timeline .timeline:nth-child(2) .title:after{
+	background: #02a2dd;
+}
+.main-timeline .timeline:nth-child(3) .title,
+.main-timeline .timeline:nth-child(3) .title:after{
+	background: #58b25e;
+}
+.main-timeline .timeline:nth-child(4) .title,
+.main-timeline .timeline:nth-child(4) .title:after{
+	background: #eab715;
+}
+@media only screen and (max-width: 990px){
+	.main-timeline{ width: 100%; }
+}
+@media only screen and (max-width: 767px){
+	.main-timeline:before,
+	.main-timeline .date{
+		left: 6%;
+	}
+	.main-timeline .timeline-content{
+		width: 85%;
+		float: right;
+	}
+	.main-timeline .title:after{
+		left: -5px;
+	}
+}
+@media only screen and (max-width: 480px){
+	.main-timeline:before,
+	.main-timeline .date{
+		left: 12%;
+	}
+	.main-timeline .timeline-content{
+		width: 75%;
+	}
+	.main-timeline .date{
+		width: 60px;
+		height: 60px;
+		margin-left: -30px;
+	}
+	.main-timeline .month{
+		font-size: 14px;
+	}
+}
 	</style>
-		<div class="main-timeline">
-					<div class="timeline">
-						<div class="timeline-icon"><span class="year">2018</span></div>
-						<div class="timeline-content">
-							<h3 class="title">Web Desginer</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices, luctus nunc ut, commodo enim. Vivamus sem erat.
-							</p>
+					<div class="main-timeline">
+						<div class="timeline">
+							<div class="timeline-content">
+								<span class="date">
+									<span class="day">10<sup>th</sup></span>
+									<span class="month">Apr</span>
+									<span class="year">2017</span>
+								</span>
+								<h2 class="title">Web Design</h2>
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
+							</div>
+						</div>
+
+						<div class="timeline">
+							<div class="timeline-content">
+								<span class="date">
+									<span class="day">12<sup>th</sup></span>
+									<span class="month">Apr</span>
+									<span class="year">2017</span>
+								</span>
+								<h2 class="title">Web Development</h2>
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
+							</div>
+						</div>
+
+						<div class="timeline">
+							<div class="timeline-content">
+								<span class="date">
+									<span class="day">14<sup>th</sup></span>
+									<span class="month">Apr</span>
+									<span class="year">2017</span>
+								</span>
+								<h2 class="title">Brand Building</h2>
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
+							</div>
+						</div>
+
+						<div class="timeline">
+							<div class="timeline-content">
+								<span class="date">
+									<span class="day">16<sup>th</sup></span>
+									<span class="month">Apr</span>
+									<span class="year">2017</span>
+								</span>
+								<h2 class="title">Responsive Design</h2>
+								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
+							</div>
 						</div>
 					</div>
-
-					<div class="timeline">
-						<div class="timeline-icon"><span class="year">2017</span></div>
-						<div class="timeline-content">
-							<h3 class="title">Web Developer</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices, luctus nunc ut, commodo enim. Vivamus sem erat.
-							</p>
-						</div>
-					</div>
-
-					<div class="timeline">
-						<div class="timeline-icon"><span class="year">2016</span></div>
-						<div class="timeline-content">
-							<h3 class="title">Web Desginer</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices, luctus nunc ut, commodo enim. Vivamus sem erat.
-							</p>
-						</div>
-					</div>
-
-					<div class="timeline">
-						<div class="timeline-icon"><span class="year">2015</span></div>
-						<div class="timeline-content">
-							<h3 class="title">Web Developer</h3>
-							<p class="description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices, luctus nunc ut, commodo enim. Vivamus sem erat.
-							</p>
-						</div>
-					</div>
-				</div>
-
