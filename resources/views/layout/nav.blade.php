@@ -29,30 +29,22 @@
                 <li>
                     <a class="blog-nav-item" href="/posts/tottle">碎碎念</a>
                 </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <input name="s" type="text" value="" class="form-control" style="margin-top:10px" placeholder="Search...">
+                    <input name="s" type="text" value="" class="form-control" style="margin-top:10px;width:150px;" placeholder="Search..." id='search_head' onfocus="deal_search()" onblur="cancel_deal_search()">
                 </li>
                 <li>
                     <button class="btn btn-default" style="margin-top:10px" type="submit">Go!</button>
                 </li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </li>
                 <li class="dropdown">
                     <div>
-                        {{--@if (\Auth::id())--}}
-                        {{--<img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px">--}}
-                        {{--<a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Auth::user()->name}}<span class="caret"></span></a>--}}
-                        {{--<ul class="dropdown-menu">--}}
-                            {{--<li><a href="/user/5">我的主页</a></li>--}}
-                            {{--<li><a href="/user/5/setting">个人设置</a></li>--}}
-                            {{--<li><a href="/user/logout">登出</a></li>--}}
-                        {{--</ul>--}}
-                        {{--@else--}}
-                            {{--<a href="/user/login">登陆</a>--}}
-                        {{--@endif--}}
                 @auth
-                    <img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px">
+                    <img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px;">
                     <a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Auth::user()->name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/user/5">我的主页</a></li>
@@ -62,10 +54,18 @@
                 @endauth
                 @guest
                     <li><a href="/user/login">登陆</a></li>
-                 @endguest
+                @endguest
                     </div>
                 </li>
             </ul>
         </form>
     </div>
 </div>
+<script>
+   function deal_search(){
+       $("#search_head").css({"width":"500px"});
+   }
+   function cancel_deal_search(){
+       $("#search_head").css({"width":"150px"});
+   }
+</script>
