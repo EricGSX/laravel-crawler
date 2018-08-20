@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use \App\Post;
 use \App\Comment;
 use \App\Zan;
+use App\Libs\Parser;
 
 class PostController extends Controller
 {
@@ -71,7 +72,9 @@ class PostController extends Controller
     public function show(Post $id)
     {
         $id->load('comments'); //写了就是预加载，不写就是逻辑直接在view层里面处理了，不符合MVC的模式思想，但是也是正确的
-        return view('home.show',compact('id'));
+        //$content = $id->content;
+        //echo $content;die;
+        return view('home.show',compact('id','html'));
     }
 
     /**
