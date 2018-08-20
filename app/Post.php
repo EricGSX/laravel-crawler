@@ -11,7 +11,13 @@ class Post extends Model
 
 //    protected $guarded = [];//不可注入字段
 //    protected $fillable = ['title','content'];//可注入字段
-    //TODO 文章关联用户
+
+    /**
+     * TODO 文章关联用户
+     * withdefault是跟随belongsto使用的其他的不能使用
+     *
+     * @return $this
+     */
     public function user()
     {
         return $this->belongsTo('\App\User','user_id','id')->withDefault(['name'=>'游客']);
