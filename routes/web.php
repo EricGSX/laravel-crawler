@@ -81,6 +81,8 @@ Route::group(['prefix'=>'posts'],function(){
 
 //TODO 后台界面
 
+
+
 //TODO 用户模块
 Route::group(['prefix'=>'user'],function(){
     //注册
@@ -94,8 +96,9 @@ Route::group(['prefix'=>'user'],function(){
     //个人设置
     Route::get('/me/setting','User\UserController@setting');
     Route::post('/me/setting','User\UserController@settingStore');
+
     //个人中心
-    Route::get('/{user}','User\UserController@show');
+    Route::get('/{my}','User\UserController@show');
     Route::get('/{user}/fan','User\UserController@fan');
     Route::get('/{user}/unfan','User\UserController@unfan');
 });
