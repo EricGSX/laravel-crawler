@@ -17,9 +17,11 @@
                 </div>
 
                 <p class="blog-post-meta">{{$id->created_at->toFormattedDateString()}}  <a href="#">{{$id->user->name}}</a></p>
-
+                @if($type == 1)
                 <p>{!! $id->content !!}</p>
+                @elseif($type == 2)
                 {!! $html !!}
+                @endif
                 <div>
                     @if($id->zan(\Auth::id())->exists())
                     <a href="/posts/{{$id->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>
