@@ -16,7 +16,9 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title',100)->default('');
+            $table->text('description')->comment('摘要');
             $table->text('content');
+            $table->tinyInteger('encoding_type')->default(1)->comment('1:富文本，2:markdown');
             $table->integer('user_id')->default(0);
             $table->timestamps();
         });
