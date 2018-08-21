@@ -51,14 +51,16 @@ class PostController extends Controller
         //TODO 验证
         $this->validate(request(),[
             'title' => 'required|string|max:100|min:5',
+            'description'=> 'required|string|min:10',
             'content'=> 'required|string|min:10',
+            'encoding_type' => 'required',
         ]
 //            [
 //            'title.min' => '文章标题过短'
 //        ]
         );
         $user_id = \Auth::id();
-        $params = array_merge(request(['title','content']),compact('user_id'));
+        $params = array_merge(request(['title','content','description','encoding_type']),compact('user_id'));
         $post = Post::create($params);
         return redirect('/posts');
     }
