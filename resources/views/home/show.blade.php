@@ -61,7 +61,8 @@
                         <li class="list-group-item">
                             <textarea name="content" class="form-control" rows="10"></textarea>
                             @include('layout.error')
-                            <button class="btn btn-default" type="submit">提交</button>
+                            <br />
+                            <button class="btn btn-primary" type="submit">提交</button>
                         </li>
                     </form>
 

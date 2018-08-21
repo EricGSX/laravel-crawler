@@ -102,12 +102,16 @@ class PostController extends Controller
     public function update(Post $post)
     {
         $this->validate(request(),[
-            'title'=>'required|string|max:100|min:5',
-            'content' => 'required|string|min:10'
+            'title' => 'required|string|max:100|min:5',
+            'description'=> 'required|string|min:10',
+            'content'=> 'required|string|min:10',
+            'encoding_type' => 'required',
         ]);
         $this->authorize('update',$post);
         $post->title = request('title');
         $post->content = request('content');
+        $post->description = request('description');
+        $post->encoding_type = request('encoding_type');
         $post->save();
 
         return redirect("/posts/{$post->id}");
