@@ -51,7 +51,7 @@ class PostController extends Controller
         //TODO 验证
         $this->validate(request(),[
             'title' => 'required|string|max:100|min:5',
-            'description'=> 'required|string|min:10',
+            'description'=> 'required|string|min:5',
             'content'=> 'required|string|min:10',
             'encoding_type' => 'required',
         ]
@@ -103,7 +103,7 @@ class PostController extends Controller
     {
         $this->validate(request(),[
             'title' => 'required|string|max:100|min:5',
-            'description'=> 'required|string|min:10',
+            'description'=> 'required|string|min:5',
             'content'=> 'required|string|min:10',
             'encoding_type' => 'required',
         ]);
