@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group" id='content-div'>
                     <label>内容</label>
-                    <textarea id="content-2"  style="height:400px;max-height:500px;" name="content" class="form-control"></textarea>
+                    <textarea id="content-2" rows='13' name="content" class="form-control"></textarea>
                 </div>
 @include('layout.error')
                 <button type="submit" class="btn btn-primary">提交</button>
@@ -27,6 +27,7 @@
             <br>
 
         </div><!-- /.blog-main -->
+        <script type="text/javascript" src="{{asset('js/eric.guo.editor.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('js/eric.js')}}"></script>
     <script>
         $('.eric-coding-type').on('click',function(){
@@ -44,10 +45,12 @@
             var check_type = $('#encoding_type').val()
             if(check_type == 1){
                 //富文本
-                var html_content = ' <label>内容</label><textarea id="content-2"  style="height:400px;max-height:500px;" name="content" class="form-control"></textarea>'
+                var html_content = ' <label>内容</label><textarea id="content-2"  rows="13" name="content" class="form-control"></textarea>'
                 $('#content-div').empty()
                 $('#content-div').append(html_content)
-                var editor = new wangEditor('content-2');
+                wangEditor.config.printLog = false;
+                var editor2 = new wangEditor('content-2')
+                editor2.create()
             }else{
                 //markdown
                 var html_content = ' <label>内容</label><textarea id="content-1"  name="content" class="form-control" rows="13"></textarea>'
@@ -57,5 +60,9 @@
         });
     </script>
 @endsection
+
+<style>
+
+</style>
 
 

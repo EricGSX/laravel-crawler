@@ -169,3 +169,6 @@ p {
 .blog-footer p:last-child {
     margin-bottom: 0;
 }
+.wangEditor-txt{
+    resize: vertical;
+}
