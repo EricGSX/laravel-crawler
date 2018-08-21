@@ -19,6 +19,7 @@
                 <p class="blog-post-meta">{{$id->created_at->toFormattedDateString()}}  <a href="#">{{$id->user->name}}</a></p>
 
                 <p>{!! $id->content !!}</p>
+                {!! $html !!}
                 <div>
                     @if($id->zan(\Auth::id())->exists())
                     <a href="/posts/{{$id->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>
