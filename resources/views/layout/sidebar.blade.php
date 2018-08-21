@@ -10,7 +10,7 @@
     @endauth
     <aside id="widget-welcome" class="widget panel panel-primary">
         <div class="panel-body">
-            <p>
+            <p style='text-align: center;'>
                 欢迎来到我的博客
             </p>
             <p>
@@ -21,7 +21,7 @@
         </div>
     </aside>
     <aside id="widget-categories" class="widget panel panel-primary">
-        <div class="panel-heading">
+        <div class="panel-heading" style='text-align: center;'>
             公告
         </div>
 
@@ -32,6 +32,9 @@
             </li>
             <li class="list-group-item">
                 <a href="javascript:void(0)">发布鼠标点击特效</a>
+            </li>
+            <li class="list-group-item">
+                <a href="javascript:void(0)">开通Markdown编辑模式</a>
             </li>
         </ul>
     </aside>
@@ -51,8 +54,8 @@
     </aside>
         {{--标签云--}}
     <aside id="widget-fature" class="widget panel panel-primary">
-        <div class="panel-heading">
-            特色功能
+        <div class="panel-heading" style='text-align: center;'>
+            Web小工具
         </div>
 
         <ul class="category-root list-group">
