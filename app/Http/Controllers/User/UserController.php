@@ -23,10 +23,8 @@ class UserController extends Controller
      */
     public function show(User $my)
     {
-//        dd($aaa->id);
         //这个人的信息，包含关注/粉丝/文章数
         $user = User::withCount(['stars','fans','posts'])->find($my->id);
-//        dd($user);
         //这个人的文章列表,取最新的10条
         $posts = $user->posts()->orderBy('created_at','desc')->take(10)->get();
         //关注的用户,包含关注用户的 关注/粉丝/文章数
