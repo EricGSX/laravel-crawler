@@ -17,8 +17,8 @@
                 <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false" style="color:initial!important;">粉丝</a></li>
             </ul>
             <div class="tab-content">
-                @foreach($posts as $post)
                 <div class="tab-pane active" id="tab_1">
+                    @foreach($posts as $post)
                     <div class="blog-post" style="margin-top: 30px">
                         <p class=""><a href="/user/{{$post->user->id}}">{{$post->user->name}}</a> 6天前</p>
                         <p class=""><a href="/posts/{{$post->id}}" >{{$post->title}}</a></p>
@@ -30,37 +30,10 @@
                 <div class="tab-pane" id="tab_2">
                     <div class="blog-post" style="margin-top: 30px">
                         <p class="">Jadyn Medhurst Jr.</p>
-                        <p class="">关注：1 | 粉丝：1｜ 文章：0</p>
+                        <p class="">关注：12 | 粉丝：1｜ 文章：0</p>
 
                         <div>
                             <button class="btn btn-default like-button" like-value="1" like-user="6" _token="MESUY3topeHgvFqsy9EcM916UWQq6khiGHM91wHy" type="button">取消关注</button>
-                        </div>
-
-                    </div>
-                    <div class="blog-post" style="margin-top: 30px">
-                        <p class="">Mrs. Felicita D&#039;Amore DVM</p>
-                        <p class="">关注：0 | 粉丝：1｜ 文章：1</p>
-
-                        <div>
-                            <button class="btn btn-default like-button" like-value="1" like-user="55" _token="MESUY3topeHgvFqsy9EcM916UWQq6khiGHM91wHy" type="button">取消关注</button>
-                        </div>
-
-                    </div>
-                    <div class="blog-post" style="margin-top: 30px">
-                        <p class="">Maybell VonRueden</p>
-                        <p class="">关注：0 | 粉丝：2｜ 文章：0</p>
-
-                        <div>
-                            <button class="btn btn-default like-button" like-value="1" like-user="3" _token="MESUY3topeHgvFqsy9EcM916UWQq6khiGHM91wHy" type="button">取消关注</button>
-                        </div>
-
-                    </div>
-                    <div class="blog-post" style="margin-top: 30px">
-                        <p class="">Miss Melyssa Bogan DDS</p>
-                        <p class="">关注：2 | 粉丝：2｜ 文章：3</p>
-
-                        <div>
-                            <button class="btn btn-default like-button" like-value="1" like-user="2" _token="MESUY3topeHgvFqsy9EcM916UWQq6khiGHM91wHy" type="button">取消关注</button>
                         </div>
 
                     </div>
