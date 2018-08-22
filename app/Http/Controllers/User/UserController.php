@@ -41,7 +41,7 @@ class UserController extends Controller
      */
     public function fan(User $user)
     {
-        echo 1;
+        return;
     }
 
     /**
