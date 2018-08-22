@@ -99,8 +99,8 @@ Route::group(['prefix'=>'user'],function(){
 
     //个人中心
     Route::get('/{my}','User\UserController@show');
-    Route::get('/{user}/fan','User\UserController@fan');
-    Route::get('/{user}/unfan','User\UserController@unfan');
+    Route::post('/{my}/fan','User\UserController@fan');
+    Route::post('/{my}/unfan','User\UserController@unfan');
 });
 
 

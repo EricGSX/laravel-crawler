@@ -29,26 +29,36 @@ class UserController extends Controller
         $posts = $user->posts()->orderBy('created_at','desc')->take(10)->get();
         //关注的用户,包含关注用户的 关注/粉丝/文章数
         $stars = $user->stars;
-        $suser = User::whereIn('id',$stars->pluck('star_id'))->withCount(['stars','fans','posts']);
+        $susers = User::whereIn('id',$stars->pluck('star_id'))->withCount(['stars','fans','posts'])->get();
         //这个人的粉丝，包含粉丝用户的 关注/粉丝/文章数
         $fans = $user->fans;
-        $fuser = User::whereIn('id',$fans->pluck('fan_id'))->withCount(['stars','fans','posts']);
-        return view('user.show',compact('user', 'posts', 'fuser', 'suser'));
+        $fusers = User::whereIn('id',$fans->pluck('fan_id'))->withCount(['stars','fans','posts'])->get();
+        return view('user.show',compact('user', 'posts', 'susers', 'fusers'));
     }
 
     /**
      * TODO 关注
      */
-    public function fan(User $user)
+    public function fan(User $my)
     {
-        return;
+        $me = \Auth::user();
+        $me->doFan($my->id);
+        return [
+            'error' => 0,
+            'msg' => ''
+        ];
     }
 
     /**
      * TODO 取消关注
      */
-    public function unfan()
+    public function unfan(User $my)
     {
-
+        $me = \Auth::user();
+        $me->doUnfan($my->id);
+        return [
+            'error' => 0,
+            'msg' => ''
+        ];
     }
 }
