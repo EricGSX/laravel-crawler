@@ -22,7 +22,7 @@ function siteTime(){
     minutes - 0-59之间的整数，做为date对象的分钟数
     seconds - 0-59之间的整数，做为date对象的秒数
     microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-    var t1 =Date.UTC(2018,08,23,00,00,00);//北京时间2016-12-1 00:00:00
+    var t1 =Date.UTC(2018,06,08,09,00,00);//北京时间2018-06-08 09:00:00
     var t2 =Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
     var diff = t2-t1;
     var diffYears =Math.floor(diff/years);
