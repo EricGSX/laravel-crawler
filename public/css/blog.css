@@ -6,6 +6,8 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
     cursor: url("../image/mouse.png"), auto;
+    background: url('../image/background.jpg');
+    background-size: cover;
 }
 
 h1, .h1,
@@ -160,7 +162,7 @@ p {
  */
 
 .blog-footer {
-    padding: 40px 0;
+    padding: 10px 0;
     color: #999;
     text-align: center;
     background-color: #f9f9f9;
