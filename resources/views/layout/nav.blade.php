@@ -79,10 +79,10 @@
 <script>
    function deal_search(){
        $("#search_head").css({"width":"500px"})
-       $('.search_hide').css({'display':'none'})
+       $('.search_hide').hide()
    }
    function cancel_deal_search(){
        $("#search_head").css({"width":"150px"})
-       $('.search_hide').css({'display':'block'})
+       $('.search_hide').show()
    }
 </script>
