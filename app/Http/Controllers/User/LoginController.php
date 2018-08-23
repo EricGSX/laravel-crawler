@@ -30,6 +30,6 @@ class LoginController extends Controller
     public function logout()
     {
         \Auth::logout();
-        return redirect('/user/login');
+        return redirect('/users/login');
     }
 }

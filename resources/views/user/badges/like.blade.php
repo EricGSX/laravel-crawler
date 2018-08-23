@@ -20,7 +20,7 @@
         if(current_like ==1){
             //取消关注
             $.ajax({
-                url:'/user/'+user_id+'/unfan',
+                url:'/users/'+user_id+'/unfan',
                 method:'POST',
                 dataType:'json',
                 success:function (data) {
@@ -37,7 +37,7 @@
         }else{
             //关注
             $.ajax({
-                url:'/user/'+user_id+'/fan',
+                url:'/users/'+user_id+'/fan',
                 method:'POST',
                 dataType:'json',
                 success:function (data) {

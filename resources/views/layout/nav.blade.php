@@ -62,9 +62,9 @@
                     <img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 30px;">
                     <a href="#" class="blog-nav-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Auth::user()->name}}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/user/{{\Auth::user()->id}}">我的主页</a></li>
-                        <li><a href="/user/me/setting">个人设置</a></li>
-                        <li><a href="/user/logout">登出</a></li>
+                        <li><a href="/users/{{\Auth::user()->id}}">我的主页</a></li>
+                        <li><a href="/users/me/setting">个人设置</a></li>
+                        <li><a href="/users/logout">登出</a></li>
                     </ul>
                 @endauth
                 @guest

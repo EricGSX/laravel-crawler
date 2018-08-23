@@ -21,10 +21,10 @@ class UserController extends Controller
     /**
      * TODO 个人中心页面
      */
-    public function show(User $my)
+    public function show(User $user)
     {
         //这个人的信息，包含关注/粉丝/文章数
-        $user = User::withCount(['stars','fans','posts'])->find($my->id);
+        $user = User::withCount(['stars','fans','posts'])->find($user->id);
         //这个人的文章列表,取最新的10条
         $posts = $user->posts()->orderBy('created_at','desc')->take(10)->get();
         //关注的用户,包含关注用户的 关注/粉丝/文章数
@@ -39,10 +39,10 @@ class UserController extends Controller
     /**
      * TODO 关注
      */
-    public function fan(User $my)
+    public function fan(User $user)
     {
         $me = \Auth::user();
-        $me->doFan($my->id);
+        $me->doFan($user->id);
         return [
             'error' => 0,
             'msg' => ''
@@ -52,10 +52,10 @@ class UserController extends Controller
     /**
      * TODO 取消关注
      */
-    public function unfan(User $my)
+    public function unfan(User $user)
     {
         $me = \Auth::user();
-        $me->doUnfan($my->id);
+        $me->doUnfan($user->id);
         return [
             'error' => 0,
             'msg' => ''

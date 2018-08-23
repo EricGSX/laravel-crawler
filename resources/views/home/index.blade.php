@@ -13,7 +13,7 @@
                             @foreach($posts as $post)
                       <div class="blog-post">
                           <span class="blog-post-title"><a href="/posts/{{$post->id}}" >{{$post->title}}</a></span>
-                            <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></p>
+                            <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/users/{{$post->user->id}}">{{$post->user->name}}</a></p>
 
                           {!! str_limit($post->description,100,'...') !!}
                           @auth
