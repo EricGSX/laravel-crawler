@@ -7,19 +7,24 @@
 </div>        <div style="height: 20px;">
         </div>
         <div>
-            @foreach($posts as $post)
-                        <div class="blog-post">
-                <h2 class="blog-post-title"><a href="/posts/{{$post->id}}" >{{$post->title}}</a></h2>
-                <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></p>
+            {{--内容面板--}}
+            <div class="panel panel-default">
+              <div class="panel-body">
+                            @foreach($posts as $post)
+                      <div class="blog-post">
+                            <h2 class="blog-post-title"><a href="/posts/{{$post->id}}" >{{$post->title}}</a></h2>
+                            <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></p>
 
-                {!! str_limit($post->description,100,'...') !!}
-                            @auth
-                <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}}</p>
-                                @endauth
+                          {!! str_limit($post->description,100,'...') !!}
+                          @auth
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}}</p>
+                          @endauth
+                        </div>
+                  @endforeach
+                  {{$posts->links()}}
+              </div>
             </div>
-@endforeach
-            {{$posts->links()}}
-
+            {{--内容面板--}}
         </div><!-- /.blog-main  -->
     </div>
 @endsection

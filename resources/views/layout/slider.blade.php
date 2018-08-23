@@ -7,16 +7,14 @@
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg" alt="First slide">
+        <div class="item active" style="background:url(http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg); background-size:cover;height: 200px;">
+            {{--<img src="">--}}
             <div class="carousel-caption">标题 1</div>
         </div>
-        <div class="item">
-            <img src="http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg" alt="Second slide">
+        <div class="item" style="background:url(http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg); background-size:cover;height: 200px;">
             <div class="carousel-caption">标题 2</div>
         </div>
-        <div class="item">
-            <img src="http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg" alt="Third slide">
+        <div class="item" style="background:url(http://ww2.sinaimg.cn/large/44287191gw1excbq4kx57j21400migs4.jpg); background-size:cover;height: 200px;">
             <div class="carousel-caption">标题 3</div>
         </div>
     </div>
