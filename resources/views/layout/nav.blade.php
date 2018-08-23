@@ -21,7 +21,22 @@
                     <a class="blog-nav-item " href="/">首页</a>
                 </li>
                 <li>
-                    <a class="blog-nav-item" href="/posts/create">写文章</a>
+                    <a class="blog-nav-item search_hide" href="/">PHP</a>
+                </li>
+                <li>
+                    <a class="blog-nav-item search_hide" href="/">MarkDown</a>
+                </li>
+                <li>
+                    <a class="blog-nav-item search_hide" href="/">前端</a>
+                </li>
+                <li>
+                    <a class="blog-nav-item search_hide" href="/">数据库</a>
+                </li>
+                <li>
+                    <a class="blog-nav-item search_hide" href="/">服务器</a>
+                </li>
+                <li>
+                    <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
                 </li>
                 <li>
                     <a class="blog-nav-item" href="/notices">通知</a>
@@ -63,9 +78,11 @@
 </div>
 <script>
    function deal_search(){
-       $("#search_head").css({"width":"500px"});
+       $("#search_head").css({"width":"500px"})
+       $('.search_hide').css({'display':'none'})
    }
    function cancel_deal_search(){
-       $("#search_head").css({"width":"150px"});
+       $("#search_head").css({"width":"150px"})
+       $('.search_hide').css({'display':'block'})
    }
 </script>

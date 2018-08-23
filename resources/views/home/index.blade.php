@@ -17,7 +17,7 @@
 
                           {!! str_limit($post->description,100,'...') !!}
                           @auth
-                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | <i class="glyphicon glyphicon-tags"></i> <span class="label label-info">PHP</span></p>
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | <i class="glyphicon glyphicon-tags"></i> php</p>
                           @endauth
                         </div>
                   @endforeach
