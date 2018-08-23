@@ -13,7 +13,7 @@
 
         </div>
     </aside>
-    <aside id="widget-categories" class="widget panel panel-primary">
+    <aside id="widget-categories" class="widget panel panel-default">
         <div class="panel-heading" style='text-align: center;'>
             公告
         </div>
@@ -32,22 +32,23 @@
         </ul>
     </aside>
             {{--标签云--}}
-        <aside id="tagscloud" class="widget panel panel-primary">
+    <aside id="tagscloud" class="widget panel panel-default">
         <div class="panel-heading">
             标签云
         </div>
         <ul>
-    <a href="#" class="tagc1">这是一个美丽的测试</a>
-    <a href="#" class="tagc2">这是一个美丽的测试</a>
-    <a href="#" class="tagc3">这是一个美丽的测试</a>
-    <a href="#" class="tagc1">这是一个美丽的测试</a>
-    <a href="#" class="tagc5">这是一个美丽的测试</a>
-    <a href="#" class="tagc5">这是一个美丽的测试</a>
+            <a href="#" class="tagc1">这是一个美丽的测试</a>
+            <a href="#" class="tagc2">这是一个美丽的测试</a>
+            <a href="#" class="tagc3">这是一个美丽的测试</a>
+            <a href="#" class="tagc1">这是一个美丽的测试</a>
+            <a href="#" class="tagc5">这是一个美丽的测试</a>
+            <a href="#" class="tagc5">这是一个美丽的测试</a>
             </ul>
     </aside>
         {{--标签云--}}
-    <aside id="widget-fature" class="widget panel panel-primary">
-        <div class="panel-heading" style='text-align: center;'>
+    <br />
+    <aside id="widget-fature" class="widget panel panel-default">
+        <div class="panel-heading" >
             Web小工具
         </div>
 
