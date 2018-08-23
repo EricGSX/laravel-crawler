@@ -25,6 +25,6 @@ class RegisterController extends Controller
         $email = request('email');
         $password = bcrypt(request('password'));
         $user = User::create(compact('name','email','password'));
-        return redirect('/user/login');
+        return redirect('/users/login');
     }
 }
