@@ -1,11 +1,11 @@
 <div id="sidebar" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-    <aside id="widget-welcome" class="widget panel panel-primary">
-        <div class="panel-body">
+    <aside id="widget-welcome" class="widget panel panel-default">
+        <div class="panel-heading">
             <p style='text-align: center;'>
-                欢迎来到我的博客
+                 <img src="{{asset('image/guoshixin.jpg')}}" alt="" class="img-circle" style="width:140px;height:130px;">
             </p>
             <p>
-                <strong><a href="/">博客</a></strong> Laravel+BootStrop
+                <strong><a href="/">咖啡泡柠檬</a></strong> Make a little progress every day
             </p>
             <p>@include('layout.web_sitetime')</p>
             <div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1494580268777"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a></div>
