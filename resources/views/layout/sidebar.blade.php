@@ -13,24 +13,6 @@
 
         </div>
     </aside>
-    <aside id="widget-categories" class="widget panel panel-default">
-        <div class="panel-heading" style='text-align: center;'>
-            公告
-        </div>
-
-        <ul class="category-root list-group">
-            <li class="list-group-item">
-                <a href="/topic/1">近期将开通本站SSL证书免费申请入口
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="javascript:void(0)">发布鼠标点击特效</a>
-            </li>
-            <li class="list-group-item">
-                <a href="javascript:void(0)">开通Markdown编辑模式</a>
-            </li>
-        </ul>
-    </aside>
             {{--标签云--}}
     <aside id="tagscloud" class="widget panel panel-default">
         <div class="panel-heading">
@@ -67,7 +49,24 @@
             </li>
         </ul>
     </aside>
+    <aside id="widget-categories" class="widget panel panel-default">
+        <div class="panel-heading" style='text-align: center;'>
+            公告
+        </div>
 
+        <ul class="category-root list-group">
+            <li class="list-group-item">
+                <a href="/topic/1">近期将开通本站SSL证书免费申请入口
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="javascript:void(0)">发布鼠标点击特效</a>
+            </li>
+            <li class="list-group-item">
+                <a href="javascript:void(0)">开通Markdown编辑模式</a>
+            </li>
+        </ul>
+    </aside>
 </div>
 <style>
     #tagscloud{height:260px;position:relative;font-size:12px;color:#333;margin:20px auto 0;text-align:center;}
