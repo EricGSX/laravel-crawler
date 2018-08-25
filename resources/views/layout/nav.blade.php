@@ -68,7 +68,7 @@
                     </ul>
                 @endauth
                 @guest
-                    <li><a href="/user/login">登陆</a></li>
+                    <li><a href="/users/login">登陆</a></li>
                 @endguest
                     </div>
                 </li>

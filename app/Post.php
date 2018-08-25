@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Post extends Model
 {
@@ -52,5 +53,41 @@ class Post extends Model
     public function zans()
     {
         return $this->hasMany(\App\Zan::class);
+    }
+
+    /**
+     * TODO 属于某个作者的文章
+     *
+     * @param Builder $query
+     * @param $user_id
+     * @return mixed
+     */
+    public function scopeAuthorBy(Builder $query,$user_id)
+    {
+        return $query->where('user_id',$user_id);
+    }
+
+    /**
+     * TODO 文章对应的topic
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function postTopics()
+    {
+        return $this->hasMany(\App\PostTopic::class,'post_id','id');
+    }
+
+    /**
+     * TODO 不属于某个专题的文章
+     *
+     * @param Builder $query
+     * @param $topic_id
+     * @return mixed
+     */
+    public function scopeTopicNotBy(Builder $query,$topic_id)
+    {
+        return $query->doesntHave('postTopics','and',function($q) use($topic_id){
+            $q->where('topic_id',$topic_id);
+        });
     }
 }
