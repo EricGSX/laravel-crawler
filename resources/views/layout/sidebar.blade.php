@@ -29,26 +29,6 @@
     </aside>
         {{--标签云--}}
     <br />
-    <aside id="widget-fature" class="widget panel panel-default">
-        <div class="panel-heading" >
-            Web小工具
-        </div>
-
-        <ul class="category-root list-group">
-            <li class="list-group-item">
-                <a href="/topic/1">CSR在线生成
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="/topic/1">SSL证书申请
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="/posts/weather">天气查询
-                </a>
-            </li>
-        </ul>
-    </aside>
     <aside id="widget-categories" class="widget panel panel-default">
         <div class="panel-heading" style='text-align: center;'>
             公告
@@ -81,6 +61,27 @@
             @endforeach
         </ul>
     </aside>
+    <aside id="widget-fature" class="widget panel panel-default">
+        <div class="panel-heading" >
+            Web小工具
+        </div>
+
+        <ul class="category-root list-group">
+            <li class="list-group-item">
+                <a href="/topic/1">CSR在线生成
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="/topic/1">SSL证书申请
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="/posts/weather">天气查询
+                </a>
+            </li>
+        </ul>
+    </aside>
+
 </div>
 <style>
     #tagscloud{height:260px;position:relative;font-size:12px;color:#333;margin:20px auto 0;text-align:center;}

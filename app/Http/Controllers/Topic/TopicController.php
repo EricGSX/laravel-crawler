@@ -25,6 +25,12 @@ class TopicController extends Controller
         return view('topic.show',compact('topic','posts','myposts'));
     }
 
+    /**
+     * TODO 将文章投到某个专题下
+     *
+     * @param Topic $topic
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function submit(Topic $topic)
     {
         $this->validate(request(),[
