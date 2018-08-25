@@ -67,6 +67,20 @@
             </li>
         </ul>
     </aside>
+    <aside id="widget-categories" class="widget panel panel-default">
+        <div class="panel-heading" style='text-align: center;'>
+            专栏
+        </div>
+
+        <ul class="category-root list-group">
+            @foreach($topics as $topic)
+            <li class="list-group-item">
+                <a href="/topics/{{$topic->id}}">{{$topic->name}}
+                </a>
+            </li>
+            @endforeach
+        </ul>
+    </aside>
 </div>
 <style>
     #tagscloud{height:260px;position:relative;font-size:12px;color:#333;margin:20px auto 0;text-align:center;}

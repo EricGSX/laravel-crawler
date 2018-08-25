@@ -103,4 +103,10 @@ Route::group(['prefix'=>'users'],function(){
     Route::post('/{user}/unfan','User\UserController@unfan');
 });
 
+//TODO 专题模块
+
+Route::group(['prefix'=>'topics'],function(){
+    Route::get('/{topic}','Topic\TopicController@show');
+    Route::post('/{topic}/submit','Topic\TopicController@submit');
+});
 
