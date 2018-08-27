@@ -19,12 +19,12 @@
             标签云
         </div>
         <ul>
-            <a href="#" class="tagc1">这是一个美丽的测试</a>
-            <a href="#" class="tagc2">这是一个美丽的测试</a>
-            <a href="#" class="tagc3">这是一个美丽的测试</a>
-            <a href="#" class="tagc1">这是一个美丽的测试</a>
-            <a href="#" class="tagc5">这是一个美丽的测试</a>
-            <a href="#" class="tagc5">这是一个美丽的测试</a>
+            <a href="#" class="tagc1">MarkDown</a>
+            <a href="#" class="tagc2">Linux</a>
+            <a href="#" class="tagc3">PHP</a>
+            <a href="#" class="tagc1">Mysql批量插入</a>
+            <a href="#" class="tagc5">鼠标点击特效</a>
+            <a href="#" class="tagc5">鼠标UI</a>
             </ul>
     </aside>
         {{--标签云--}}
