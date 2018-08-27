@@ -113,5 +113,7 @@ Route::group(['prefix'=>'topics'],function(){
 //TODO 碎碎念
 Route::group(['prefix'=>'tottles'],function(){
     Route::get('/show','Home\TottleController@show');
+    Route::get('/create','Home\TottleController@create');
+    Route::post('/','Home\TottleController@store');
 });
 
