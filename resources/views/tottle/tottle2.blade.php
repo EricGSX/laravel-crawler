@@ -148,48 +148,12 @@
 						<div class="timeline">
 							<div class="timeline-content">
 								<span class="date">
-									<span class="day">10<sup>th</sup></span>
-									<span class="month">Apr</span>
-									<span class="year">2017</span>
+									<span class="day">25<sup>th</sup></span>
+									<span class="month">Aug</span>
+									<span class="year">2018</span>
 								</span>
-								<h2 class="title">Web Design</h2>
-								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
-							</div>
-						</div>
-
-						<div class="timeline">
-							<div class="timeline-content">
-								<span class="date">
-									<span class="day">12<sup>th</sup></span>
-									<span class="month">Apr</span>
-									<span class="year">2017</span>
-								</span>
-								<h2 class="title">Web Development</h2>
-								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
-							</div>
-						</div>
-
-						<div class="timeline">
-							<div class="timeline-content">
-								<span class="date">
-									<span class="day">14<sup>th</sup></span>
-									<span class="month">Apr</span>
-									<span class="year">2017</span>
-								</span>
-								<h2 class="title">Brand Building</h2>
-								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
-							</div>
-						</div>
-
-						<div class="timeline">
-							<div class="timeline-content">
-								<span class="date">
-									<span class="day">16<sup>th</sup></span>
-									<span class="month">Apr</span>
-									<span class="year">2017</span>
-								</span>
-								<h2 class="title">Responsive Design</h2>
-								<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus, quam non pellentesque consequat, massa justo elementum nunc, ac efficitur tortor nunc sit amet dolor.</p>
+								<h2 class="title">前端上线</h2>
+								<p class="description">网站前台基本上线了，加了点花哨的标签，一些页面的特效，另外吧markdown放进去了，挺好用。</p>
 							</div>
 						</div>
 					</div>

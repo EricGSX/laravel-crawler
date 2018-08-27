@@ -42,7 +42,7 @@
                     <a class="blog-nav-item" href="/notices">通知</a>
                 </li>
                 <li>
-                    <a class="blog-nav-item" href="/posts/tottle">碎碎念</a>
+                    <a class="blog-nav-item" href="/tottles/show">碎碎念</a>
                 </li>
             </ul>
 

@@ -110,3 +110,8 @@ Route::group(['prefix'=>'topics'],function(){
     Route::post('/{topic}/submit','Topic\TopicController@submit');
 });
 
+//TODO 碎碎念
+Route::group(['prefix'=>'tottles'],function(){
+    Route::get('/show','Home\TottleController@show');
+});
+

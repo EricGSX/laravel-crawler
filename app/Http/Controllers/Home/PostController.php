@@ -217,13 +217,4 @@ class PostController extends Controller
         return view('home.search',compact('posts','s'));
     }
 
-    /**
-     * TODO 碎碎念的一些话
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function tottle()
-    {
-        return view('home.tottle');
-    }
 }
