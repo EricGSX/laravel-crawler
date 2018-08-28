@@ -29,10 +29,20 @@ class TottleController extends Controller
         return view('tottle.create');
     }
 
+    /**
+     * TODO 保存一些碎碎叨叨的话
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $this->validate(request(),[
-            'title' => 'required|string|min:3',
+            'title' => 'required|string|min:2',
+            'content' => 'required|string|min:3',
         ]);
+        $params =request(['title','content']);
+        $post = Tottle::create($params);
+        return redirect("/tottles/show");
     }
 }

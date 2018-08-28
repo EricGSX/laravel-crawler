@@ -64,6 +64,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/users/{{\Auth::user()->id}}">我的主页</a></li>
                         <li><a href="/users/me/setting">个人设置</a></li>
+                        <li><a href="/tottles/create">碎碎叨叨</a></li>
                         <li><a href="/users/logout">登出</a></li>
                     </ul>
                 @endauth
