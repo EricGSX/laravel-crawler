@@ -25,6 +25,12 @@ class RegisterController extends Controller
         $email = request('email');
         $password = bcrypt(request('password'));
         $user = User::create(compact('name','email','password'));
-        return redirect('/users/login');
+        //登陆
+        $user_data = request(['email','password']);
+        $is_remember = boolval(1);
+        if(\Auth::attempt($user_data,$is_remember)){
+            return redirect('/posts');
+        }
+        return redirect('/users/login')->withErrors('发生了不为人知的错误，自动登录失败！');
     }
 }
