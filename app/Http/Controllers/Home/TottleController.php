@@ -15,7 +15,8 @@ class TottleController extends Controller
      */
     public function show()
     {
-        return view('tottle.tottle');
+        $tottles = Tottle::orderBy('created_at','desc')->get();
+        return view('tottle.tottle',compact('tottles'));
     }
 
     /**

@@ -37,7 +37,7 @@
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
-	background: #25303b;
+	background: #58b25e;
 	padding: 5px 0;
 	margin: 0 0 0 -36px;
 	position: absolute;
@@ -46,9 +46,9 @@
 	font-size: 12px;
 	font-weight: 900;
 	text-transform: uppercase;
-	color: rgba(255,255,255,0.5);
+	color: white;
 	border: 2px solid rgba(255,255,255,0.2);
-	box-shadow: 0 0 0 7px #25303b;
+	box-shadow: 0 0 0 7px #58b25e;
 }
 .main-timeline .date span{
 	display: block;
@@ -94,21 +94,25 @@
 .main-timeline .timeline:nth-child(2n+2) .title:after{
 	left: -5px;
 }
-.main-timeline .timeline:nth-child(1) .title,
-.main-timeline .timeline:nth-child(1) .title:after{
+.eric-1 .title,
+.eric-1 .title:after{
 	background: #9f84c4;
 }
-.main-timeline .timeline:nth-child(2) .title,
-.main-timeline .timeline:nth-child(2) .title:after{
+.eric-2 .title,
+.eric-2 .title:after{
 	background: #02a2dd;
 }
-.main-timeline .timeline:nth-child(3) .title,
-.main-timeline .timeline:nth-child(3) .title:after{
+.eric-3 .title,
+.eric-13 .title:after{
 	background: #58b25e;
 }
-.main-timeline .timeline:nth-child(4) .title,
-.main-timeline .timeline:nth-child(4) .title:after{
+.eric-4 .title,
+.eric-4 .title:after{
 	background: #eab715;
+}
+.eric-5 .title,
+.eric-5 .title:after{
+    background: #8cc63e;
 }
 @media only screen and (max-width: 990px){
 	.main-timeline{ width: 100%; }
@@ -145,15 +149,18 @@
 }
 	</style>
 					<div class="main-timeline">
-						<div class="timeline">
+						@foreach($tottles as $tottle)
+						<div class="timeline eric-{{rand(1, 5)}}">
 							<div class="timeline-content">
 								<span class="date">
-									<span class="day">25<sup>th</sup></span>
-									<span class="month">Aug</span>
-									<span class="year">2018</span>
+									<span class="day">{{$tottle->created_at->day}}<sup>th</sup></span>
+									<span class="month">{{$tottle->created_at->month}}</span>
+									<span class="year">{{$tottle->created_at->year}}</span>
 								</span>
-								<h2 class="title">前端上线</h2>
-								<p class="description">网站前台基本上线了，加了点花哨的标签，一些页面的特效，另外吧markdown放进去了，挺好用。</p>
+								<h2 class="title">{{$tottle->title}}</h2>
+								<p class="description">{{$tottle->content}}</p>
 							</div>
 						</div>
+						@endforeach
+
 					</div>
