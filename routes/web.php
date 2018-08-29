@@ -117,3 +117,4 @@ Route::group(['prefix'=>'tottles'],function(){
     Route::post('/','Home\TottleController@store');
 });
 
+include_once('admin.php');
