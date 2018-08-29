@@ -8,13 +8,44 @@
         </div>
         <div>
             {{--内容面板--}}
-            <div class="list-group">
-                <ul class="list-group">
-                    <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;近期将开通本站SSL证书免费申请入口</li>
-                    <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
-                    <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
-                </ul>
+            {{--滚动通知--}}
+                   <style type="text/css">
+            #scrollBox{height:100px;overflow:hidden;}
+
+        </style>
+            <div class="panel panel-default">
+              <div class="panel-heading">公告 & 推荐</div>
+              <div  id="scrollBox">
+                       <div id="roll_one">
+                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;近期将开通本站SSL证书免费申请入口</li>
+                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
+                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
+                        </div>
+                        <div id="roll_two"></div>
+              </div>
             </div>
+    <script type="text/javascript">
+                var roll_area =document.getElementById('scrollBox');
+                var roll_one = document.getElementById('roll_one');
+                var roll_two = document.getElementById('roll_two');
+                roll_two.innerHTML=roll_one.innerHTML;
+                function scrollUp(){
+                    if(roll_area.scrollTop>=roll_one.offsetHeight){
+                        roll_area.scrollTop=0;
+                    }else{
+                        roll_area.scrollTop++
+                    }
+                }
+                var time = 50;
+                var mytimer=setInterval(scrollUp,time);
+                roll_area.onmouseover=function(){
+                    clearInterval(mytimer);
+                }
+                roll_area.onmouseout=function(){
+                    mytimer=setInterval(scrollUp,time);
+                }
+        </script>
+            {{--滚动通知--}}
             <div class="panel panel-default">
               <div class="panel-body">
                             @foreach($posts as $post)
