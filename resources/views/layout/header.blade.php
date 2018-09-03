@@ -2,11 +2,13 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="几经辗转最后成形的博客社区，发一些技术上遇到的问题及一些常用方法的总结，同时还会有些吐槽在里面。">
+    <meta name="keywords" content="个人博客,会武术的地瓜,Linux,PHP,Mysql,前端,郭世鑫">
+    <meta name="author" content="郭世鑫,guoshixin@guosx.com">
+    <meta name="robots" content="index,follow" />
     <meta name="csrf-token" content="{{csrf_token()}}">
 
 
