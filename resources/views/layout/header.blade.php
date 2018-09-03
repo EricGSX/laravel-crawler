@@ -16,7 +16,7 @@
 
     <title>会武术的地瓜(郭世鑫Eric.Guo的个人博客)</title>
     <script src="{{asset('js/tagscloud.js')}}"></script>
-    <script src="{{asset('js/eric.guo.jq3.0.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="{{asset('js/effects.js')}}"></script>
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
