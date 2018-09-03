@@ -16,7 +16,7 @@
                     @endcan
                 </div>
 
-                <p class="blog-post-meta">{{$id->created_at->toFormattedDateString()}}  <a href="/user/{{$id->user->id}}">{{$id->user->name}}</a></p>
+                <p class="blog-post-meta">{{$id->created_at->toFormattedDateString()}}  <a href="/user/{{$id->user->id}}">{{$id->user->name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open">{{$id->view_count}}</i></p>
                 @if($type == 1)
                 <p>{!! $id->content !!}</p>
                 @elseif($type == 2)

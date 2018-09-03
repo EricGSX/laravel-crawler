@@ -78,6 +78,7 @@ class PostController extends Controller
         $type = $id->encoding_type;
         $parser = new Parser();
         $html = $parser->makeHtml($content);
+        $id->update(['view_count'=>$id->view_count + 1]);
         return view('home.show',compact('id','html','type'));
     }
 
