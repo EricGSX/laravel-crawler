@@ -679,12 +679,12 @@ body {
     </div>
     <div class="tomb">
       <div class="tomb__info">
-        <h2 class="headers">405</h2>
+        <h2 class="headers">Illegality</h2>
         <h4 class="headers">"不走寻常路的小孩，可不是好孩子呦。"</h4>
       </div>
     </div>
     <div class="brains-comic-box">
-      <h1 class="brains__text">405！  Method Not Allowed！！！</h1>
+      <h1 class="brains__text">405！</h1>
     </div>
   </div>
 </div>
