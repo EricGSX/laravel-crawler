@@ -8,7 +8,6 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item" style="background:url(http://three.com/image/banner1.jpg); background-size:cover;height: 200px;">
-            {{--<img src="">--}}
             <div class="carousel-caption">Make a little progress every day.</div>
         </div>
         <div class="item" style="background:url(http://three.com/image/banner2.jpg); background-size:cover;height: 200px;">

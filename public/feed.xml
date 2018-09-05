@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+　<channel>
+　<title>郭世鑫的个人博客</title>
+	<link>http://three.com</link>
+ 		<description>This is description</description>
+　<copyright>授权信息</copyright>
+　<language>zh-cn</language>
+　<pubDate>发布的时间</pubDate>
+　<lastBuildDate>最后更新的时间</lastBuildDate>
+　<item>
+ 			<title>会武术的地瓜</title>
+ 			<link>http://three.com</link>
+ 		<description>This is description</description>
+　<pubDate>发布时间</pubDate>
+　<category>所属目录</category>
+　<author>郭世鑫</author>
+　</item>
+　</channel>
+　</rss>
