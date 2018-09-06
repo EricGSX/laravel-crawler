@@ -10,9 +10,8 @@
             <p>@include('layout.web_sitetime')</p>
             @include('layout.share')
             <p>
-                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2570890941&site=qq&menu=yes">Chat</a>
+                @include('layout.chat')
             </p>
-            <a href="/feed.xml">123</a>
         </div>
     </aside>
             {{--标签云--}}

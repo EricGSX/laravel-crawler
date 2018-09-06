@@ -19,11 +19,3 @@
     console.log('不是别人不好，是自己不够优秀。')
     console.log('%cMake a little progress every day ', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;');
 </script>
-<div style="position: fixed;left:1%;top:20%;" tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-content='    <aside id="widget-fature" class="widget panel panel-primary">
-    <ul>
-        <img style="200px;height:200px;" src="/image/wechat.jpg">
-    </ul>
-    </aside>'>
-    <div><img style="width:50px;height:50px;" src="{{asset('image/contact-me.jpg')}}" /></div>
-    <div><span class="label label-primary" >Contact</span></div>
-</div>
