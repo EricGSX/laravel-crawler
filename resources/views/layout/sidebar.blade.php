@@ -5,7 +5,7 @@
                  <img src="{{asset('image/guoshixin.jpg')}}" alt="" class="img-circle" style="width:110px;height:122px;">
             </p>
             <p>
-                <strong><a href="/">咖啡泡柠檬</a></strong> Make a little progress every day
+                <strong><a href="javascript:void(0)" style="text-decoration: none;">咖啡泡柠檬</a></strong> Make a little progress every day
             </p>
             <p>@include('layout.web_sitetime')</p>
             @include('layout.share')
@@ -93,8 +93,3 @@
     #tagscloud a.tagc5{background:#006633;color:#fff;}
     #tagscloud a:hover{color:#fff;background:#0099ff;}
 </style>
-    <script>
-	$(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-	</script>

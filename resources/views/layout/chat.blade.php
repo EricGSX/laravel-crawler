@@ -1,3 +1,4 @@
+<p><a href="javascript:void(0)" style="text-decoration: none;">click and chat with me&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-hand-down"></i></a></p>
 <div class="row">
 	<div class="col-sm-4">
 		<div tabindex="0"  role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="bottom" data-content='   
@@ -13,3 +14,8 @@
         <a href="/feed.xml" title="订阅&收藏"><img src="{{asset('/image/rss.png')}}" style="width:35px;height:35px;"></a>
 	</div>
 </div>
+<script>
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
+</script>
