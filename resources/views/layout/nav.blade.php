@@ -17,31 +17,31 @@
     <div class="container">
         <form action="/posts/search" method="GET">
             <ul class="nav navbar-nav navbar-left">
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item " href="/">首页</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/">PHP</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/">MarkDown</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/">前端</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/">数据库</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/">服务器</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item" href="/notices">通知</a>
                 </li>
-                <li>
+                <li class="eric-li">
                     <a class="blog-nav-item" href="/tottles/show">碎碎念</a>
                 </li>
             </ul>

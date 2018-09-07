@@ -33,6 +33,13 @@ h6, .h6 {
     /*}*/
 /*}*/
 
+@media (max-width: 330px) {
+    .eric-li {
+        visibility: hidden;
+        height:0px;
+    }
+}
+
 
 /*
  * Masthead for nav
