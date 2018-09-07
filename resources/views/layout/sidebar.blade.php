@@ -32,21 +32,16 @@
     <br />
     <aside id="widget-categories" class="widget panel panel-default">
         <div class="panel-heading" style='text-align: center;'>
-            公告
+            邀请好友
         </div>
-
-        <ul class="category-root list-group">
-            <li class="list-group-item">
-                <a href="/topic/1">近期将开通本站SSL证书免费申请入口
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="javascript:void(0)">发布鼠标点击特效</a>
-            </li>
-            <li class="list-group-item">
-                <a href="javascript:void(0)">开通Markdown编辑模式</a>
-            </li>
-        </ul>
+        <div class="row" style='margin-bottom: 8px;margin-top: 8px;'>
+            <div class="col-sm-8">
+                <input value="hello world!" class="form-control" disabled id='js-copy-text'>
+            </div>
+            <div class="col-sm-4">
+                 <button class="btn btn-primary" type='button' onclick="copy()" >复制链接</button>
+            </div>
+        </div>    
     </aside>
     <aside id="widget-categories" class="widget panel panel-default">
         <div class="panel-heading" style='text-align: center;'>
@@ -93,3 +88,19 @@
     #tagscloud a.tagc5{background:#006633;color:#fff;}
     #tagscloud a:hover{color:#fff;background:#0099ff;}
 </style>
+<script type="text/javascript">
+    function copy(){
+    var Url2=document.getElementById("js-copy-text");
+    Url2.select();
+ try{
+      if(document.execCommand('copy', false, null)){
+       document.execCommand("Copy");
+       alert("复制成功");
+      } else{
+       alert("当前浏览器不兼容，请手动复制");
+      }
+  } catch(err){
+   alert("当前浏览器不兼容，请手动复制");
+  }
+}
+</script>
