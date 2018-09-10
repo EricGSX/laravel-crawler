@@ -75,26 +75,37 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
                 'product_href'   => ['#content>#right>.right_body>.pros>li>h2>a','href'],
             ];
             $ql = QueryList::html($html)->rules($rules)->query();
-            $data = $ql->getData();
-            $data = json_decode($data);
+            $data = $ql->getData()->toArray();
             foreach($data as $kk=>$vv){
                 //爬取列表下对应商品的详情页信息
                 $detail_url = $vv['product_href'];
-                $detail_html = file_get_contents($detail_url);
-                $detail_rules = [
-                    'title'     => ['#content>#right>.pt>.pr>h1','text'],
-                    'head_content'   => ['#content>#right>#flay','text'],
-                    'footer_table' => ['#content>#right>.pt>.pd>#slide_content>#slide_content_a>table','html']
-                ];
-                $detail_ql = QueryList::html($detail_html)->rules($detail_rules)->query();
-                $detail_data = $detail_ql->getData();
-                $detail_data = json_decode($detail_data);
+                $detail_data = $this->productDetail($detail_url);
                 $data[$kk]['detail'] = $detail_data;
             }
 
             $return = array_merge($data,$return);
         }
         return $return;
+    }
+
+    /**
+     * TODO 产品详情
+     */
+    public function productDetail($url)
+    {
+        //$detail_url = 'http://www.foodchem.cn/products/folic-acid';
+        $detail_url = $url;
+        $detail_html = file_get_contents($detail_url);
+        $detail_rules = [
+            'title'     => ['#content>#right>.pt>.pr>h1','text'],
+            'head_content'   => ['.pr','html'],
+            'footer_table' => ['#slide_content_a','html']
+        ];
+        $detail_ql = QueryList::html($detail_html)->rules($detail_rules)->query();
+        $detail_data = $detail_ql->getData()->toArray();
+        //$detail_data = json_decode($detail_data);
+        //$data[$kk]['detail'] = $detail_data;
+        return $detail_data;
     }
 
     /**
