@@ -19,26 +19,28 @@ Route::get('/','Home\PostController@index');
 Route::get('/test','WebCrawlerController@test');
 
 
-//TODO TEST
-//Route::get('/baidu','WebCrawlerController@baidu');
-//
-//Route::get('/wxarticle','WebCrawlerController@article');
-//
-//Route::get('/github','WebCrawlerController@github');
-//
-//Route::get('/gitee','WebCrawlerController@gitee');
-//
-//Route::get('/snoopy','WebCrawlerController@snooy');
-//
-//Route::get('/amazon','WebCrawlerController@amazon');
-//
-//Route::get('/cookie','WebCrawlerController@cookie');
-//
-//Route::get('/checkcurl','WebCrawlerController@checkcurl');
-//
-//Route::get('/zhihu','WebCrawlerController@zhihu');
-//
-//Route::get('/test_spider','WebCrawlerController@test_spider');
+//TODO Other
+Route::group(['prefix'=>'others'],function(){
+    Route::get('/product','Other\WebCrawlerController@product');
+
+    //Route::get('/wxarticle','WebCrawlerController@article');
+    //
+    //Route::get('/github','WebCrawlerController@github');
+    //
+    //Route::get('/gitee','WebCrawlerController@gitee');
+    //
+    //Route::get('/snoopy','WebCrawlerController@snooy');
+    //
+    //Route::get('/amazon','WebCrawlerController@amazon');
+    //
+    //Route::get('/cookie','WebCrawlerController@cookie');
+    //
+    //Route::get('/checkcurl','WebCrawlerController@checkcurl');
+    //
+    //Route::get('/zhihu','WebCrawlerController@zhihu');
+    //
+    //Route::get('/test_spider','WebCrawlerController@test_spider');
+});
 
 //TODO 开始爬虫
 Route::group(['prefix'=>'spider'],function (){

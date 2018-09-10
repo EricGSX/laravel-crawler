@@ -6,13 +6,14 @@
  * Time: 13:53
  * Project: OceaniaWebCrawler
  */
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Other;
 
 use Illuminate\Http\Request;
 use QL\QueryList;
 use App\Libs\Snoopy;
 use App\Libs\Spider;
 use App\Libs\Parser;
+use App\Http\Controllers\Controller;
 
 class WebCrawlerController extends Controller
 {
@@ -55,22 +56,30 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
     }
 
     /**
-     * TODO 采集百度搜索首页内容
+     * TODO 产品
      *
      * @return array
      */
-    public function baidu()
+    public function product()
     {
-        $url = 'http://www.baidu.com/s?wd=QueryList';
-        $rules = [
-            'img'     => ['img','src'],
-            'title'   => ['h3>a','text'],
-            'content' => ['.c-abstract','text'],
-            'ad_url'  => ['.f13>a','src'],
+        $url_arr = [
+            'http://www.foodchem.cn/products/Other-Industrial-Chemicals/1',
+            'http://www.foodchem.cn/products/Other-Industrial-Chemicals/2'
         ];
-        $ql = QueryList::get($url)->rules($rules)->query();
-        $data = $ql->getData();
-        $return = $data->all();
+        $return = [];
+        foreach ($url_arr  as $k=>$v){
+            $url = 'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/1';
+            $html = file_get_contents($url);
+            $rules = [
+                'img'     => ['#content>#right>.right_body>.pros>li>h1>a>img','src'],
+                'title'   => ['#content>#right>.right_body>.pros>li>h2>a','text'],
+                'content' => ['#content>#right>.right_body>.pros>li>h3','html'],
+            ];
+            $ql = QueryList::html($html)->rules($rules)->query();
+            $data = $ql->getData();
+            $data = json_decode($data);
+            $return = array_merge($data,$return);
+        }
         return $return;
     }
 

@@ -6,7 +6,7 @@
  * Time: 16:02
  * Project: OceaniaWebCrawler
  */
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Other;
 
 use App\Libs\Spider;
 use Illuminate\Http\Request;
