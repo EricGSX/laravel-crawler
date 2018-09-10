@@ -72,12 +72,26 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
             $html = file_get_contents($url);
             $rules = [
                 'img'     => ['#content>#right>.right_body>.pros>li>h1>a>img','src'],
-                'title'   => ['#content>#right>.right_body>.pros>li>h2>a','text'],
-                'content' => ['#content>#right>.right_body>.pros>li>h3','html'],
+                'product_href'   => ['#content>#right>.right_body>.pros>li>h2>a','href'],
             ];
             $ql = QueryList::html($html)->rules($rules)->query();
             $data = $ql->getData();
             $data = json_decode($data);
+            foreach($data as $kk=>$vv){
+                //爬取列表下对应商品的详情页信息
+                $detail_url = $vv['product_href'];
+                $detail_html = file_get_contents($detail_url);
+                $detail_rules = [
+                    'title'     => ['#content>#right>.pt>.pr>h1','text'],
+                    'head_content'   => ['#content>#right>#flay','text'],
+                    'footer_table' => ['#content>#right>.pt>.pd>#slide_content>#slide_content_a>table','html']
+                ];
+                $detail_ql = QueryList::html($detail_html)->rules($detail_rules)->query();
+                $detail_data = $detail_ql->getData();
+                $detail_data = json_decode($detail_data);
+                $data[$kk]['detail'] = $detail_data;
+            }
+
             $return = array_merge($data,$return);
         }
         return $return;
