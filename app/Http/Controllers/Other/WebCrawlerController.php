@@ -68,13 +68,21 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
         set_time_limit(0);
         ini_set("memory_limit", "1000M");
 
-        $url_arr = [
-            'http://www.foodchem.cn/products/Other-Industrial-Chemicals/1',
-            'http://www.foodchem.cn/products/Other-Industrial-Chemicals/2'
-        ];
+        //$url_arr = [
+        //    'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/',
+        //    'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/2',
+        //    'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/3',
+        //]; 26个产品
+        //$url_arr = [
+        //    'http://www.foodchem.cn/products/Feed_additives/',
+        //    'http://www.foodchem.cn/products/Feed_additives/2',
+        //    'http://www.foodchem.cn/products/Feed_additives/3'
+        //]; 28个产品
+        $url_arr = [];
         $return = [];
         foreach ($url_arr  as $k=>$v){
-            $url = 'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/1';
+            //$url = 'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/1';
+            $url = $v;
             $html = file_get_contents($url);
             $rules = [
                 'img'     => ['#content>#right>.right_body>.pros>li>h1>a>img','src'],
@@ -91,12 +99,13 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
 
             $return = array_merge($data,$return);
         }
+        //return($return);die;
          $csv_data = [];
          foreach($return as $k=>$v){
          	$csv_data[$k]['name'] = $v['detail'][0]['title'];
-         	$csv_data[$k]['short_description'] = $v['detail'][0]['head_content'];
-         	$csv_data[$k]['description'] = $v['detail'][0]['footer_table'];
-         	$csv_data[$k]['categories'] = 'test';
+         	$csv_data[$k]['short_description'] = $v['detail'][0]['short_description_one'] . $v['detail'][0]['short_description_two'];
+         	$csv_data[$k]['description'] = $v['detail'][0]['description_one'].$v['detail'][0]['description_two'];
+         	$csv_data[$k]['categories'] = 'Pharmaceuticals';
          	$csv_data[$k]['images'] = $v['img'];
          }
         Session::put('pc_data',$csv_data);
@@ -113,8 +122,10 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
         $detail_html = file_get_contents($detail_url);
         $detail_rules = [
             'title'     => ['#content>#right>.pt>.pr>h1','text'],
-            'head_content'   => ['.pr','html'],
-            'footer_table' => ['#slide_content_a','html']
+            'short_description_one'   => ['#content>#right>.pt>.pr>.prmore>ul','html'],
+            'short_description_two' => ['#content>#right>#flag','text'],
+            'description_one' => ['#slide_content_b','text'],
+            'description_two' => ['#slide_content_a','html'],
         ];
         $detail_ql = QueryList::html($detail_html)->rules($detail_rules)->query();
         $detail_data = $detail_ql->getData()->toArray();
@@ -127,6 +138,8 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
     public function addDbData()
     {
         $a = Session::get('pc_data');
+        //echo '<pre>';
+        //var_dump($a);die;
         $result = DB::table('others')->insert($a);
         return $result;
     }
