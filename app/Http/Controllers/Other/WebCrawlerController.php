@@ -78,7 +78,9 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
         //    'http://www.foodchem.cn/products/Feed_additives/2',
         //    'http://www.foodchem.cn/products/Feed_additives/3'
         //]; 28个产品
-        $url_arr = [];
+        $url_arr = [
+            ''
+        ];
         $return = [];
         foreach ($url_arr  as $k=>$v){
             //$url = 'http://www.foodchem.cn/products/Active_Pharmaceutical_Ingredient/1';
