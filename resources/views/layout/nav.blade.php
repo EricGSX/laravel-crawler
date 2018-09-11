@@ -36,14 +36,16 @@
                     <a class="blog-nav-item search_hide" href="/">服务器</a>
                 </li>
                 <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
-                </li>
-                <li class="eric-li">
                     <a class="blog-nav-item" href="/notices">通知</a>
                 </li>
                 <li class="eric-li">
                     <a class="blog-nav-item" href="/tottles/show">碎碎念</a>
                 </li>
+                @auth
+                <li class="eric-li">
+                    <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
+                </li>
+                @endauth
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
