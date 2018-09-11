@@ -22,8 +22,9 @@ Route::get('/test','WebCrawlerController@test');
 //TODO Other
 Route::group(['prefix'=>'others'],function(){
     Route::get('/product','Other\WebCrawlerController@product');
-    Route::get('/productDetail','Other\WebCrawlerController@productDetail');
-
+    //Route::get('/productDetail','Other\WebCrawlerController@productDetail');
+    Route::get('/add','Other\WebCrawlerController@addDbData');
+    Route::get('/csv','Other\WebCrawlerController@exportCsv');
     //Route::get('/wxarticle','WebCrawlerController@article');
     //
     //Route::get('/github','WebCrawlerController@github');

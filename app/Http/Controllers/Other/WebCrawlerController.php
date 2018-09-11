@@ -14,6 +14,9 @@ use App\Libs\Snoopy;
 use App\Libs\Spider;
 use App\Libs\Parser;
 use App\Http\Controllers\Controller;
+use App\Libs\Tools;
+use DB;
+use Illuminate\Support\Facades\Session;
 
 class WebCrawlerController extends Controller
 {
@@ -62,6 +65,9 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
      */
     public function product()
     {
+        set_time_limit(0);
+        ini_set("memory_limit", "1000M");
+
         $url_arr = [
             'http://www.foodchem.cn/products/Other-Industrial-Chemicals/1',
             'http://www.foodchem.cn/products/Other-Industrial-Chemicals/2'
@@ -85,7 +91,16 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
 
             $return = array_merge($data,$return);
         }
-        return $return;
+         $csv_data = [];
+         foreach($return as $k=>$v){
+         	$csv_data[$k]['name'] = $v['detail'][0]['title'];
+         	$csv_data[$k]['short_description'] = $v['detail'][0]['head_content'];
+         	$csv_data[$k]['description'] = $v['detail'][0]['footer_table'];
+         	$csv_data[$k]['categories'] = 'test';
+         	$csv_data[$k]['images'] = $v['img'];
+         }
+        Session::put('pc_data',$csv_data);
+        echo '爬取成功';
     }
 
     /**
@@ -103,9 +118,74 @@ Laravel5.5+Bootstrop3.0开发的SPIDER框架
         ];
         $detail_ql = QueryList::html($detail_html)->rules($detail_rules)->query();
         $detail_data = $detail_ql->getData()->toArray();
-        //$detail_data = json_decode($detail_data);
-        //$data[$kk]['detail'] = $detail_data;
         return $detail_data;
+    }
+
+    /**
+     * 将数据添加到数据库
+     */
+    public function addDbData()
+    {
+        $a = Session::get('pc_data');
+        $result = DB::table('others')->insert($a);
+        return $result;
+    }
+
+    /**
+     * 导出csv
+     */
+    public function exportCsv()
+    {
+        $result = Db::table('others')->orderBy('id' ,'asc')->get()->map(function ($value) {
+            return (array)$value;
+        })->toArray();
+        $header_data = [
+            'id',
+            'name',
+            'short_description',
+            'description',
+            'categories',
+            'images',
+        ];
+        $return = $this->export_csv($result,$header_data,'9-11-all.csv');
+        echo '<pre>';
+        var_dump($return);
+    }
+
+    public function export_csv($data = [], $header_data = [], $file_name = '')
+    {
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename='.$file_name);
+        header('Cache-Control: max-age=0');
+        $fp = fopen('php://output', 'a');
+        if (!empty($header_data)) {
+            foreach ($header_data as $key => $value) {
+                $header_data[$key] = iconv('utf-8', 'gbk', $value);
+            }
+            fputcsv($fp, $header_data);
+        }
+        $num = 0;
+        //每隔$limit行，刷新一下输出buffer，不要太大，也不要太小
+        $limit = 100000;
+        //逐行取出数据，不浪费内存
+        $count = count($data);
+        if ($count > 0) {
+            for ($i = 0; $i < $count; $i++) {
+                $num++;
+                //刷新一下输出buffer，防止由于数据过多造成问题
+                if ($limit == $num) {
+                    ob_flush();
+                    flush();
+                    $num = 0;
+                }
+                $row = $data[$i];
+                foreach ($row as $key => $value) {
+                    $row[$key] = iconv('utf-8', 'gbk', $value);
+                }
+                fputcsv($fp, $row);
+            }
+        }
+        fclose($fp);
     }
 
     /**
