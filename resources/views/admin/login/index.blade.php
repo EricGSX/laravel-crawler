@@ -12,7 +12,7 @@
             {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input name="name" type="text" class="form-control" placeholder="姓名">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <input name="password" type="password" class="form-control" placeholder="密码">
