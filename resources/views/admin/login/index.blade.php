@@ -2,7 +2,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="/adminlte/index2.html">咖啡泡柠檬</a>
+        <a href="/">咖啡泡柠檬</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
