@@ -43,6 +43,7 @@
             </div>
         </div>    
     </aside>
+    @if(\Auth::user()->id == 1)
     <aside id="widget-categories" class="widget panel panel-default">
         <div class="panel-heading" style='text-align: center;'>
             专栏
@@ -57,6 +58,7 @@
             @endforeach
         </ul>
     </aside>
+    @endif
     <aside id="widget-fature" class="widget panel panel-default">
         <div class="panel-heading" >
             Web小工具

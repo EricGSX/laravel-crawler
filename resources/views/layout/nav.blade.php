@@ -20,32 +20,22 @@
                 <li class="eric-li">
                     <a class="blog-nav-item " href="/">首页</a>
                 </li>
+                @foreach($topics as $topic)
                 <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/">PHP</a>
+                    <a class="blog-nav-item search_hide" href="/">{{$topic->name}}</a>
                 </li>
-                <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/">MarkDown</a>
-                </li>
-                <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/">前端</a>
-                </li>
-                <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/">数据库</a>
-                </li>
-                <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/">服务器</a>
-                </li>
+                @endforeach
                 <li class="eric-li">
                     <a class="blog-nav-item" href="/notices">通知</a>
                 </li>
                 <li class="eric-li">
                     <a class="blog-nav-item" href="/tottles/show">碎碎念</a>
                 </li>
-                @auth
+                @if(\Auth::user()->id == 1)
                 <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
                 </li>
-                @endauth
+                @endif
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
