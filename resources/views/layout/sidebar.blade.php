@@ -43,6 +43,7 @@
             </div>
         </div>    
     </aside>
+    @auth
     @if(\Auth::user()->id == 1)
     <aside id="widget-categories" class="widget panel panel-default">
         <div class="panel-heading" style='text-align: center;'>
@@ -59,6 +60,7 @@
         </ul>
     </aside>
     @endif
+    @endauth
     <aside id="widget-fature" class="widget panel panel-default">
         <div class="panel-heading" >
             Web小工具

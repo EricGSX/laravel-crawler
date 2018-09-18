@@ -31,11 +31,13 @@
                 <li class="eric-li">
                     <a class="blog-nav-item" href="/tottles/show">碎碎念</a>
                 </li>
+                @auth
                 @if(\Auth::user()->id == 1)
                 <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
                 </li>
                 @endif
+                @endauth
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
