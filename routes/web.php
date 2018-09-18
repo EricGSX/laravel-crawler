@@ -108,10 +108,13 @@ Route::group(['prefix'=>'users'],function(){
 });
 
 //TODO 专题模块
-
 Route::group(['prefix'=>'topics'],function(){
     Route::get('/{topic}','Topic\TopicController@show');
     Route::post('/{topic}/submit','Topic\TopicController@submit');
+});
+//TODO 导航栏分类（专题）
+Route::group(['prefix'=>'categories'],function(){
+    Route::get('/{topic}','Topic\TopicController@postList');
 });
 
 //TODO 碎碎念

@@ -22,7 +22,7 @@
                 </li>
                 @foreach($topics as $topic)
                 <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/">{{$topic->name}}</a>
+                    <a class="blog-nav-item search_hide" href="/categories/{{$topic->id}}">{{$topic->name}}</a>
                 </li>
                 @endforeach
                 <li class="eric-li">
