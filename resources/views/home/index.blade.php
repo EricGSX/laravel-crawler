@@ -57,7 +57,7 @@
                           @if($topics == 'All')
                               <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |</p>
                           @else
-                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |<i class="glyphicon glyphicon-tag"></i> {{$topics}}</p>
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} | <i class="label label-info">{{$topics}}</i> </p>
                           @endif
                         </div>
                   @endforeach
