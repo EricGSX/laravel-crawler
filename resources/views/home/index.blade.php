@@ -54,7 +54,11 @@
                             <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/users/{{$post->user->id}}">{{$post->user->name}}</a></p>
 
                           {!! str_limit($post->description,100,'...') !!}
+                          @if($topics == 'All')
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |</p>
+                          @else
                               <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |<i class="glyphicon glyphicon-tag"></i> {{$topics}}</p>
+                          @endif
                         </div>
                   @endforeach
                   {{$posts->links()}}
