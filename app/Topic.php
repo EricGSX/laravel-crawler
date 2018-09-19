@@ -16,6 +16,7 @@ class Topic extends Model
 
     /**
      * TODO 专题文章数用于withcount
+     * 专题下有多少文章
      */
     public function postTopics()
     {

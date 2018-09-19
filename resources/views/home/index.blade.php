@@ -54,12 +54,7 @@
                             <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/users/{{$post->user->id}}">{{$post->user->name}}</a></p>
 
                           {!! str_limit($post->description,100,'...') !!}
-                          @auth
-                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |<i class="glyphicon glyphicon-tag"></i> php</p>
-                          @endauth
-                          @guest
-                              <p class="blog-post-meta">阅读 {{$post->view_count}}</p>
-                          @endguest
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |<i class="glyphicon glyphicon-tag"></i> {{$topics}}</p>
                         </div>
                   @endforeach
                   {{$posts->links()}}

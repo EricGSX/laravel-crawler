@@ -27,7 +27,8 @@ class PostController extends Controller
         TODO:Facade门面模式
 */
         $posts = Post::orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
-        return view('home.index',compact('posts'));
+        $topics = 'All';
+        return view('home.index',compact('posts','topics'));
     }
 
     /**

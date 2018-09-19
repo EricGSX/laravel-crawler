@@ -55,6 +55,7 @@ class TopicController extends Controller
         $topic = Topic::find($topic->id);
         //专题文章列表，按照时间倒序排列，前十个
         $posts = $topic->posts()->orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
-        return view('home.index',compact('posts'));
+        $topics = $topic->name;
+        return view('home.index',compact('posts','topics'));
     }
 }

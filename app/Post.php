@@ -69,6 +69,7 @@ class Post extends Model
 
     /**
      * TODO 文章对应的topic
+     * 文章下有多少专题
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -90,4 +91,5 @@ class Post extends Model
             $q->where('topic_id',$topic_id);
         });
     }
+
 }
