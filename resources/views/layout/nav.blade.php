@@ -5,6 +5,7 @@
     .nav>li>a{
         font-weight: bold!important;
         color: white!important;
+        padding: 16px 10px!important;
     }
     .blog-nav-item {
         color:white!important;
@@ -18,8 +19,7 @@
         <form action="/posts/search" method="GET">
             <ul class="nav navbar-nav navbar-left">
                 <li class="eric-li">
-                    <a class="blog-nav-item " href="/">首页</a>
-{{--                    <img src="{{asset('image/mylogo.png')}}">--}}
+                    <img src="{{asset('image/gsx-logo.png')}}" style="width:70px;height:50px;cursor: pointer;" onclick="javascript:window.location.href='/'">
                 </li>
                 @foreach($topics as $topic)
                 <li class="eric-li">
