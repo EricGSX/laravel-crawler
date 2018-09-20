@@ -19,6 +19,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="eric-li">
                     <a class="blog-nav-item " href="/">首页</a>
+{{--                    <img src="{{asset('image/mylogo.png')}}">--}}
                 </li>
                 @foreach($topics as $topic)
                 <li class="eric-li">
