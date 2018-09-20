@@ -15,7 +15,7 @@
     <meta name="csrf-token" content="{{csrf_token()}}">
 
 
-    <title>会武术的地瓜(郭世鑫Eric.Guo的个人博客)</title>
+    <title>会武术的地瓜(郭世鑫的个人博客)</title>
     <script src="{{asset('js/tagscloud.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="{{asset('js/effects.js')}}"></script>
