@@ -1,7 +1,6 @@
 @include('layout.header')
 
 <body>
-
 @include('layout.nav')
 <div class="container">
 
