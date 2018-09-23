@@ -35,9 +35,15 @@ class LoginController extends Controller
         return \Redirect::back()->withErrors('用户名密码不匹配');
     }
 
+    /**
+     * TODO 退出
+     * 利用了守卫（guard）admin
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function logout()
     {
-        \Auth::guard('admin')->logout();
+        \Auth::guard('admin')-id>logout();
         return redirect('/admin/login');
     }
 }
