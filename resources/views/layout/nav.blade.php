@@ -27,15 +27,15 @@
                 </li>
                 @endforeach
                 <li class="eric-li">
-                    <a class="blog-nav-item" href="/notices">通知</a>
+                    <a class="blog-nav-item glyphicon glyphicon-comment" href="/tottles/show"  title="碎碎念"></a>
                 </li>
                 <li class="eric-li">
-                    <a class="blog-nav-item" href="/tottles/show">碎碎念</a>
+                    <a class="blog-nav-item glyphicon glyphicon-volume-up" href="/notices" title="通知&公告"></a>
                 </li>
                 @auth
                 @if(\Auth::user()->id == 1)
                 <li class="eric-li">
-                    <a class="blog-nav-item search_hide" href="/posts/create">写文章</a>
+                    <a class="blog-nav-item search_hide glyphicon glyphicon-pencil" href="/posts/create"></a>
                 </li>
                 @endif
                 @endauth

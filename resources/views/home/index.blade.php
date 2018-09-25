@@ -14,7 +14,7 @@
 
         </style>
             <div class="panel panel-default">
-              <div class="panel-heading">公告 & 推荐</div>
+              <div class="panel-heading "><span class="glyphicon glyphicon-volume-up"></span>  每日精选</div>
               <div  id="scrollBox">
                        <div id="roll_one">
                             <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;近期将开通本站SSL证书免费申请入口</li>
