@@ -9,4 +9,7 @@ class AdminUser extends Authenticatable
 {
     //TODO 这里取消了remembertoken字段
     protected $rememberTokenName = '';
+
+    //TODO 设置不可注入的字段为空
+    protected $guarded = [];
 }
