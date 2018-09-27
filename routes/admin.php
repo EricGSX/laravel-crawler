@@ -11,6 +11,9 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/users','Admin\UserController@index');
         Route::get('/users/create','Admin\UserController@create');
         Route::post('/users','Admin\UserController@store');
+        Route::get('/users/{user}/update','Adnin\UserController@detail');
+        Route::post('/users/{user}','Admin\UserController@update');
+        Route::get('/users/{user}/delete','Admin\UserController@delete');
     });
 
 });

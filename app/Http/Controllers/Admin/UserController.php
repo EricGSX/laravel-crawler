@@ -42,4 +42,19 @@ class UserController extends Controller
     	AdminUser::create(compact('name','password'));
     	return redirect('admin/users');
     }
+
+    public function detail()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function delete()
+    {
+
+    }
 }
