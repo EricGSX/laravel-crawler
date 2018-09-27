@@ -66,8 +66,15 @@ class UserController extends Controller
         return redirect('admin/users');
     }
 
-    public function delete()
+    /**
+     * TODO 删除用户
+     *
+     * @param \App\AdminUser $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function delete(AdminUser $user)
     {
-
+        $user->delete();
+        return redirect('admin/users');
     }
 }
