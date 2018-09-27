@@ -43,14 +43,27 @@ class UserController extends Controller
     	return redirect('admin/users');
     }
 
-    public function detail()
+    /**
+     * TODO 展示用户信息
+     */
+    public function detail(AdminUser $user)
     {
-
+        return view('admin.user.edit',compact('user'));
     }
 
-    public function update()
+    /**
+     * TODO 更新用户信息
+     */
+    public function update(AdminUser $user)
     {
-
+        $this->validate(request(),[
+            'name' => 'bail|required|min:3',
+            'password' => 'bail|required'
+        ]);
+        $user->name = request('name');
+        $user->password = bcrypt(request('password'));
+        $user->save();
+        return redirect('admin/users');
     }
 
     public function delete()
