@@ -1,42 +1,4 @@
-{{--<aside class="main-sidebar">--}}
-    {{--<!-- sidebar: style can be found in sidebar.less -->--}}
-    {{--<section class="sidebar">--}}
-        {{--<!-- /.search form -->--}}
-        {{--<!-- sidebar menu: : style can be found in sidebar.less -->--}}
-        {{--<ul class="sidebar-menu">--}}
-            {{--<li class="treeview active">--}}
-                {{--<a href="#" >--}}
-                    {{--<i class="fa fa-dashboard"></i> <span>系统管理</span>--}}
-                    {{--<span class="pull-right-container">--}}
-                        {{--<i class="e-top-down glyphicon glyphicon-chevron-down" show-value="1"></i>--}}
-                    {{--</span>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu">--}}
-                    {{--<li><a href="/admin/permissions"><i class="fa fa-circle-o"></i> 权限管理</a></li>--}}
-                    {{--<li><a href="/admin/users"><i class="fa fa-circle-o"></i> 用户管理</a></li>--}}
-                    {{--<li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
-            {{--<li class=" treeview">--}}
-                {{--<a href="/admin/posts">--}}
-                    {{--<i class="fa fa-dashboard"></i> <span>文章管理</span>--}}
-                {{--</a>--}}
-            {{--</li>--}}
-            {{--<li class=" treeview">--}}
-                {{--<a href="/admin/topics">--}}
-                    {{--<i class="fa fa-dashboard"></i> <span>专题管理</span>--}}
-                {{--</a>--}}
-            {{--</li>--}}
-            {{--<li class=" treeview">--}}
-                {{--<a href="/admin/notices">--}}
-                    {{--<i class="fa fa-dashboard"></i> <span>通知管理</span>--}}
-                {{--</a>--}}
-            {{--</li>--}}
-        {{--</ul>--}}
-    {{--</section>--}}
-    {{--<!-- /.sidebar -->--}}
-{{--</aside>--}}
-  <aside class="main-sidebar">
+<aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -45,7 +7,7 @@
           <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{\Auth::guard('admin')->user()->name}}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -58,14 +20,15 @@
         <li class="treeview active">
           <a href="#">
             <i class="fa fa-dashboard"></i>
-            <span>Dashboard</span>
+            <span>系统管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li><a href="/admin/permissions"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li><a href="/admin/users"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+            <li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>
           </ul>
         </li>
         <li class="treeview">
