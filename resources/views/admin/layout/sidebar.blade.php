@@ -5,9 +5,11 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="treeview active">
-                <a href="#">
+                <a href="#" >
                     <i class="fa fa-dashboard"></i> <span>系统管理</span>
-                    <span class="pull-right-container"></span>
+                    <span class="pull-right-container">
+                        <i class="e-top-down glyphicon glyphicon-chevron-down" show-value="1"></i>
+                    </span>
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/admin/permissions"><i class="fa fa-circle-o"></i> 权限管理</a></li>
@@ -15,17 +17,17 @@
                     <li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>
                 </ul>
             </li>
-            <li class="active treeview">
+            <li class=" treeview">
                 <a href="/admin/posts">
                     <i class="fa fa-dashboard"></i> <span>文章管理</span>
                 </a>
             </li>
-            <li class="active treeview">
+            <li class=" treeview">
                 <a href="/admin/topics">
                     <i class="fa fa-dashboard"></i> <span>专题管理</span>
                 </a>
             </li>
-            <li class="active treeview">
+            <li class=" treeview">
                 <a href="/admin/notices">
                     <i class="fa fa-dashboard"></i> <span>通知管理</span>
                 </a>
