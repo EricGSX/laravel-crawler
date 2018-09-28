@@ -92,4 +92,17 @@ class Post extends Model
         });
     }
 
+
+    /**
+     * TODO 定义全局Scope用于过滤软删除的数据
+     * @return [type] [description]
+     */
+    public static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('adaiable',function(Builder $builder){
+            $builder->where('mark_status','<>',-1);
+        });
+    }
+
 }
