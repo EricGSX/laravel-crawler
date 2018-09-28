@@ -100,7 +100,7 @@ class Post extends Model
     public static function boot()
     {
         parent::boot();
-        static::addGlobalScope('adaiable',function(Builder $builder){
+        static::addGlobalScope('myPost',function(Builder $builder){
             $builder->where('mark_status','<>',-1);
         });
     }
