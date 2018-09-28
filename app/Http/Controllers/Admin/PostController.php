@@ -18,13 +18,22 @@ class PostController extends Controller
     	return view('admin.post.index',compact('posts'));
     }
 
-    public function star()
+    /**
+     * TODO 修改文章的状态
+     * @param  Post   $post [description]
+     * @return [type]       [description]
+     */
+    public function status(Post $post)
     {
-
+    	$this->validate(request(),[
+    		'status' => 'required|in:-1,1'
+    	]);
+    	$post->mark_status = request('status');
+    	$post->save();
+    	return [
+    		'error' => 0,
+    		'msg' => ''
+    	];
     }
 
-    public function del()
-    {
-
-    }
 }

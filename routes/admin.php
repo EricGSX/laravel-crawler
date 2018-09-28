@@ -16,8 +16,7 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/users/{user}/delete','Admin\UserController@delete');
         //审核文章
         Route::get('/posts','Admin\PostController@index');
-        Route::post('/posts/{post}/stars','Admin\PostController@stars');
-        Route::post('/posts/{post}/del','Admin\PostController@del');
+        Route::post('/posts/{post}/status','Admin\PostController@status');
     });
 
 });

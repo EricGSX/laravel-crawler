@@ -21,8 +21,8 @@
                                 <td>{{$post->id}}.</td>
                                 <td>{{$post->title}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-block btn-default post-audit" post-id="62" post-action-status="1" >通过</button>
-                                    <button type="button" class="btn btn-block btn-default post-audit" post-id="62" post-action-status="-1" >拒绝</button>
+                                    <button type="button" class="btn btn-block btn-default post-audit" post-id="{{$post->id}}" post-action-status="1" >标记</button>
+                                    <button type="button" class="btn btn-block btn-default post-audit" post-id="{{$post->id}}" post-action-status="-1" >删除</button>
                                 </td>
                             </tr>
                             @endforeach
