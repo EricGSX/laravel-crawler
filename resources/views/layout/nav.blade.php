@@ -74,7 +74,7 @@
 </div>
 <script>
    function deal_search(){
-       $("#search_head").css({"width":"500px"})
+       $("#search_head").css({"width":"300px"})
        $('.search_hide').hide()
    }
    function cancel_deal_search(){
