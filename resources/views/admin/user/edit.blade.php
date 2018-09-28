@@ -16,13 +16,15 @@
                         <form role="form" action="/admin/users/{{$user->id}}" method="POST">
                             {{csrf_field()}}
                             <div class="box-body">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label for="exampleInputEmail1">用户名</label>
                                     <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label for="exampleInputPassword1">密码</label>
                                     <input type="password" class="form-control" placeholder="New Password" name="password">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                 </div>
                             </div>
                             <!-- /.box-body -->
