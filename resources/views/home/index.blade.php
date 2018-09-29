@@ -9,19 +9,14 @@
         <div>
             {{--内容面板--}}
             {{--滚动通知--}}
-                   <style type="text/css">
-            #scrollBox{height:100px;overflow:hidden;}
-
-        </style>
+                   <style type="text/css">a{cursor: pointer;text-decoration: none!important;}</style>
             <div class="panel panel-default">
-              <div class="panel-heading "><span class="glyphicon glyphicon-volume-up"></span>  每日精选</div>
               <div  id="scrollBox">
                        <div id="roll_one">
-                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;近期将开通本站SSL证书免费申请入口</li>
-                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
-                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i></label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
+                           <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;<a>近期将开通本站SSL证书免费申请入口</a></li>
+                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
+                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;123123</li>
                         </div>
-                        <div id="roll_two"></div>
               </div>
             </div>
             {{--滚动通知--}}
