@@ -41,7 +41,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/admin/posts"><i class="fa fa-circle-o"></i> 文章列表</a></li>
-            <li><a href="/admin/posts"><i class="fa fa-circle-o"></i> 回收站</a></li>
+            <li><a href="/admin/posts/trash"><i class="fa fa-circle-o"></i> 回收站</a></li>
           </ul>
         </li>
         <li class="treeview">

@@ -6,7 +6,6 @@ $.ajaxSetup({
 $('.post-audit').click(function(event){
 	target = $(event.target);
 	var post_id = target.attr('post-id');
-	// console.log(post_id);return;
 	var status = target.attr('post-action-status');
 	$.ajax({
 		url:"/admin/posts/" + post_id + "/status",
@@ -15,6 +14,7 @@ $('.post-audit').click(function(event){
 		dataType:'json',
 		success:function(data){
 			if(data.error != 0){
+			    alert(data);
 				alert(data.msg);
 				return;
 			}

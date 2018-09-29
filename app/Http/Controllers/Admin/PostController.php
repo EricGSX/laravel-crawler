@@ -9,7 +9,7 @@ use \App\Post;
 class PostController extends Controller
 {
 	/**
-	 * 
+	 * TODO 文章列表
 	 * @return [type] [description]
 	 */
     public function index()
@@ -26,7 +26,7 @@ class PostController extends Controller
     public function status(Post $post)
     {
     	$this->validate(request(),[
-    		'status' => 'required|in:-1,1'
+    		'status' => 'required|in:-1,0,1'
     	]);
     	$post->mark_status = request('status');
     	$post->save();
@@ -34,6 +34,17 @@ class PostController extends Controller
     		'error' => 0,
     		'msg' => ''
     	];
+    }
+
+    /**
+     * TODO 回收站
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function trash()
+    {
+        $posts = Post::withoutGlobalScopes(['myPost'])->where('mark_status',-1)->orderBy('created_at','desc')->paginate(10);
+        return view('admin.post.trash',compact('posts'));
     }
 
 }
