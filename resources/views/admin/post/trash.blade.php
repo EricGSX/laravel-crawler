@@ -21,7 +21,7 @@
                                 <td>{{$post->id}}.</td>
                                 <td>{{$post->title}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-warning post-audit" post-id="{{$post->id}}" post-action-status="0" >恢复</button>
+                                    <button type="button" class="btn btn-sm btn-warning post-audit" post-id="{{$post->id}}" post-action-status="3" >恢复</button>
                                     <button type="button" class="btn btn-sm btn-danger post-audit" post-id="{{$post->id}}" post-action-status="2" >销毁</button>
                                 </td>
                             </tr>

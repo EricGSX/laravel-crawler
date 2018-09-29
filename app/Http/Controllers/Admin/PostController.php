@@ -25,11 +25,13 @@ class PostController extends Controller
      */
     public function status(Post $post)
     {
-    	$this->validate(request(),[
-    		'status' => 'required|in:-1,0,1'
-    	]);
-    	$post->mark_status = request('status');
-    	$post->save();
+    	//$this->validate(request(),[
+    	//	'status' => 'required|in:-1,0,1'
+    	//]);
+    	//$post->mark_status = request('status');
+    	//$post->save();
+        //$post->delete();
+        $post->restore();
     	return [
     		'error' => 0,
     		'msg' => ''
@@ -43,7 +45,7 @@ class PostController extends Controller
      */
     public function trash()
     {
-        $posts = Post::withoutGlobalScopes(['myPost'])->where('mark_status',-1)->orderBy('created_at','desc')->paginate(10);
+        $posts = Post::onlyTrashed()->orderBy('created_at','desc')->paginate(10);
         return view('admin.post.trash',compact('posts'));
     }
 

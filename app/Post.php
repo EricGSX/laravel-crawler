@@ -4,9 +4,14 @@ namespace App;
 
 use App\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     //TODO 定义表 默认posts表
 //    protected $table = "table_name";
 
@@ -97,12 +102,12 @@ class Post extends Model
      * TODO 定义全局Scope用于过滤软删除的数据
      * @return [type] [description]
      */
-    public static function boot()
-    {
-        parent::boot();
-        static::addGlobalScope('myPost',function(Builder $builder){
-            $builder->where('mark_status','<>',-1);
-        });
-    }
+    //public static function boot()
+    //{
+    //    parent::boot();
+    //    static::addGlobalScope('myPost',function(Builder $builder){
+    //        $builder->where('mark_status','<>',-1);
+    //    });
+    //}
 
 }

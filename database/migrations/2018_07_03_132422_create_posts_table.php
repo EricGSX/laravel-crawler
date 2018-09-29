@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->integer('user_id')->default(0);
             $table->tinyInteger('mark_status')->default(0)->comment('标记的状态，0默认-1软删除1标记');
             $table->timestamps();
+            $table->softDeletes();
             $table->index('title');
             $table->index('description');
         });
