@@ -10,7 +10,7 @@ $('.post-audit').click(function(event){
 	$.ajax({
 		url:"/admin/posts/" + post_id + "/status",
 		method:'POST',
-		data:{'status':status},
+		data:{'status':status,'post_id':post_id},
 		dataType:'json',
 		success:function(data){
 			if(data.error != 0){

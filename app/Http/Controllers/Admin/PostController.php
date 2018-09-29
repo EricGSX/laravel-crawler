@@ -23,15 +23,18 @@ class PostController extends Controller
      * @param  Post   $post [description]
      * @return [type]       [description]
      */
-    public function status(Post $post)
+    public function status(Request $request)
     {
+        Post::withTrashed()
+            ->where('id', $request->post_id)
+            ->restore();
+        //echo $request;die;
     	//$this->validate(request(),[
     	//	'status' => 'required|in:-1,0,1'
     	//]);
     	//$post->mark_status = request('status');
     	//$post->save();
         //$post->delete();
-        $post->restore();
     	return [
     		'error' => 0,
     		'msg' => ''
