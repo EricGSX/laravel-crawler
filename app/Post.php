@@ -100,6 +100,7 @@ class Post extends Model
 
     /**
      * TODO 定义全局Scope用于过滤软删除的数据
+     * 后期采用了软删除模型 没有适用全局Scope
      * @return [type] [description]
      */
     //public static function boot()

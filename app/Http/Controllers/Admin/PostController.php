@@ -25,20 +25,28 @@ class PostController extends Controller
      */
     public function status(Request $request)
     {
-        Post::withTrashed()
-            ->where('id', $request->post_id)
-            ->restore();
-        //echo $request;die;
-    	//$this->validate(request(),[
-    	//	'status' => 'required|in:-1,0,1'
-    	//]);
-    	//$post->mark_status = request('status');
-    	//$post->save();
-        //$post->delete();
-    	return [
-    		'error' => 0,
-    		'msg' => ''
-    	];
+        $this->validate(request(),[
+            'status' => 'required|in:-1,0,1'
+        ]);
+        $action = $request->e_post_action;
+        if($action == 'star'){
+            Post::where('id', $request->post_id)->update(['mark_status' => 1]);
+        }elseif($action == 'del'){
+            Post::where('id', $request->post_id)->delete();
+        }elseif($action == 'restore'){
+            Post::withTrashed()->where('id', $request->post_id)->restore();
+        }elseif ($action == 'destroy'){
+            Post::where('id', $request->post_id)->forceDelete();
+        }else{
+            return [
+                'error' => 80001,
+                'msg' => '非法的请求'
+            ];
+        }
+        return [
+            'error' => 0,
+            'msg' => ''
+        ];
     }
 
     /**

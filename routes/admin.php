@@ -18,7 +18,6 @@ Route::group(['prefix'=>'admin'],function (){
         Route::get('/posts','Admin\PostController@index');
         Route::get('/posts/trash','Admin\PostController@trash');
         Route::post('/posts/{post}/status','Admin\PostController@status');
-        Route::post('/posts/{post}/destroy','Admin\PostController@destroy');
     });
 
 });
