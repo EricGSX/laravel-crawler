@@ -24,37 +24,20 @@
                         <div id="roll_two"></div>
               </div>
             </div>
-    <script type="text/javascript">
-                var roll_area =document.getElementById('scrollBox');
-                var roll_one = document.getElementById('roll_one');
-                var roll_two = document.getElementById('roll_two');
-                roll_two.innerHTML=roll_one.innerHTML;
-                function scrollUp(){
-                    if(roll_area.scrollTop>=roll_one.offsetHeight){
-                        roll_area.scrollTop=0;
-                    }else{
-                        roll_area.scrollTop++
-                    }
-                }
-                var time = 50;
-                var mytimer=setInterval(scrollUp,time);
-                roll_area.onmouseover=function(){
-                    clearInterval(mytimer);
-                }
-                roll_area.onmouseout=function(){
-                    mytimer=setInterval(scrollUp,time);
-                }
-        </script>
             {{--滚动通知--}}
             <div class="panel panel-default">
               <div class="panel-body">
                             @foreach($posts as $post)
-                      <div class="blog-post">
+                      <div class="blog-post">{{count($post->topics)}}
                           <span class="blog-post-title"><a href="/posts/{{$post->id}}" >{{$post->title}}</a></span>
                             <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/users/{{$post->user->id}}">{{$post->user->name}}</a></p>
                           {!! str_limit($post->description,100,'...') !!}
+                          @if(count($post->topics) == 0)
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} | <i class="label label-warning">Other</i> </p>
+                          @else
                               <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} | <i class="label label-info">{{$post->topics[0]->name}}</i> </p>
-                        </div>
+                          @endif
+                      </div>
                   @endforeach
                   {{$posts->links()}}
               </div>
