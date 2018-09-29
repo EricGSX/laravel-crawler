@@ -84,6 +84,16 @@ class Post extends Model
     }
 
     /**
+     * 文章下的所有专题
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function topics()
+    {
+        return $this->belongsToMany(\App\Topic::class,'post_topics','post_id','topic_id');
+    }
+
+    /**
      * TODO 不属于某个专题的文章
      *
      * @param Builder $query

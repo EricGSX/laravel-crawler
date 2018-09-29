@@ -8,6 +8,7 @@ use \App\Post;
 use \App\Comment;
 use \App\Zan;
 use App\Libs\Parser;
+use \App\Topic;
 
 class PostController extends Controller
 {
@@ -26,9 +27,8 @@ class PostController extends Controller
         TODO:依赖注入
         TODO:Facade门面模式
 */
-        $posts = Post::orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
-        $topics = 'All';
-        return view('home.index',compact('posts','topics'));
+        $posts = Post::with('topics')->orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
+        return view('home.index',compact('posts'));
     }
 
     /**
