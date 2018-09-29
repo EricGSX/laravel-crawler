@@ -9,16 +9,18 @@
         <div>
             {{--内容面板--}}
             {{--滚动通知--}}
+            @if(count($star_posts) >0)
                    <style type="text/css">a{cursor: pointer;text-decoration: none!important;}</style>
             <div class="panel panel-default">
               <div  id="scrollBox">
                        <div id="roll_one">
-                           <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;<a>近期将开通本站SSL证书免费申请入口</a></li>
-                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;发布鼠标点击特效</li>
-                            <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;123123</li>
+                        @foreach($star_posts as $star_post)
+                           <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;<a href="/posts/{{$star_post->id}}">{{$star_post->title}}</a></li>
+                        @endforeach
                         </div>
               </div>
             </div>
+            @endif
             {{--滚动通知--}}
             <div class="panel panel-default">
               <div class="panel-body">
