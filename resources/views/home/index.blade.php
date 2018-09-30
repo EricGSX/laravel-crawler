@@ -15,7 +15,7 @@
               <div  id="scrollBox">
                        <div id="roll_one">
                         @foreach($star_posts as $star_post)
-                           <li class="list-group-item"><img src="{{asset('image/hot.jpg')}}" style="width:25px;height:25px;"> &nbsp;&nbsp;&nbsp;<a href="/posts/{{$star_post->id}}">{{$star_post->title}}</a></li>
+                           <li class="list-group-item"><label class="label label-danger"><i class="glyphicon glyphicon-flag"></i>Hot</label> &nbsp;&nbsp;&nbsp;<a href="/posts/{{$star_post->id}}">{{$star_post->title}}</a></li>
                         @endforeach
                         </div>
               </div>
