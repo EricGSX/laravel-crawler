@@ -3,28 +3,33 @@
     <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-10 col-xs-6">
+            <div class="col-lg-10 col-xs-9">
                 <div class="box">
 
                     <!-- /.box-header -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">增加用户</h3>
+                            <h3 class="box-title">更新友链</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" action="/admin/users/{{$user->id}}" method="POST">
+                        <form role="form" action="/admin/flinks/{{$link->id}}" method="POST">
                             {{csrf_field()}}
                             <div class="box-body">
                                 <div class="form-group has-feedback">
                                     <label for="exampleInputEmail1">用户名</label>
-                                    <input type="text" class="form-control" name="name" value="{{$user->name}}">
+                                    <input type="text" class="form-control" name="author" value="{{$link->author}}">
                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                 </div>
                                 <div class="form-group has-feedback">
-                                    <label for="exampleInputPassword1">密码</label>
-                                    <input type="password" class="form-control" placeholder="New Password" name="password">
-                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                    <label for="exampleInputEmail1">别名</label>
+                                    <input type="text" class="form-control" name="nick" value="{{$link->nick}}">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="exampleInputPassword1">链接</label>
+                                    <input type="text" class="form-control" placeholder="Password" name="link_url" value="{{$link->link_url}}">
+                                     <span class="glyphicon glyphicon-random form-control-feedback"></span>
                                 </div>
                             </div>
                             <!-- /.box-body -->

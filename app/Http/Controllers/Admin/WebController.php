@@ -59,4 +59,35 @@ class WebController extends Controller
         $link->delete();
         return redirect('admin/flinks');
     }
+
+    /**
+     * TODO 展示友链详情
+     *
+     * @param \App\FriendLink $link
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function detail(FriendLink $link)
+    {
+        return view('admin.link.edit',compact('link'));
+    }
+
+    /**
+     * TODO 跟新友链
+     *
+     * @param \App\FriendLink $link
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(FriendLink $link)
+    {
+        $this->validate(request(),[
+            'author' => 'bail|required',
+            'nick' => 'bail|required',
+            'link_url' => 'bail|required',
+        ]);
+        $link->author = request('author');
+        $link->nick = request('nick');
+        $link->link_url = request('link_url');
+        $link->save();
+        return redirect('admin/flinks');
+    }
 }

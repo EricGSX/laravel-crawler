@@ -3,7 +3,7 @@
     <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-10 col-xs-6">
+            <div class="col-lg-10 col-xs-9">
                 <div class="box">
 
                     <!-- /.box-header -->
