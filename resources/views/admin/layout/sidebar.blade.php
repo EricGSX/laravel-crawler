@@ -33,7 +33,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
+            <i class="fa fa fa-book"></i>
             <span>文章管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -46,17 +46,14 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <i class="fa fa-laptop"></i>
+            <span>网站布局</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li><a href="/admin/flinks"><i class="fa fa-circle-o"></i> Friend Link</a></li>
           </ul>
         </li>
         <li class="treeview">
