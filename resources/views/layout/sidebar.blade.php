@@ -62,7 +62,7 @@
     @endif
     @endauth
     <aside id="widget-fature" class="widget panel panel-default">
-        <div class="panel-heading" >
+        <div class="panel-heading" style='text-align: center;'>
             Web小工具
         </div>
 
