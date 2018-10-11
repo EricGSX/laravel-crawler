@@ -6,7 +6,11 @@
     <span style="padding-left: 50px;">&copy;2018 guosx.com All rights reserved. &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn"> 豫ICP备16038585号-1</a></span>
 </footer>
 <footer class="blog-footer">
-    <span>Friendly Link : <a href="#">one</a> | <a href="#">one</a</span>
+    <span>Friendly Link :
+        @foreach($friend_links as $friend_link)
+        <a href="http://{{$friend_link->link_url}}">{{$friend_link->nick}}</a> |
+        @endforeach
+    </span>
 </footer>
 <div id='scroll-to-top' style="position: fixed;right:1%;bottom:1%;"><a href='#'><img src="{{asset('image/scroll-to-top2.jpg')}}" style="width:50px;height:50px;"></a></div>
 <script>

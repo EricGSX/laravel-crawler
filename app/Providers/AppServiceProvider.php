@@ -16,9 +16,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        \View::composer(['layout.sidebar','layout.nav'],function($view){
+        \View::composer(['layout.sidebar','layout.nav','layout.footer'],function($view){
             $topics = \App\Topic::all();
+            $friend_links = \App\FriendLink::all();
             $view->with('topics',$topics);
+            $view->with('friend_links',$friend_links);
         });
     }
 
