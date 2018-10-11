@@ -17,7 +17,7 @@ class AdminRole extends Model
      */
     public function permissions()
     {
-    	$this->belongsToMany(\App\AdminPermission::class,'admin_permission_role','role_id','permission_id')->withPivat(['permission_id','role_id']);
+    	$this->belongsToMany(\App\AdminPermission::class,'admin_permission_role','role_id','permission_id')->withPivot(['permission_id','role_id']);
     }
 
     /**
@@ -49,6 +49,6 @@ class AdminRole extends Model
      */
     public function hasPermission($permission)
     {
-    	return $this->permissions()->contains($permissions);
+    	return $this->permissions()->contains($permission);
     }
 }
