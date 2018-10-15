@@ -77,4 +77,24 @@ class UserController extends Controller
         $user->delete();
         return redirect('admin/users');
     }
+
+    /**
+     * TODO 用户角色页面
+     * 
+     * @return [type] [description]
+     */
+    public function role()
+    {
+
+    }
+
+    /**
+     * TODO 保存用户角色
+     * 
+     * @return [type] [description]
+     */
+    public function storeRole()
+    {
+
+    }
 }
