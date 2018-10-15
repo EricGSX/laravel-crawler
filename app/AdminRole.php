@@ -11,7 +11,7 @@ class AdminRole extends Model
     protected $guarded = [];
 
     /**
-     * 当前角色的所有权限
+     * TODO 当前角色的所有权限
      * 
      * @return [type] [description]
      */
@@ -21,7 +21,7 @@ class AdminRole extends Model
     }
 
     /**
-     * 角色赋予权限
+     * TODO 角色赋予权限
      * 
      * @param  [type] $permission [description]
      * @return [type]             [description]
@@ -32,7 +32,8 @@ class AdminRole extends Model
     }
 
     /**
-     * 取消角色赋予的权限
+     * TODO 取消角色赋予的权限
+     * 
      * @param  [type] $permission [description]
      * @return [type]             [description]
      */

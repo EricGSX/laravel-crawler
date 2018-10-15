@@ -11,7 +11,7 @@ class AdminPermission extends Model
     protected $guarded = [];
 
     /**
-     * 权限属于哪个角色
+     * TODO 权限属于哪个角色
      * 
      * @return [type] [description]
      */

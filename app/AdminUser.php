@@ -23,7 +23,8 @@ class AdminUser extends Authenticatable
     }
 
     /**
-     * 判断是否有某个、某些角色
+     * TODO 判断是否有某个、某些角色
+     * 两个感叹号在这里是用于返回布尔值类型的数据
      */
     public function isInRoles($roles)
     {
@@ -31,7 +32,7 @@ class AdminUser extends Authenticatable
     }
 
     /**
-     * 给用户分配角色
+     * TODO 给用户分配角色
      */
     public function assignRole($role)
     {
@@ -39,7 +40,7 @@ class AdminUser extends Authenticatable
     }
 
     /**
-     * 取消用户分配的角色
+     * TODO 取消用户分配的角色
      * 
      * @param  [type] $tole [description]
      * @return [type]       [description]
@@ -49,9 +50,16 @@ class AdminUser extends Authenticatable
     	return $this->roles()->detach($role);
     }
 
+    /**
+     * TODO 用户是否有权限
+     * 判断 用户的角色 跟   有这个权限的角色  他俩是否有交集
+     * 也就是判断用户 是不是有（有这个权限的角色） 这个角色
+     * @param  [type]  $permission [description]
+     * @return boolean             [description]
+     */
     public function hasPermission($permission)
     {
-    	//TODO 
+    	return $this->isInRoles($permission->roles);
     }
 
 }
