@@ -45,7 +45,7 @@ class AdminUser extends Authenticatable
      * @param  [type] $tole [description]
      * @return [type]       [description]
      */
-    public function deleteRole($tole)
+    public function deleteRole($role)
     {
     	return $this->roles()->detach($role);
     }
