@@ -83,9 +83,11 @@ class UserController extends Controller
      * 
      * @return [type] [description]
      */
-    public function role()
+    public function role(\App\AdminUser $user)
     {
-        return view('admin.user.role');
+        $roles = \App\AdminRole::all();
+        $myRoles = $user->roles;
+        return view('admin.user.role',compact('roles','myRoles','user'));
     }
 
     /**
@@ -93,8 +95,24 @@ class UserController extends Controller
      * 
      * @return [type] [description]
      */
-    public function storeRole()
+    public function storeRole(\App\AdminUser $user)
     {
-
+        $this->validate(request(),[
+            'roles' => 'required|array',
+            ]);
+        $roles = \App\AdminRole::findMany(request('roles'));
+        //之前已经有的角色
+        $myRoles = $user->roles;
+        //要增加的（表单提交的，跟现在拥有的 的差集）
+        $addRoles = $roles->diff($myRoles);
+        foreach($addRoles as $role){
+            $user->assignRole($role);
+        }
+        //要删除的(现在有的，但是表单里面没有的，这些要删除)
+        $deleteRoles = $myRoles->diff($roles);
+        foreach($deleteRoles as $role){
+            $user->deleteRole($role);
+        }
+        return back();
     }
 }

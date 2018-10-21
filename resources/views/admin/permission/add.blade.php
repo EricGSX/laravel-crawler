@@ -14,7 +14,7 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form role="form" action="/admin/permissions/store" method="POST">
-                        <input type="hidden" name="_token" value="RPPMc0lhvtynKELDZljXlz9UZI9uNc55ip1P8GCM">
+                        {{csrf_field()}}
                         <div class="box-body">
                             <div class="form-group">
                                 <label >权限名</label>
@@ -28,6 +28,7 @@
                             </div>
                         </div>
                         <!-- /.box-body -->
+                         @include('admin.layout.error')
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">提交</button>
                         </div>

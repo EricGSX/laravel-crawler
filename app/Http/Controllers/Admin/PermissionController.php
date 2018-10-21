@@ -15,7 +15,8 @@ class PermissionController extends Controller
 	 */
     public function index()
     {
-    	return view('admin.permission.index');
+        $permissions = \App\AdminPermission::paginate(10);
+    	return view('admin.permission.index',compact('permissions'));
     }
 
     /**
@@ -35,6 +36,11 @@ class PermissionController extends Controller
      */
     public function store()
     {
-
+        $this->validate(request(),[
+            'name' => 'required:min:3',
+            'description' => 'required'
+        ]);
+        \App\AdminPermission::create(request(['name','description']));
+        return redirect('/admin/permissions');
     }
 }
