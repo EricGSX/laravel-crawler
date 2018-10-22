@@ -43,7 +43,7 @@ class AdminRole extends Model
     }
 
     /**
-     * 判断角色是否有权限
+     * TODO 判断角色是否有权限
      * 
      * @param  [type]  $permission [description]
      * @return boolean             [description]
