@@ -29,6 +29,7 @@
                                 </div>
                             @endforeach
                         </div>
+                        @include('admin.layout.error')
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">提交</button>
                         </div>
