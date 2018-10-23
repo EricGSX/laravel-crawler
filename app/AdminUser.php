@@ -23,8 +23,12 @@ class AdminUser extends Authenticatable
     }
 
     /**
-     * TODO 判断是否有某个、某些角色
+     * TODO 判断用户是否有某个、某些角色
      * 两个感叹号在这里是用于返回布尔值类型的数据
+     * intersect 方法从原集合中删除不在给定「数组」或集合中的任何值。最终的集合会保留原集合的键
+     * 这个角色是不是在$this->>roles里面
+     *
+     * @return bool
      */
     public function isInRoles($roles)
     {

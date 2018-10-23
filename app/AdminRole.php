@@ -44,6 +44,7 @@ class AdminRole extends Model
 
     /**
      * TODO 判断角色是否有权限
+     * contains 方法判断集合是否包含给定的项目
      * 
      * @param  [type]  $permission [description]
      * @return boolean             [description]
