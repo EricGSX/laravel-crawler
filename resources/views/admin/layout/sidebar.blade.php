@@ -17,6 +17,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+        {{--@can('system')--}}
         <li class="treeview active">
           <a href="#">
             <i class="fa fa-dashboard"></i>
@@ -31,6 +32,7 @@
             <li><a href="/admin/roles"><i class="fa fa-circle-o"></i> 角色管理</a></li>
           </ul>
         </li>
+      {{--@endcan--}}
         <li class="treeview">
           <a href="#">
             <i class="fa fa fa-book"></i>
