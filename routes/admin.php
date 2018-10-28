@@ -42,5 +42,7 @@ Route::group(['prefix'=>'admin'],function (){
             Route::post('/posts/{post}/status','Admin\PostController@status');
 //        });
     });
+    //专题
+    Route::resource('/topics','Admin\TopicController');
 
 });

@@ -35,7 +35,7 @@
       {{--@endcan--}}
         <li class="treeview">
           <a href="#">
-            <i class="fa fa fa-book"></i>
+            <i class="fa fa-book"></i>
             <span>文章管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -46,6 +46,19 @@
             <li><a href="/admin/posts/trash"><i class="fa fa-circle-o"></i> 回收站</a></li>
           </ul>
         </li>
+        <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-map"></i>
+                  <span>专题管理</span>
+                  <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="/admin/topics"><i class="fa fa-circle-o"></i>专题列表</a></li>
+                  <li><a href="/admin/topics/create"><i class="fa fa-circle-o"></i>添加专题</a></li>
+              </ul>
+          </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
