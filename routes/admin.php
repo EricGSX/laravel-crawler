@@ -44,5 +44,7 @@ Route::group(['prefix'=>'admin'],function (){
     });
     //专题
     Route::resource('/topics','Admin\TopicController');
+    //通知
+    Route::resource('/notices','Admin\NoticeController');
 
 });
