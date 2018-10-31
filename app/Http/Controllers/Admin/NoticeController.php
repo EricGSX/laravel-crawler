@@ -37,10 +37,11 @@ class NoticeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required:string'
+            'title' => 'required|string',
+            'content' => 'required|string',
         ]);
-
-        return redirect('/admin/topics');
+        \App\Notice::create(request(['title','content']));
+        return redirect('/admin/notices');
     }
 
     /**

@@ -37,7 +37,7 @@ class TopicController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required:string'
+            'name' => 'required|string'
         ]);
         \App\Topic::create(['name'=>$request['name']]);
         return redirect('/admin/topics');

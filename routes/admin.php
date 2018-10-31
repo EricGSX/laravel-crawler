@@ -41,10 +41,11 @@ Route::group(['prefix'=>'admin'],function (){
             Route::get('/posts/trash','Admin\PostController@trash');
             Route::post('/posts/{post}/status','Admin\PostController@status');
 //        });
+            //专题
+            Route::resource('/topics','Admin\TopicController');
+            //通知
+             Route::resource('/notices','Admin\NoticeController');
     });
-    //专题
-    Route::resource('/topics','Admin\TopicController');
-    //通知
-    Route::resource('/notices','Admin\NoticeController');
+
 
 });
