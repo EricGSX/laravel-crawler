@@ -124,4 +124,7 @@ Route::group(['prefix'=>'tottles'],function(){
     Route::post('/','Home\TottleController@store');
 });
 
+//TODO 通知模块
+Route::get('/notices','Home\NoticeController@index');
+
 include_once('admin.php');

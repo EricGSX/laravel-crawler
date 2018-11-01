@@ -19,7 +19,7 @@ class CreateNoticeTable extends Migration
             $table->string('content',1000)->default('');
             $table->timestamps();
         });
-        Schema::create('user_notices', function (Blueprint $table) {
+        Schema::create('user_notice', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->default(0);
             $table->integer('notice_id')->default(0);
@@ -34,6 +34,6 @@ class CreateNoticeTable extends Migration
     public function down()
     {
         Schema::dropIfExists('notice');
-        Schema::dropIfExists('user_notices');
+        Schema::dropIfExists('user_notice');
     }
 }
