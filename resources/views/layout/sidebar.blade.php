@@ -68,14 +68,6 @@
 
         <ul class="category-root list-group">
             <li class="list-group-item">
-                <a href="/topic/1">CSR在线生成
-                </a>
-            </li>
-            <li class="list-group-item">
-                <a href="/topic/1">SSL证书申请
-                </a>
-            </li>
-            <li class="list-group-item">
                 <a href="/posts/weather">天气查询
                 </a>
             </li>

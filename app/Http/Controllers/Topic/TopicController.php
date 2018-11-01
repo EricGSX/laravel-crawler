@@ -53,8 +53,9 @@ class TopicController extends Controller
     public function postList(Topic $topic)
     {
         $topic = Topic::find($topic->id);
+        $star_posts = '';
         //专题文章列表，按照时间倒序排列，前十个
         $posts = $topic->posts()->orderBy('created_at','desc')->withCount(['comments','zans'])->paginate(6);
-        return view('home.index',compact('posts'));
+        return view('home.index',compact('posts','star_posts'));
     }
 }

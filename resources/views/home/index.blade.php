@@ -9,6 +9,7 @@
         <div>
             {{--内容面板--}}
             {{--滚动通知--}}
+            @if($star_posts)
             @if(count($star_posts) >0)
                    <style type="text/css">a{cursor: pointer;text-decoration: none!important;}</style>
             <div class="panel panel-default">
@@ -20,6 +21,7 @@
                         </div>
               </div>
             </div>
+            @endif
             @endif
             {{--滚动通知--}}
             <div class="panel panel-default">
