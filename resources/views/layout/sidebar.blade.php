@@ -20,12 +20,13 @@
             标签云
         </div>
         <ul>
-            <a href="#" class="tagc1">MarkDown</a>
-            <a href="#" class="tagc2">Linux</a>
-            <a href="#" class="tagc3">PHP</a>
-            <a href="#" class="tagc1">Mysql批量插入</a>
-            <a href="#" class="tagc5">鼠标点击特效</a>
-            <a href="#" class="tagc5">鼠标UI</a>
+            @if($labels)
+                @if(count($labels) >0)
+                    @foreach($labels as $label)
+                    <a href="/posts/{{$label->id}}" class="tagc{{rand(1, 5)}}">{{$label->title}}</a>
+                    @endforeach
+                @endif
+            @endif
         </ul>
     </aside>
         {{--标签云--}}
@@ -80,6 +81,7 @@
     #tagscloud a{position:absolute;top:0px;left:0px;color:#333;font-family:Arial;text-decoration:none;margin:0 10px 15px 0;line-height:18px;text-align:center;font-size:12px;padding:1px 5px;display:inline-block;border-radius:3px;}
     #tagscloud a.tagc1{background:#666;color:#fff;}
     #tagscloud a.tagc2{background:#F16E50;color:#fff;}
+    #tagscloud a.tagc4{background:#f39c12;color:#fff;}
     #tagscloud a.tagc3{background:blue;color:#fff;}
     #tagscloud a.tagc5{background:#006633;color:#fff;}
     #tagscloud a:hover{color:#fff;background:#0099ff;}

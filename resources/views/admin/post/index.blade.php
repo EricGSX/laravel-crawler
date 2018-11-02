@@ -15,6 +15,7 @@
                                 <th style="width: 10px">#</th>
                                 <th>文章标题</th>
                                 <th>标记</th>
+                                <th>动态标签云</th>
                                 <th>操作</th>
                             </tr>
                             @foreach($posts as $post)
@@ -27,10 +28,18 @@
                                     @else
                                         <span class="glyphicon glyphicon-star-empty"></span>
                                     @endif
-                                    </td>
+                                </td>
+                                <td>
+                                    @if($post->mark_status ==2)
+                                        <span class=""><span class="fa fa-leaf"></span></span>
+                                    @else
+                                        <span class=""></span>
+                                    @endif
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-warning post-audit" post-id="{{$post->id}}" e-post-action='star' post-action-status="1" >标记</button>
                                     <button type="button" class="btn btn-sm btn-danger post-audit" post-id="{{$post->id}}" e-post-action='del' post-action-status="-1" >删除</button>
+                                    <button type="button" class="btn btn-sm btn-info post-audit" post-id="{{$post->id}}" e-post-action='show_label' post-action-status="2" >标签云展示</button>
                                 </td>
                             </tr>
                             @endforeach

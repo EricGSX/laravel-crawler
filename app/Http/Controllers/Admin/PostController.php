@@ -26,7 +26,7 @@ class PostController extends Controller
     public function status(Request $request)
     {
         $this->validate(request(),[
-            'status' => 'required|in:-1,0,1'
+            'status' => 'required|in:-1,0,1,2'
         ]);
         $action = $request->e_post_action;
         if($action == 'star'){
@@ -37,7 +37,9 @@ class PostController extends Controller
             Post::withTrashed()->where('id', $request->post_id)->restore();
         }elseif ($action == 'destroy'){
             Post::where('id', $request->post_id)->forceDelete();
-        }else{
+        }elseif ($action == 'show_label'){
+            Post::where('id', $request->post_id)->update(['mark_status' => 2]);
+        } else{
             return [
                 'error' => 80001,
                 'msg' => '非法的请求'

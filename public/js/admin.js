@@ -18,8 +18,8 @@ $('.post-audit').click(function(event){
 				alert(data.msg);
 				return;
 			}
-			if(e_post_action == 'star'){
-                //标记的只需要刷新页面
+			if((e_post_action == 'star') || (e_post_action == 'show_label')){
+                //标记\标签云展示 的只需要刷新页面
                 location.reload();
             }else{
 			    //其他的删除这个节点

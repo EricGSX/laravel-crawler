@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
         \View::composer(['layout.sidebar','layout.nav','layout.footer'],function($view){
             $topics = \App\Topic::all();
             $friend_links = \App\FriendLink::all();
+            $labels = \App\Post::where('mark_status',2)->orderBy('created_at','desc')->get();
+            $view->with('labels',$labels);
             $view->with('topics',$topics);
             $view->with('friend_links',$friend_links);
         });
