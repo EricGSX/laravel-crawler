@@ -18,7 +18,7 @@ $('.post-audit').click(function(event){
 				alert(data.msg);
 				return;
 			}
-			if((e_post_action == 'star') || (e_post_action == 'show_label')){
+			if((e_post_action == 'star') || (e_post_action == 'show_label') || (e_post_action == 'restart')){
                 //标记\标签云展示 的只需要刷新页面
                 location.reload();
             }else{
