@@ -39,7 +39,9 @@ class PostController extends Controller
             Post::where('id', $request->post_id)->forceDelete();
         }elseif ($action == 'show_label'){
             Post::where('id', $request->post_id)->update(['mark_status' => 2]);
-        } else{
+        }elseif ($action == 'restart'){
+            Post::where('id', $request->post_id)->update(['mark_status' => 0]);
+        }else{
             return [
                 'error' => 80001,
                 'msg' => '非法的请求'

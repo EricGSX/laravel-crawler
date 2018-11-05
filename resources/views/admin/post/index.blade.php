@@ -40,6 +40,7 @@
                                     <button type="button" class="btn btn-sm btn-warning post-audit" post-id="{{$post->id}}" e-post-action='star' post-action-status="1" >标记</button>
                                     <button type="button" class="btn btn-sm btn-danger post-audit" post-id="{{$post->id}}" e-post-action='del' post-action-status="-1" >删除</button>
                                     <button type="button" class="btn btn-sm btn-info post-audit" post-id="{{$post->id}}" e-post-action='show_label' post-action-status="2" >标签云展示</button>
+                                   <button type="button" class="btn btn-sm btn-success post-audit" post-id="{{$post->id}}" e-post-action='restart' post-action-status="2" >标签云展示</button>
                                 </td>
                             </tr>
                             @endforeach
