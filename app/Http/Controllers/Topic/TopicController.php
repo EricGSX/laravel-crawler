@@ -21,6 +21,7 @@ class TopicController extends Controller
         //专题文章列表，按照时间倒序排列，前十个
         $posts = $topic->posts()->orderBy('created_at','desc')->take(10)->get();
         //属于我的文章但是未投稿,且不属于某个专题的文章
+        //在这个专题下没有投稿，不属于这个专题
         $myposts = \App\Post::authorBy(\Auth::id())->topicNotBy($topic->id)->get();
         return view('topic.show',compact('topic','posts','myposts'));
     }
