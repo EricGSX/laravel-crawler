@@ -34,7 +34,11 @@
                           @if(count($post->topics) == 0)
                               <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} | <i class="label label-warning">Other</i> </p>
                           @else
-                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} | <i class="label label-info">{{$post->topics[0]->name}}</i> </p>
+                              <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |
+                              @foreach($post->topics as $label)
+                             <i class="label label-info">{{$label->name}}</i>
+                              @endforeach
+                               </p>
                           @endif
                       </div>
                   @endforeach
