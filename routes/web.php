@@ -62,8 +62,6 @@ Route::group(['prefix'=>'posts'],function(){
     Route::get('/weather','Home\PostController@weather');
     //搜索
     Route::get('/search','Home\PostController@search');
-    //碎碎念
-    Route::get('/tottle','Home\PostController@tottle');
     //创建文章
     Route::get('/create','Home\PostController@create');
     Route::post('/','Home\PostController@store');

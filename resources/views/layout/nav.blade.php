@@ -27,13 +27,13 @@
                 </li>
                 @endforeach
                 <li class="eric-li">
-                    <a class="blog-nav-item glyphicon glyphicon-comment" href="/tottles/show"  title="碎碎念"></a>
+                    <a class="blog-nav-item" href="/tottles/show"  title="碎碎念">碎碎念</a>
                 </li>
+                @auth
+                @if((\Auth::user()->id == 1) || (\Auth::user()->id == 2))
                 <li class="eric-li">
                     <a class="blog-nav-item glyphicon glyphicon-volume-up" href="/notices" title="通知&公告"></a>
                 </li>
-                @auth
-                @if(\Auth::user()->id == 1)
                 <li class="eric-li">
                     <a class="blog-nav-item search_hide glyphicon glyphicon-pencil" href="/posts/create"></a>
                 </li>
@@ -59,7 +59,9 @@
                     <ul class="dropdown-menu">
                         <li><a href="/users/{{\Auth::user()->id}}">我的主页</a></li>
                         <li><a href="/users/me/setting">个人设置</a></li>
+                        @if((\Auth::user()->id == 1) || (\Auth::user()->id == 2))
                         <li><a href="/tottles/create">碎碎叨叨</a></li>
+                        @endif
                         <li><a href="/users/logout">登出</a></li>
                     </ul>
                 @endauth

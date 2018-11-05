@@ -23,11 +23,13 @@
                 {!! $html !!}
                 @endif
                 <div>
+                    @auth
                     @if($id->zan(\Auth::id())->exists())
                     <a href="/posts/{{$id->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>
                     @else
                     <a href="/posts/{{$id->id}}/zan" type="button" class="btn btn-primary btn-lg">赞</a>
                     @endif
+                    @endauth
                 </div>
             </div>
 
