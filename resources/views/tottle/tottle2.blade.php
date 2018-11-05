@@ -148,10 +148,13 @@
 	}
 }
 	</style>
+    @auth
 	@if(\Auth::user()->id == 1)
 		<a href="/tottles/create" class="btn btn-primary">吐槽</a>
 	@endif
+    @endauth
 					<div class="main-timeline">
+						@if($tottles)
 						@foreach($tottles as $tottle)
 						<div class="timeline eric-{{rand(1, 5)}}">
 							<div class="timeline-content">
@@ -165,5 +168,6 @@
 							</div>
 						</div>
 						@endforeach
+						@endif
 
 					</div>
