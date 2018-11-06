@@ -1,6 +1,7 @@
 @include('layout.header')
 
 <body>
+@include('layout.baidu_js_push')
 @include('layout.nav')
 <div class="container">
 
