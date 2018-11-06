@@ -7,11 +7,11 @@
 </div>        <div style="height: 20px;">
         </div>
         <div>
+             <style type="text/css">a{cursor: pointer;text-decoration: none!important;}</style>
             {{--内容面板--}}
             {{--滚动通知--}}
             @if($star_posts)
             @if(count($star_posts) >0)
-                   <style type="text/css">a{cursor: pointer;text-decoration: none!important;}</style>
             <div class="panel panel-default">
               <div  id="scrollBox">
                        <div id="roll_one">
