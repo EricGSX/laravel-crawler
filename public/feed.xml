@@ -2,19 +2,39 @@
 <rss version="2.0">
 　<channel>
 　<title>郭世鑫的个人博客</title>
-	<link>http://three.com</link>
- 		<description>This is description</description>
-　<copyright>授权信息</copyright>
+	<link>https://www.guosx.com</link>
+ 		<description>分享、记录一些工作用遇到的方法问题</description>
+　<copyright>©2018 guosx.com All rights reserved</copyright>
 　<language>zh-cn</language>
-　<pubDate>发布的时间</pubDate>
-　<lastBuildDate>最后更新的时间</lastBuildDate>
 　<item>
- 			<title>会武术的地瓜</title>
- 			<link>http://three.com</link>
- 		<description>This is description</description>
-　<pubDate>发布时间</pubDate>
-　<category>所属目录</category>
+<title>PHP</title>
+<link>https://www.guosx.com/categories/5</link>
+<description>PHP相关的技术问题</description>
 　<author>郭世鑫</author>
 　</item>
+	　<item>
+	<title>SQL</title>
+	<link>https://www.guosx.com/categories/6</link>
+	<description>数据库相关的技术问题</description>
+	　<author>郭世鑫</author>
+	　</item>
+	　<item>
+	<title>服务器</title>
+	<link>https://www.guosx.com/categories/7</link>
+	<description>服务器遇到的问题及方案</description>
+	　<author>郭世鑫</author>
+	　</item>
+	　<item>
+	<title>前端</title>
+	<link>https://www.guosx.com/categories/8</link>
+	<description>前端小技巧</description>
+	　<author>郭世鑫</author>
+	　</item>
+    　<item>
+    <title>Other</title>
+    <link>https://www.guosx.com/categories/9</link>
+    <description>其他学习的东西</description>
+    　<author>郭世鑫</author>
+    　</item>
 　</channel>
 　</rss>
