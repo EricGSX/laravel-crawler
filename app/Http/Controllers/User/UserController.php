@@ -8,14 +8,32 @@ use App\User;
 
 class UserController extends Controller
 {
+    /**
+     * TODO 展示个人设置页面
+     *
+     * @param \App\User $user
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function setting(User $user)
     {
         return view('user.setting');
     }
 
+    /**
+     * TODO 保存用户信息
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function settingStore(Request $request)
     {
-
+        $this->validate($request,[
+            'name' => 'required|string|max:100|min:2',
+        ]);
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->save();
+        return back();
     }
 
     /**
