@@ -36,7 +36,7 @@
                           @else
                               <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}} | 阅读 {{$post->view_count}} |
                               @foreach($post->topics as $label)
-                             <i class="label label-info">{{$label->name}}</i>
+                                      <a href="/categories/{{$label->id}}"><i class="label label-info">{{$label->name}}</i></a>
                               @endforeach
                                </p>
                           @endif
