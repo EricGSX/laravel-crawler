@@ -37,7 +37,7 @@
         </div>
         <div class="row" style='margin-bottom: 8px;margin-top: 8px;'>
             <div class="col-sm-8">
-                <input value="hello world!" class="form-control" disabled id='js-copy-text'>
+                <input value="https://www.guosx.com" readonly='true' class="form-control" id='my_web_url'>
             </div>
             <div class="col-sm-4">
                  <button class="btn btn-primary" type='button' onclick="copy()" >复制链接</button>
@@ -88,11 +88,11 @@
 </style>
 <script type="text/javascript">
     function copy(){
-    var Url2=document.getElementById("js-copy-text");
+    var Url2=document.getElementById("my_web_url");
     Url2.select();
  try{
       if(document.execCommand('copy', false, null)){
-       document.execCommand("Copy");
+       document.execCommand("copy");
        alert("复制成功");
       } else{
        alert("当前浏览器不兼容，请手动复制");
