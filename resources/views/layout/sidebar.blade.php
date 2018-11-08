@@ -69,7 +69,11 @@
 
         <ul class="category-root list-group">
             <li class="list-group-item">
-                <a href="/posts/weather">天气查询
+                <a href="/posts/weather" target=_blank>天气查询
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="https://doc.guosx.com/index.php" target="_blank">API文档工具
                 </a>
             </li>
         </ul>
