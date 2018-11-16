@@ -44,7 +44,8 @@
                                 </td>
                             </tr>
                             @endforeach
-                            {{$posts->links()}}</tbody></table>
+                            </tbody></table>
+                        {{$posts->links()}}
                     </div>
 
                 </div>
