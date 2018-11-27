@@ -27,11 +27,11 @@ h6, .h6 {
  * Override Bootstrap's default container.
  */
 
-/*@media (min-width: 1200px) {*/
-    /*.container {*/
-        /*width: 1400px;*/
-    /*}*/
-/*}*/
+@media (min-width: 1200px) {
+    .container {
+        width: 80%;
+    }
+}
 
 @media (max-width: 330px) {
     .eric-li {
