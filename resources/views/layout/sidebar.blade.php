@@ -2,7 +2,7 @@
     <aside id="widget-welcome" class="widget panel panel-default">
         <div class="panel-heading">
             <p style='text-align: center;'>
-                 <img src="{{asset('image/guoshixin.jpg')}}" alt="" class="img-circle" style="width:110px;height:122px;">
+                <a href="https://ding.guosx.com" title="机智郭&暴力丁"><img src="{{asset('image/guoshixin.jpg')}}" alt="机智郭&暴力丁" class="img-circle" style="width:110px;height:122px;"></a>
             </p>
             <p>
                 <strong><a href="javascript:void(0)" style="text-decoration: none;">咖啡泡柠檬</a></strong> Make a little progress every day
