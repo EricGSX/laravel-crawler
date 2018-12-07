@@ -15,7 +15,7 @@
     }
 </style>
 <div class="blog-masthead">
-    <div class="container">
+    <div class="container top_con_phone">
         <form action="/posts/search" method="GET">
             <ul class="nav navbar-nav navbar-left">
                 <li class="eric-li">
