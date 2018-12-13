@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>会武术的地瓜</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="个人博客，发一些技术上遇到的问题及一些常用方法的总结，同时还会有些吐槽在里面。">
+    <meta name="keywords" content="个人博客,会武术的地瓜,Linux,PHP,Mysql,前端,郭世鑫,PHP博客,Linux博客,Mysql博客,论坛,社区">
+    <meta name="author" content="郭世鑫,guoshixin@guosx.com">
+    <meta name="robots" content="index,follow" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <Meta name="Copyright" Content="本页版权归郭世鑫(Eric.Guo)所有。All Rights Reserved">
+    <title>会武术的地瓜(郭世鑫的个人博客)</title>
 <link rel="stylesheet" href="{{asset('/css/iconfont.css')}}" />
 <style>
 	*{margin:0;padding:0;}
@@ -55,10 +65,10 @@
 
 <script src="{{asset('js/eric.guo.jq3.0.js')}}"></script>
 
-<script src="http://webapi.amap.com/subway?v=1.0&key=a6414d65323db9e2718b31e525a1337d&callback=cbk"></script>
+<script src="https://webapi.amap.com/subway?v=1.0&key=a6414d65323db9e2718b31e525a1337d&callback=cbk"></script>
 <script>
 	function getWeather(location,type,el){
-        var url = "http://restapi.amap.com/v3/weather/weatherInfo";
+        var url = "https://restapi.amap.com/v3/weather/weatherInfo";
         var postData = {
             key: "dfb9a576fbcb2c9a13a65ab736e47004",
             city: location,
