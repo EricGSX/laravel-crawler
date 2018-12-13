@@ -63,7 +63,7 @@
 	</div>
 </div>
 
-<script src="{{asset('js/eric.guo.jq3.0.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 
 <script src="https://webapi.amap.com/subway?v=1.0&key=a6414d65323db9e2718b31e525a1337d&callback=cbk"></script>
 <script>
