@@ -7,10 +7,11 @@
  * Project: OceaniaWebCrawler
  */
 namespace App\Http\Controllers\Other;
-
 use App\Libs\Spider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use QL\QueryList;
+use App\Http\Controllers\Controller;
 class SpiderController extends Controller
 {
     /**
@@ -106,5 +107,19 @@ class SpiderController extends Controller
         // fclose($myfile);
        /* echo '<pre>';
         print_r($output);*/
+    }
+
+    public function email2()
+    {
+        $message = '1231';
+        $to = 'no-reply@guosx.com';
+        $subject = '自动回复';
+        Mail::send(
+            'emails.test',
+            ['content' => $message],
+            function ($message) use($to, $subject) {
+                $message->to($to)->subject($subject);
+            }
+        );
     }
 }

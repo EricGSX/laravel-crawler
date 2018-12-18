@@ -45,13 +45,14 @@ Route::group(['prefix'=>'others'],function(){
 });
 
 //TODO 开始爬虫
-Route::group(['prefix'=>'spider'],function (){
+Route::group(['prefix'=>'spiders'],function (){
     Route::get('/','SpiderController@index');
     Route::get('/gitee','SpiderController@gitee');
     Route::get('/zhihu','SpiderController@zhihu');
     Route::get('/sf','SpiderController@sf');
     Route::get('/sina','SpiderController@sina');
     Route::get('/baidu','SpiderController@baidu');
+    Route::get('/email','Other\SpiderController@email2');
 });
 
 //TODO 前台界面
