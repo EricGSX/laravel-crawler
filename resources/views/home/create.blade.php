@@ -6,11 +6,11 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label>标题</label>
-                    <input name="title" type="text" class="form-control">
+                    <input name="title" type="text" class="form-control" value="{{old('title')}}">
                 </div>
                 <div class="form-group">
                     <label>摘要</label>
-                    <textarea id="description"  name="description" class="form-control"></textarea>
+                    <textarea id="description"  name="description" class="form-control">{{old('description')}}</textarea>
                 </div>
                 <div class="form-group">
                     <div><label>编码方式</label></div>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group" id='content-div'>
                     <label>内容</label>
-                    <textarea id="content-2" rows='13' name="content" class="form-control"></textarea>
+                    <textarea id="content-2" rows='13' name="content" class="form-control">{{old('content')}}</textarea>
                 </div>
 @include('layout.error')
                 <button type="submit" class="btn btn-primary">提交</button>
@@ -45,7 +45,7 @@
             var check_type = $('#encoding_type').val()
             if(check_type == 1){
                 //富文本
-                var html_content = ' <label>内容</label><textarea id="content-2"  rows="13" name="content" class="form-control"></textarea>'
+                var html_content = ' <label>内容</label><textarea id="content-2"  rows="13" name="content" class="form-control">{{old("content")}}</textarea>'
                 $('#content-div').empty()
                 $('#content-div').append(html_content)
                 wangEditor.config.printLog = false;
@@ -53,7 +53,7 @@
                 editor2.create()
             }else{
                 //markdown
-                var html_content = ' <label>内容</label><textarea id="content-1"  name="content" class="form-control" rows="13"></textarea>'
+                var html_content = ' <label>内容</label><textarea id="content-1"  name="content" class="form-control" rows="13">{{old("content")}}</textarea>'
                 $('#content-div').empty()
                 $('#content-div').append(html_content)
             }
