@@ -88,20 +88,20 @@
                     border-top:0px solid #fff!important;border-left:0px solid #fff!important;border-right:0px solid #fff!important;border-radius:0px!important;border-bottom:1px solid #dcdcdc!important;box-shadow: none!important;
                 }
             </style>
-            <form action="/posts" method="POST">
+            <form action="/emails" method="POST">
                 {{csrf_field()}}
                 <div class="col-sm-12">
                     <div class="col-sm-1">
                     </div>
                     <div class="col-sm-10">
-                        <input value="" class="form-control eric-form" name='emial_user' placeholder="UserName">
+                        <input value="" class="form-control eric-form" name='email_user' placeholder="UserName"/>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="col-sm-1">
                     </div>
                     <div class="col-sm-10">
-                        <input value="" class="form-control eric-form" name='email_address' placeholder="Email">
+                        <input value="" class="form-control eric-form" name='email_address' placeholder="Email"/>
                     </div>
                 </div>
                 <div class="col-sm-12">
