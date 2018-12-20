@@ -88,7 +88,7 @@
                     border-top:0px solid #fff!important;border-left:0px solid #fff!important;border-right:0px solid #fff!important;border-radius:0px!important;border-bottom:1px solid #dcdcdc!important;box-shadow: none!important;
                 }
             </style>
-            <form action="/emails" method="POST">
+            <form action="/emails" method="POST" id="email_form">
                 {{csrf_field()}}
                 <div class="col-sm-12">
                     <div class="col-sm-1">
@@ -114,10 +114,16 @@
                 <div class="col-sm-12" style="margin:8px;">
                     <div class="col-sm-8">
                         @include('layout.error')
-                        <button type="submit" class="btn btn-default col-sm-6 col-xs-12">Go<label class="glyphicon glyphicon-send"></label></button>
+                        <button type="button" onclick="change_status(this)" class="btn btn-default col-sm-6 col-xs-12">Go<label class="glyphicon glyphicon-send"></label></button>
                     </div>
                 </div>
             </form>
+            <script>
+                function change_status(obj){
+                    $(obj).attr('disabled',true);
+                    $('#email_form').submit();
+                }
+            </script>
         </div>
     </aside>
 

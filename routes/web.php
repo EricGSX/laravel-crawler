@@ -122,6 +122,10 @@ Route::group(['prefix'=>'tottles'],function(){
     Route::get('/create','Home\TottleController@create');
     Route::post('/','Home\TottleController@store');
 });
+//TODO 邮件
+Route::group(['prefix'=>'emails'],function(){
+    Route::post('/','Home\EmailController@feedback');
+});
 
 //TODO 通知模块
 Route::get('/notices','Home\NoticeController@index');
