@@ -36,9 +36,30 @@ $('.resource-delete').click(function(event){
     event.preventDefault();
     var url = $(target).attr('delete-url');
     $.ajax({
-        url : url,
+        url:"/admin/posts/" + post_id + "/status",
         method:'POST',
         data:{"_method":"DELETE"},
+        dataType:'json',
+        success:function (data) {
+            if(data.error != 0){
+                alert(data.msg);
+                return;
+            }
+            window.location.reload();
+        }
+    });
+});
+$('.feedback-email').click(function(event){
+    if(confirm('确定删除该意见吗？') == false){
+        return;
+    }
+    var target = $(event.target);
+    $(target).attr('disabled',true);
+    var feedback_id = $(target).attr('feedback-id');
+    $.ajax({
+        url:"/admin/feedbacks/del",
+        method:'POST',
+        data:{"feedback_id":feedback_id},
         dataType:'json',
         success:function (data) {
             if(data.error != 0){

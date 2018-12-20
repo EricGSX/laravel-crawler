@@ -126,6 +126,18 @@
             </script>
         </div>
     </aside>
+    <aside id="widget-fature" class="widget panel panel-default">
+        <div class="panel-heading" style='text-align: center;'>
+            Recent Suggestions
+        </div>
+        <ul class="category-root list-group">
+            @foreach($feedbacks as $feedback)
+                <li class="list-group-item">
+                <b>{{$feedback->username}}:</b>{{$feedback->commits}}
+            </li>
+            @endforeach
+        </ul>
+    </aside>
 
 </div>
 <style>

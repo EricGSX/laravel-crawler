@@ -84,6 +84,18 @@
             <li><a href="/admin/flinks"><i class="fa fa-circle-o"></i> Friend Link</a></li>
           </ul>
         </li>
+          <li class="treeview">
+          <a href="#">
+            <i class="fa fa-microphone"></i>
+            <span>吐槽&建议</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/feedbacks"><i class="fa fa-circle-o"></i> Friend Link</a></li>
+          </ul>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>

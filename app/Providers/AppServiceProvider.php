@@ -20,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
             $topics = \App\Topic::all();
             $friend_links = \App\FriendLink::all();
             $labels = \App\Post::where('mark_status',2)->orderBy('created_at','desc')->get();
+            $feedbacks = \App\FeedbackEmail::orderBy('id','desc')->take(6)->get();
+            $view->with('feedbacks',$feedbacks);
             $view->with('labels',$labels);
             $view->with('topics',$topics);
             $view->with('friend_links',$friend_links);

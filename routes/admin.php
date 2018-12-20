@@ -45,6 +45,9 @@ Route::group(['prefix'=>'admin'],function (){
             Route::resource('/topics','Admin\TopicController');
             //通知
              Route::resource('/notices','Admin\NoticeController');
+             //反馈建议
+             Route::get('/feedbacks','Home\EmailController@list');
+             Route::post('/feedbacks/del','Home\EmailController@delete');
     });
 
 

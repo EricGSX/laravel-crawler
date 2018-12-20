@@ -37,4 +37,30 @@ class EmailController extends Controller
         FeedbackEmail::autoReply($mail);
         return redirect("/");
     }
+
+    /**
+     * TODO 展示意见列表
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function list()
+    {
+        $feedbacks = FeedbackEmail::orderBy('created_at','desc')->paginate(4);
+        return view('emails.list',compact('feedbacks'));
+    }
+
+    /**
+     * TODO 删除不合法的意见
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return array
+     */
+    public function delete(Request $request)
+    {
+        FeedbackEmail::where('id', $request->feedback_id)->delete();
+        return [
+            'error' => 0,
+            'msg'   => ''
+        ];
+    }
 }
