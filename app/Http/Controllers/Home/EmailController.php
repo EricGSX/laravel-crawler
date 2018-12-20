@@ -29,7 +29,12 @@ class EmailController extends Controller
             'email' => $request->email_address,
             'commits' => $request->email_commits
         ];
-        $feedbacks = FeedbackEmail::create($params);
+        FeedbackEmail::create($params);
+        $mail = [
+            'user' => $request->email_user,
+            'to' => $request->email_address,
+        ];
+        FeedbackEmail::autoReply($mail);
         return redirect("/");
     }
 }

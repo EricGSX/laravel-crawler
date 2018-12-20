@@ -13,20 +13,20 @@ class FeedbackEmail extends Model
      * @param array $data
      * @return bool
      */
-    public function autoReply($data=[])
+    public static function autoReply($data=[])
     {
         try{
-            $message = $data['msg'];
+            $message = $data['user'];
             $to = $data['to'];
             $subject = '自动回复';
-            $result = Mail::send(
-                'emails.test',
-                ['content' => $message],
+            Mail::send(
+                'emails.notice',
+                ['user' => $message],
                 function ($message) use($to, $subject) {
                     $message->to($to)->subject($subject);
                 }
             );
-            if($result){
+            if(empty(Mail::failures())){
                 return true;
             }else{
                 return false;
