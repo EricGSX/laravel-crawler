@@ -93,7 +93,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/admin/feedbacks"><i class="fa fa-circle-o"></i> Friend Link</a></li>
+            <li><a href="/admin/feedbacks"><i class="fa fa-circle-o"></i>Feedback list</a></li>
           </ul>
         </li>
         <li class="treeview">
