@@ -133,8 +133,16 @@
         <ul class="category-root list-group">
             @foreach($feedbacks as $feedback)
                 <li class="list-group-item">
-                <b>{{$feedback->username}}:</b>{{$feedback->commits}}
-            </li>
+                    <div class="col-sm-12">
+                        <div class="col-sm-4"  style='color:#5bc0de;font-weight: bold;'>
+                            {{$feedback->username}}
+                        </div><div class="col-sm-3"></div>
+                        <div class="col-sm-5">
+                            {{$feedback->created_at->toFormattedDateString()}}
+                        </div>
+                    </div><div class="col-sm-1"></div>
+                    {{str_limit($feedback->commits,20,'...')}}
+                </li>
             @endforeach
         </ul>
     </aside>
