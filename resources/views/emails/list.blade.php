@@ -15,10 +15,10 @@
                                 <th>ID</th>
                                 <th>User</th>
                                 <th>Email</th>
-                                <th>Ip</th>
+                                <th>IP</th>
                                 <th>UA</th>
-                                <th>Commit</th>
-                                <th>Create Date</th>
+                                <th>Commits</th>
+                                <th>Date</th>
                                 <th>操作</th>
                             </tr>
                             @foreach($feedbacks as $feedback)
