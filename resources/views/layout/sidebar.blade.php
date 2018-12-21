@@ -94,21 +94,21 @@
                     <div class="col-sm-1">
                     </div>
                     <div class="col-sm-10">
-                        <input value="" class="form-control eric-form" name='email_user' placeholder="UserName"/>
+                        <input value="" class="form-control eric-form" name='email_user' placeholder="UserName *"/>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="col-sm-1">
                     </div>
                     <div class="col-sm-10">
-                        <input value="" class="form-control eric-form" name='email_address' placeholder="Email"/>
+                        <input value="" class="form-control eric-form" name='email_address' placeholder="Email *"/>
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="col-sm-1">
                     </div>
                     <div class="col-sm-10">
-                        <textarea class="form-control eric-form" name="email_commits"  placeholder="Commits"></textarea>
+                        <textarea class="form-control eric-form" name="email_commits"  placeholder="Commits *></textarea>
                     </div>
                 </div>
                 <div class="col-sm-12" style="margin:8px;">
