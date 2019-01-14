@@ -16,7 +16,10 @@ class EmailController extends Controller
      */
     public function feedback(Request $request)
     {
-        //$id = \Auth::id();   //可用于验证用户是否登陆
+        $id = \Auth::id();   //可用于验证用户是否登陆
+        if(!$id){
+            return back()->withErrors('Please operate after login!');
+        }
         $this->validate(request(),[
             'email_user' => 'required|string|min:2',
             'email_address' => 'required|string|email|min:3',
