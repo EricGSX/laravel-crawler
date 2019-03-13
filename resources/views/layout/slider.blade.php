@@ -8,13 +8,13 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item" style="background:url(/image/banner1.jpg); background-size:cover;height: 200px;">
-            <div class="carousel-caption">Make a little progress every day.</div>
+            <div class="carousel-caption" style="font-weight: bold;color: yellow;">Make a little progress every day.</div>
         </div>
         <div class="item" style="background:url(/image/banner2.jpg); background-size:cover;height: 200px;">
-            <div class="carousel-caption">Stay Hungry. Stay Foolish.</div>
+            <div class="carousel-caption" style="font-weight: bold;color: yellow;">Stay Hungry. Stay Foolish.</div>
         </div>
         <div class="item active" style="background:url(/image/banner3.jpg); background-size:cover;height: 200px;">
-            <div class="carousel-caption">Nobody asked you must is remarkable, but yourself. No one can reach excellent step, just a little bit of progress every day.</div>
+            <div class="carousel-caption" style="font-weight: bold;color: yellow;">Nobody asked you must is remarkable, but yourself. No one can reach excellent step, just a little bit of progress every day.</div>
         </div>
     </div>
     <!-- 轮播（Carousel）导航 -->
