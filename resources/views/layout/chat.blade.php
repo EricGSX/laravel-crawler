@@ -14,7 +14,7 @@
         <a target="_blank" href="https://weibo.com/2980765271/profile?rightmod=1&wvr=6&mod=personinfo" title="微博"><img src="{{asset('/image/weibo.png')}}" style="width:35px;height:35px;"></a>
 	</div>
 	<div class="col-sm-3">
-        <a target="_blank" href="/feed.xml" title="订阅&收藏"><img src="{{asset('/image/rss.png')}}" style="width:35px;height:35px;"></a>
+        <a target="_blank" href="https://segmentfault.com/u/huiwushudedigua" title="SegmentFault思否"><img src="{{asset('/image/sf.jpg')}}" style="width:35px;height:35px;" class="img-circle"></a>
 	</div>
 </div>
 <script>
