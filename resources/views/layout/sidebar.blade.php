@@ -141,7 +141,7 @@
                             {{$feedback->created_at->toFormattedDateString()}}
                         </div>
                     </div><div class="col-sm-1"></div>
-                    {{str_limit($feedback->commits,20,'...')}}
+                    {{str_limit($feedback->commits,25,'...')}}
                 </li>
             @endforeach
         </ul>
