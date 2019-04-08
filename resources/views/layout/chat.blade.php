@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="col-sm-2">
-		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2570890941&site=qq&menu=yes" title="QQ在线聊天"><img src="{{asset('/image/qq.png')}}" style="width:35px;height:35px;"></a>
+		<a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=2570890941&site=qq&menu=yes" title="QQ在线聊天"><img src="{{asset('/image/qq.png')}}" style="width:35px;height:35px;"></a>
 	</div>
 	<div class="col-sm-2">
         <a target="_blank" href="https://weibo.com/2980765271/profile?rightmod=1&wvr=6&mod=personinfo" title="微博"><img src="{{asset('/image/weibo.png')}}" style="width:35px;height:35px;"></a>
