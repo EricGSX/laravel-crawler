@@ -8,7 +8,7 @@
 <footer class="blog-footer">
     <span>Friendly Link :
         @foreach($friend_links as $friend_link)
-        <a href="{{$friend_link->link_url}}" target="_blank">{{$friend_link->nick}}</a> |
+        <a href="http://{{$friend_link->link_url}}" target="_blank">{{$friend_link->nick}}</a> |
         @endforeach
     </span>
 </footer>
