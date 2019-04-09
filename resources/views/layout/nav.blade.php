@@ -21,6 +21,9 @@
                 <li class="eric-li">
                     <img src="{{asset('image/gsx-logo.png')}}" style="width:70px;height:50px;cursor: pointer;" onclick="javascript:window.location.href='/'">
                 </li>
+                <li class="eric-li">
+                    <a class="blog-nav-item search_hide" href="https://ding.guosx.com/">幸福日记</a>
+                </li>
                 @foreach($topics as $topic)
                 <li class="eric-li">
                     <a class="blog-nav-item search_hide" href="/categories/{{$topic->id}}">{{$topic->name}}</a>
