@@ -6,7 +6,7 @@
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
                 <div style="display:inline-flex">
-                    <h2 class="blog-post-title">{{$id->title}}</h2>
+                    <h1 class="blog-post-title">{{$id->title}}</h1>
                     @can('update',$id)
                     <a style="margin: auto"  href="/posts/{{$id->id}}/edit">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
