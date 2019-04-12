@@ -18,7 +18,7 @@
         <a target="_blank" href="https://segmentfault.com/u/huiwushudedigua" title="SegmentFault思否"><img src="{{asset('/image/sf.jpg')}}" style="width:35px;height:35px;" class="img-circle"></a>
 	</div>
 	<div class="col-sm-2">
-        <!-- <a target="_blank" href="https://book.guosx.com/" title="GitBook"><img src="{{asset('/image/gitbook.png')}}" style="width:35px;height:35px;"></a> -->
+        <a target="_blank" href="https://doc.guosx.com/" title="Api 接口文档"><img src="{{asset('/image/api.png')}}" style="width:47px;height:47px;position: relative;top:-5px;" class="img-circle"></a>
 	</div>
 	<div class="col-sm-1"></div>
 </div>
