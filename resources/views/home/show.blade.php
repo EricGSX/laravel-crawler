@@ -2,7 +2,7 @@
 @section('content')
 <style type="text/css">
     .blog-main > .blog-post > pre{color: white!important;background-color: #333!important;}
-     .hljs{color:initial!important;background:initial!important;}
+     pre>.hljs{color:white!important;background:initial!important;}
 </style>
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
