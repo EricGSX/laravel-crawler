@@ -78,10 +78,11 @@ class PostController extends Controller
         $id->load('comments'); //写了就是预加载，不写就是逻辑直接在view层里面处理了，不符合MVC的模式思想，但是也是正确的
         $content = $id->content;
         $type = $id->encoding_type;
+        $web_title = $id->title;
         $parser = new Parser();
         $html = $parser->makeHtml($content);
         $id->update(['view_count'=>$id->view_count + 1]);
-        return view('home.show',compact('id','html','type'));
+        return view('home.show',compact('id','html','type','web_title'));
     }
 
     /**
