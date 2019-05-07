@@ -45,15 +45,15 @@ Route::group(['prefix'=>'others'],function(){
 });
 
 //TODO 开始爬虫
-Route::group(['prefix'=>'spiders'],function (){
-    Route::get('/','Other\SpiderController@index');
-    Route::get('/gitee','Other\SpiderController@gitee');
-    Route::get('/zhihu','Other\SpiderController@zhihu');
-    Route::get('/sf','Other\SpiderController@sf');
-    Route::get('/sina','Other\SpiderController@sina');
-    Route::get('/baidu','Other\SpiderController@baidu');
-    Route::get('/email','Other\SpiderController@email2');
-});
+// Route::group(['prefix'=>'spiders'],function (){
+//     Route::get('/','Other\SpiderController@index');
+//     Route::get('/gitee','Other\SpiderController@gitee');
+//     Route::get('/zhihu','Other\SpiderController@zhihu');
+//     Route::get('/sf','Other\SpiderController@sf');
+//     Route::get('/sina','Other\SpiderController@sina');
+//     Route::get('/baidu','Other\SpiderController@baidu');
+//     Route::get('/email','Other\SpiderController@email2');
+// });
 
 //TODO 前台界面
 Route::group(['prefix'=>'posts'],function(){
