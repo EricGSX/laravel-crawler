@@ -11,6 +11,7 @@
 |
 */
 include_once('admin.php');
+include_once('./debug.php');
 //Route::get('/', function () {
 //    return view('welcome');
 //});
