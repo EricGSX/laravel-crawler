@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+include_once('admin.php');
 //Route::get('/', function () {
 //    return view('welcome');
 //});
@@ -130,4 +130,4 @@ Route::group(['prefix'=>'emails'],function(){
 //TODO 通知模块
 Route::get('/notices','Home\NoticeController@index');
 
-include_once('admin.php');
+
