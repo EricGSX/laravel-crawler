@@ -16,7 +16,7 @@
 //});
 Route::get('/','Home\PostController@index');
 //定义路由组
-// Route::get('/test','WebCrawlerController@test');
+Route::get('/test','Other\WebCrawlerController@test');
 
 
 //TODO Other
@@ -46,12 +46,12 @@ Route::group(['prefix'=>'others'],function(){
 
 //TODO 开始爬虫
 Route::group(['prefix'=>'spiders'],function (){
-    Route::get('/','SpiderController@index');
-    Route::get('/gitee','SpiderController@gitee');
-    Route::get('/zhihu','SpiderController@zhihu');
-    Route::get('/sf','SpiderController@sf');
-    Route::get('/sina','SpiderController@sina');
-    Route::get('/baidu','SpiderController@baidu');
+    Route::get('/','Other\SpiderController@index');
+    Route::get('/gitee','Other\SpiderController@gitee');
+    Route::get('/zhihu','Other\SpiderController@zhihu');
+    Route::get('/sf','Other\SpiderController@sf');
+    Route::get('/sina','Other\SpiderController@sina');
+    Route::get('/baidu','Other\SpiderController@baidu');
     Route::get('/email','Other\SpiderController@email2');
 });
 
