@@ -34,11 +34,11 @@ $('.resource-delete').click(function(event){
     }
     var target = $(event.target);
     event.preventDefault();
-    var url = $(target).attr('delete-url');
+    var post_id = $(target).attr('delete-topic-id');
     $.ajax({
-        url:"/admin/posts/" + post_id + "/status",
-        method:'POST',
-        data:{"_method":"DELETE"},
+        url:"/admin/topics/"+post_id,
+        method:'DELETE',
+        // data:{"_method":"DELETE","id":post_id},
         dataType:'json',
         success:function (data) {
             if(data.error != 0){

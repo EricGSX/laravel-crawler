@@ -23,7 +23,7 @@
                                 <td>{{$topic->id}}</td>
                                 <td>{{$topic->name}}</td>
                                 <td>
-                                    <a type="button" class="btn resource-delete" delete-url="/admin/topics/{{$topic->id}}" href="#" >删除</a>
+                                    <a type="button" class="btn resource-delete"  delete-topic-id="{{$topic->id}}" href="#" >删除</a>
                                 </td>
                             </tr>
                             @endforeach
