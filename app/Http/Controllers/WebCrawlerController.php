@@ -6,7 +6,7 @@
  * Time: 13:53
  * Project: OceaniaWebCrawler
  */
-namespace App\Http\Controllers\Other;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use QL\QueryList;
