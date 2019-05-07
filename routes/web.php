@@ -129,7 +129,6 @@ Route::group(['prefix'=>'emails'],function(){
 
 //TODO 通知模块
 Route::get('/notices','Home\NoticeController@index');
-Route::get('/notices2','Home\NoticeController@index');
 
 include_once('admin.php');
 
