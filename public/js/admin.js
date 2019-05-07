@@ -37,8 +37,8 @@ $('.resource-delete').click(function(event){
     var post_id = $(target).attr('delete-topic-id');
     $.ajax({
         url:"/admin/topics/"+post_id,
-        method:'DELETE',
-        // data:{"_method":"DELETE","id":post_id},
+        method:'POST',
+        data:{"_method":"DELETE"},
         dataType:'json',
         success:function (data) {
             if(data.error != 0){
