@@ -16,7 +16,7 @@
 //});
 Route::get('/','Home\PostController@index');
 //定义路由组
-Route::get('/test','Other\WebCrawlerController@test');
+Route::get('/test','WebCrawlerController@test');
 
 
 //TODO Other
