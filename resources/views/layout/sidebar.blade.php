@@ -23,7 +23,7 @@
             @if($labels)
                 @if(count($labels) >0)
                     @foreach($labels as $label)
-                    <a href="/posts/{{$label->id}}" class="tagc{{rand(1, 5)}}">{{$label->title}}</a>
+                    <a href="/posts/{{$label->id}}" class="tagc{{rand(1, 6)}}">{{$label->title}}</a>
                     @endforeach
                 @endif
             @endif
@@ -156,6 +156,7 @@
     #tagscloud a.tagc4{background:#f39c12;color:#fff;}
     #tagscloud a.tagc3{background:blue;color:#fff;}
     #tagscloud a.tagc5{background:#006633;color:#fff;}
+    #tagscloud a.tagc6{background:#30a5dd;color:#fff;}
     #tagscloud a:hover{color:#fff;background:#0099ff;}
 </style>
 <script type="text/javascript">
