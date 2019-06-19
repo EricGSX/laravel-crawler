@@ -33,7 +33,7 @@ class QiniuCloud
 	 * @param  [type] $key      [文件名]
 	 * @return [type]           [description]
 	 */
-	public function qiniu_upload($filePath='',$key='default.jpg')
+	public function upload($filePath='',$key='default.jpg')
 	{
         try{
 	        // 要上传文件的本地路径
