@@ -18,6 +18,7 @@ use App\Libs\Tools;
 use DB;
 use Illuminate\Support\Facades\Session;
 use Qiniu\Auth;
+use Qiniu\Storage\UploadManager;
 class WebCrawlerController extends Controller
 {
     /**
@@ -26,15 +27,29 @@ class WebCrawlerController extends Controller
     public function test()
     {
         //require '/../vendor/qiniu/autoload.php';
-        $accessKey = 'Access_Key';
-        $secretKey = 'Secret_Key';
+        $accessKey = env('QINIU_AK');
+        $secretKey = env('QINIU_SK');
         // 初始化签权对象
         $auth = new Auth($accessKey, $secretKey);
         $expires = 3600;
         $policy = null;
-        $bucket = '';
-        $upToken = $auth->uploadToken($bucket, null, $expires, $policy, true);
-        dd($upToken);
+        $bucket = 'eric-guo';
+        $token = $auth->uploadToken($bucket, null, $expires, $policy, true);
+        // 要上传文件的本地路径
+        $filePath = 'D:\phpStudy\WWW\spider\public\image\api.png';
+        // 上传到七牛后保存的文件名
+        $key = 'my-php-logo2.png';
+        // 初始化 UploadManager 对象并进行文件的上传。
+        $uploadMgr = new UploadManager();
+        // 调用 UploadManager 的 putFile 方法进行文件的上传。
+        list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
+        echo "\n====> putFile result: \n";
+        if ($err !== null) {
+            dd($err);
+        } else {
+            dd($ret);
+        }
+
         ////$data = QueryList::get('https://www.sputtertargets.net')->find('img')->attrs('src');
         ////dd($data->all());
         //$html = file_get_contents('https://querylist.cc/');
