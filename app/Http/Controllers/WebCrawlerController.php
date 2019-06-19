@@ -50,8 +50,10 @@ class WebCrawlerController extends Controller
         // } else {
         //     dd($ret);
         // }
+        $filePath = 'D:\PHP\phpstudy\PHPTutorial\WWW\laravel-crawler\public\image\email.png';
+        $key = 'test.png';
         $qiniu = new QiniuCloud();
-        $result = $qiniu->qiniu_upload();
+        $result = $qiniu->upload($filePath,$key);
         dd($result);
         ////$data = QueryList::get('https://www.sputtertargets.net')->find('img')->attrs('src');
         ////dd($data->all());
