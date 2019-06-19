@@ -42,7 +42,7 @@ class QiniuCloud
 	        	return 'File Path not be null';
 	        }
 	        // 上传到七牛后保存的文件名
-	        $key = $filename;
+	        $key = $key;
 	        // 初始化 UploadManager 对象并进行文件的上传。
 	        $uploadMgr = new UploadManager();
 	        // 调用 UploadManager 的 putFile 方法进行文件的上传。
