@@ -17,8 +17,8 @@ use App\Http\Controllers\Controller;
 use App\Libs\Tools;
 use DB;
 use Illuminate\Support\Facades\Session;
-use Qiniu\Auth;
-use Qiniu\Storage\UploadManager;
+use App\Libs\QiniuCloud;
+
 class WebCrawlerController extends Controller
 {
     /**
@@ -27,29 +27,32 @@ class WebCrawlerController extends Controller
     public function test()
     {
         //require '/../vendor/qiniu/autoload.php';
-        $accessKey = env('QINIU_AK');
-        $secretKey = env('QINIU_SK');
-        // 初始化签权对象
-        $auth = new Auth($accessKey, $secretKey);
-        $expires = 3600;
-        $policy = null;
-        $bucket = 'eric-guo';
-        $token = $auth->uploadToken($bucket, null, $expires, $policy, true);
+        // $accessKey = env('QINIU_AK');
+        // $secretKey = env('QINIU_SK');
+        // // 初始化签权对象
+        // $auth = new Auth($accessKey, $secretKey);
+        // $expires = 3600;
+        // $policy = null;
+        // $bucket = 'eric-guo';
+        // $token = $auth->uploadToken($bucket, null, $expires, $policy, true);
         // 要上传文件的本地路径
-        $filePath = '/home/wwwroot/spider/public/image/background.jpg';
-        // 上传到七牛后保存的文件名
-        $key = 'bk.png';
-        // 初始化 UploadManager 对象并进行文件的上传。
-        $uploadMgr = new UploadManager();
-        // 调用 UploadManager 的 putFile 方法进行文件的上传。
-        list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
-        echo "\n====> putFile result: \n";
-        if ($err !== null) {
-            dd($err);
-        } else {
-            dd($ret);
-        }
-
+        // $filePath = '/home/wwwroot/spider/public/image/background.jpg';
+        // // 上传到七牛后保存的文件名
+        // $key = 'bk.png';
+        // // 初始化 UploadManager 对象并进行文件的上传。
+        // $uploadMgr = new UploadManager();
+        // // 调用 UploadManager 的 putFile 方法进行文件的上传。
+        // list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
+        // echo "\n====> putFile result: \n";
+        // unlink($filePath);
+        // if ($err !== null) {
+        //     dd($err);
+        // } else {
+        //     dd($ret);
+        // }
+        $qiniu = new QiniuCloud();
+        $result = $qiniu->qiniu_upload();
+        dd($result);
         ////$data = QueryList::get('https://www.sputtertargets.net')->find('img')->attrs('src');
         ////dd($data->all());
         //$html = file_get_contents('https://querylist.cc/');
