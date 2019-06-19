@@ -36,9 +36,9 @@ class WebCrawlerController extends Controller
         $bucket = 'eric-guo';
         $token = $auth->uploadToken($bucket, null, $expires, $policy, true);
         // 要上传文件的本地路径
-        $filePath = 'D:\phpStudy\WWW\spider\public\image\api.png';
+        $filePath = '/home/wwwroot/spider/public/image/background.jpg';
         // 上传到七牛后保存的文件名
-        $key = 'my-php-logo2.png';
+        $key = 'bk.png';
         // 初始化 UploadManager 对象并进行文件的上传。
         $uploadMgr = new UploadManager();
         // 调用 UploadManager 的 putFile 方法进行文件的上传。
