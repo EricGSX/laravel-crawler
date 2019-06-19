@@ -9,6 +9,7 @@ use \App\Comment;
 use \App\Zan;
 use App\Libs\Parser;
 use \App\Topic;
+use App\Libs\QiniuCloud;
 
 class PostController extends Controller
 {
@@ -140,10 +141,14 @@ class PostController extends Controller
      */
     public function imageUpload(Request $request)
     {
-        // echo(json_encode($_FILES));die;
-        $path = $request->file('wangEditorH5File')->storePublicly(md5(time()));
-        return asset('storage/'.$path);
-        //dd(request()->all());
+//        $path = $request->file('wangEditorH5File')->storePublicly(md5(time()));
+//        return asset('storage/'.$path);
+        $filePath = $_FILES['wangEditorH5File']['tmp_name'];
+        $key = $_FILES['wangEditorH5File']['name'];
+        $qiniu = new QiniuCloud();
+        $result = $qiniu->upload($filePath,$key);
+        $file_url = 'http://files.guosx.com/' . $result['key'];
+        return $file_url;
     }
 
     public function delete(Post $id)
