@@ -43,6 +43,7 @@ class QiniuCloud
 	        }
 	        // 上传到七牛后保存的文件名
 	        $key = $prefix .'/'. $key;
+	        //这里有个误区 在key后跟-font 不可以，因为这个是重命名文件名的，也就是这个key是文件名，加了-font 那么文件名就会是这个，需要在打开的时候文件名后面跟上-font就可以了
 	        // 初始化 UploadManager 对象并进行文件的上传。
 	        $uploadMgr = new UploadManager();
 	        // 调用 UploadManager 的 putFile 方法进行文件的上传。

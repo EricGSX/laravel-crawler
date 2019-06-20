@@ -34,7 +34,9 @@
 
     <form class="form-signin" method="POST" action="/users/login">
         {{csrf_field()}}
-        <h2 class="form-signin-heading">请登录</h2>
+            <p style='text-align: center;'>
+                <a href="https://ding.guosx.com" title="机智郭&暴力丁"><img src="{{asset('image/guoshixin.jpg')}}" alt="机智郭&暴力丁" class="img-circle" style="width:110px;height:122px;"></a>
+            </p>
         <label for="inputEmail" class="sr-only">邮箱</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">密码</label>
@@ -45,8 +47,22 @@
             </label>
         </div>
         @include('layout.error')
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-        <a href="/users/register" class="btn btn-lg btn-primary btn-block" type="submit">去注册>></a>
+        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        <a href="/users/register" class="btn btn-danger btn-block" type="submit">Create an account.</a>
+        <!-- 第三方登陆 -->
+        <div style="text-align: center;line-height: 40px;color: #5a7079;"> -------- 其他方式登陆 -------- </div>
+        <div class="col-md-12">
+            <div class="col-sm-4" style="text-align: center;">
+                <a target="_blank" href="" title=""><img src="{{asset('/image/qq.png')}}" style="width:40px;height:40px;"></a>
+            </div>
+            <div class="col-sm-4" style="text-align: center;">
+                <a target="_blank" href="" title=""><img src="{{asset('/image/wx.png')}}" style="width:40px;height:40px;"></a>
+            </div>
+            <div class="col-sm-4" style="text-align: center;">
+                <a target="_blank" href="" title=""><img src="{{asset('/image/weibo.png')}}" style="width:40px;height:40px;"></a>
+            </div>
+        </div>
+        <!--  -->
     </form>
 
 </div> <!-- /container -->
