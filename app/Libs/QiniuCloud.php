@@ -33,7 +33,7 @@ class QiniuCloud
 	 * @param  [type] $key      [文件名]
 	 * @return [type]           [description]
 	 */
-	public function upload($filePath='',$key='default.jpg')
+	public function upload($filePath='',$key='default.jpg',$prefix='image')
 	{
         try{
 	        // 要上传文件的本地路径
@@ -42,7 +42,7 @@ class QiniuCloud
 	        	return 'File Path not be null';
 	        }
 	        // 上传到七牛后保存的文件名
-	        $key = $key;
+	        $key = $prefix .'/'. $key;
 	        // 初始化 UploadManager 对象并进行文件的上传。
 	        $uploadMgr = new UploadManager();
 	        // 调用 UploadManager 的 putFile 方法进行文件的上传。
