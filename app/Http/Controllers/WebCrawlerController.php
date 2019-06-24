@@ -18,6 +18,7 @@ use App\Libs\Tools;
 use DB;
 use Illuminate\Support\Facades\Session;
 use App\Libs\QiniuCloud;
+use App\Libs\OauthThird;
 
 class WebCrawlerController extends Controller
 {
@@ -26,6 +27,31 @@ class WebCrawlerController extends Controller
      */
     public function test()
     {
+        //https://www.cnblogs.com/finalanddistance/p/10431535.html
+        //$clientId = '7t7tOj4f5cem8I3h48wnEGp2';
+        //$clientSecret = 'mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt';
+        //$redirectUri = 'http://three.com/test';
+        //$url = "http://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&scope=email&display=popup";
+        //dd($url);
+        //header("location:https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&display=popup");
+        $a = new OauthThird();
+        $code = $a->getBaiduCode();
+        $redirect_uri  = 'http://three.com/test';
+        $client_secret = "mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt";
+        $client_id     = "7t7tOj4f5cem8I3h48wnEGp2";
+        $url           = "https://openapi.baidu.com/oauth/2.0/token?grant_type=authorization_code&code=$code&client_id=$client_id&client_secret=$client_secret&redirect_uri=$redirect_uri";
+        # 发送CURL，获得Access_Token
+        $res           = OauthThird::https_request($url);
+        $data          = json_decode($res, true);
+        if (empty($data['access_token'])) {
+            $this->error('百度授权异常！', '/');
+        }
+        //var_dump($data['access_token']);die;
+        # 发送CURL，获得百度用户的信息
+        $url  = 'https://openapi.baidu.com/rest/2.0/passport/users/getInfo?access_token='.$data['access_token'];
+        $res  = OauthThird::https_request($url);
+        $data2 = json_decode($res, true);
+        dd($data2);
         //require '/../vendor/qiniu/autoload.php';
         // $accessKey = env('QINIU_AK');
         // $secretKey = env('QINIU_SK');
@@ -50,11 +76,14 @@ class WebCrawlerController extends Controller
         // } else {
         //     dd($ret);
         // }
-        $filePath = 'D:\PHP\phpstudy\PHPTutorial\WWW\laravel-crawler\public\image\email.png';
-        $key = 'test.png';
-        $qiniu = new QiniuCloud();
-        $result = $qiniu->upload($filePath,$key);
-        dd($result);
+        //$rest = new OauthThird();
+        //$test = $rest->baiduLogin();
+        //dd($test);
+        // $filePath = 'D:\PHP\phpstudy\PHPTutorial\WWW\laravel-crawler\public\image\email.png';
+        // $key = 'test.png';
+        // $qiniu = new QiniuCloud();
+        // $result = $qiniu->upload($filePath,$key);
+        // dd($result);
         ////$data = QueryList::get('https://www.sputtertargets.net')->find('img')->attrs('src');
         ////dd($data->all());
         //$html = file_get_contents('https://querylist.cc/');
@@ -76,16 +105,24 @@ class WebCrawlerController extends Controller
         //$data = $ql->getData();
         //$return = $data->all();
         //return $return;
-        $parser = new Parser();
-        $test = '## About US
-Laravel5.5+Bootstrop3.0开发的SPIDER框架
-## Follow me
-开源是一种精神
-* github：https://github.com/EricGSX/spider.git
-* gitee：https://gitee.com/EricGuosx/spider.git';
-        $html = $parser->makeHtml($test);
-        //dd($html);
-        return view('welcome',compact('html'));
+//        $parser = new Parser();
+//        $test = '## About US
+//Laravel5.5+Bootstrop3.0开发的SPIDER框架
+//## Follow me
+//开源是一种精神
+//* github：https://github.com/EricGSX/spider.git
+//* gitee：https://gitee.com/EricGuosx/spider.git';
+//        $html = $parser->makeHtml($test);
+//        //dd($html);
+//        return view('welcome',compact('html'));
+    }
+
+    public function test2()
+    {
+        $clientId = '7t7tOj4f5cem8I3h48wnEGp2';
+        $clientSecret = 'mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt';
+        $redirectUri = 'http://three.com/test';
+        header("location:https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&display=popup");
     }
 
     /**
