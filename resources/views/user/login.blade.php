@@ -52,14 +52,17 @@
         <!-- 第三方登陆 -->
         <div style="text-align: center;line-height: 40px;color: #5a7079;"> -------- 其他方式登陆 -------- </div>
         <div class="col-md-12">
-            <div class="col-sm-4" style="text-align: center;">
+            <div class="col-sm-3" style="text-align: center;">
                 <a target="_blank" href="" title=""><img src="{{asset('/image/qq.png')}}" style="width:40px;height:40px;"></a>
             </div>
-            <div class="col-sm-4" style="text-align: center;">
+            <div class="col-sm-3" style="text-align: center;">
                 <a target="_blank" href="" title=""><img src="{{asset('/image/wx.png')}}" style="width:40px;height:40px;"></a>
             </div>
-            <div class="col-sm-4" style="text-align: center;">
+            <div class="col-sm-3" style="text-align: center;">
                 <a target="_blank" href="" title=""><img src="{{asset('/image/weibo.png')}}" style="width:40px;height:40px;"></a>
+            </div>
+            <div class="col-sm-3" style="text-align: center;">
+                <a target="_blank" href="" title=""><img src="{{asset('/image/baidu.png')}}" style="width:40px;height:40px;"></a>
             </div>
         </div>
         <!--  -->
