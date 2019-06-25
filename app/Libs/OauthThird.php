@@ -10,13 +10,11 @@
 namespace App\Libs;
 class OauthThird
 {
-    /**
-     * TODO 获取百度CODE
-     *
-     * @return mixed
-     */
-	public function getBaiduCode()
+
+	private function getBaiduCode()
 	{
+	    //DOC http://developer.baidu.com/wiki/index.php?title=docs/oauth/rest/file_data_apis_list
+
         $code = request()->get('code');
         return $code;
 	}
@@ -37,10 +35,19 @@ class OauthThird
     public function getBaiduUserinfo($accessToken='')
     {
         $access_token = $accessToken;
-        $url  = 'https://openapi.baidu.com/rest/2.0/passport/users/getInfo?access_token='.$access_token;
+        $url  = 'https://openapi.baidu.com/rest/2.0/passport/users/getLoggedInUser?access_token='.$access_token;
         $res  = $this->https_request($url);
         $userinfo = json_decode($res, true);
         return $userinfo;
+    }
+
+    public function baiduLogout($accessToken='')
+    {
+        $access_token = $accessToken;
+        $url  = 'https://openapi.baidu.com/rest/2.0/passport/auth/revokeAuthorization?access_token='.$access_token;
+        $res  = $this->https_request($url);
+        $result = json_decode($res, true);
+        return $result;
     }
 
     public static function https_request($url, $data = null){

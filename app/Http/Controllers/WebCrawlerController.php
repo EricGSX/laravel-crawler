@@ -128,6 +128,15 @@ class WebCrawlerController extends Controller
         header("location:https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&display=popup");
     }
 
+    public function test3()
+    {
+        $a = new OauthThird();
+        $token = $a->getBaiduAccessToken();
+        dd($token);
+        $a->baiduLogout($token);
+        dd($a);
+    }
+
     /**
      * TODO 产品
      *
