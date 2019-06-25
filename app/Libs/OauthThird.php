@@ -21,9 +21,28 @@ class OauthThird
         return $code;
 	}
 
-    /*
-    * 接口数据传输的万能函数
-    */
+    public function getBaiduAccessToken()
+    {
+        $code = $this->getBaiduCode();
+        $redirect_uri  = env('BAIDU_REDIRECT_URI');
+        $client_secret = env('BAIDU_SECRET_KEY');
+        $client_id     = env('BAIDU_API_KEY');
+        $url           = "https://openapi.baidu.com/oauth/2.0/token?grant_type=authorization_code&code=$code&client_id=$client_id&client_secret=$client_secret&redirect_uri=$redirect_uri";
+        # 发送CURL，获得Access_Token
+        $res           = $this->https_request($url);
+        $data          = json_decode($res, true);
+        return $data['access_token'];
+    }
+
+    public function getBaiduUserinfo($accessToken='')
+    {
+        $access_token = $accessToken;
+        $url  = 'https://openapi.baidu.com/rest/2.0/passport/users/getInfo?access_token='.$access_token;
+        $res  = $this->https_request($url);
+        $userinfo = json_decode($res, true);
+        return $userinfo;
+    }
+
     public static function https_request($url, $data = null){
         # 初始化一个cURL会话
         $curl = curl_init();

@@ -35,7 +35,10 @@ class WebCrawlerController extends Controller
         //dd($url);
         //header("location:https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&display=popup");
         $a = new OauthThird();
-        $code = $a->getBaiduCode();
+        $token = $a->getBaiduAccessToken();
+        $userinfo = $a->getBaiduUserinfo($token);
+        dd($userinfo);
+        die;
         $redirect_uri  = 'http://three.com/test';
         $client_secret = "mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt";
         $client_id     = "7t7tOj4f5cem8I3h48wnEGp2";
