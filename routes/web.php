@@ -132,5 +132,9 @@ Route::group(['prefix'=>'emails'],function(){
 //TODO 通知模块
 Route::get('/notices','Home\NoticeController@index');
 
+//第三方登录
+Route::group(['prefix'=>'oauth'],function(){
+    Route::get('/baidu','User\OauthController@baiduOauth');
+});
 include_once('admin.php');
 
