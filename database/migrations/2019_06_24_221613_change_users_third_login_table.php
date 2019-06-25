@@ -15,8 +15,8 @@ class ChangeUsersThirdLoginTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('user_img',200)->nullable()->after('remember_token');
-            $table->integer('platform_uid')->after('remember_token');
-            $table->string('platform_type',100)->after('remember_token');
+            $table->integer('platform_uid')->nullable()->after('remember_token');
+            $table->string('platform_type',100)->nullable()->after('remember_token');
         });
     }
 
