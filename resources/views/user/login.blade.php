@@ -35,7 +35,7 @@
     <form class="form-signin" method="POST" action="/users/login">
         {{csrf_field()}}
             <p style='text-align: center;'>
-                <a href="https://ding.guosx.com" title="机智郭&暴力丁"><img src="{{asset('image/guoshixin.jpg')}}" alt="机智郭&暴力丁" class="img-circle" style="width:110px;height:122px;"></a>
+                <a href="https://ding.guosx.com" title="机智郭&暴力丁"><img src="{{asset('image/adminlogo.png')}}" alt="机智郭&暴力丁"  style="width: 50%;"></a>
             </p>
         <label for="inputEmail" class="sr-only">邮箱</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>

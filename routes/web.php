@@ -136,6 +136,7 @@ Route::get('/notices','Home\NoticeController@index');
 Route::group(['prefix'=>'oauth'],function(){
     Route::get('/baidu','User\OauthController@baiduOauth');
     Route::get('/baidu/callback','User\OauthController@baiduCallback');
+    Route::get('/baidu/logout','User\OauthController@baiduLogout');
 });
 include_once('admin.php');
 

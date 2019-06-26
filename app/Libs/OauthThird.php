@@ -29,6 +29,7 @@ class OauthThird
         # 发送CURL，获得Access_Token
         $res           = $this->https_request($url);
         $data          = json_decode($res, true);
+        $this->baiduAccessToken = $data['access_token'];
         return $data['access_token'];
     }
 

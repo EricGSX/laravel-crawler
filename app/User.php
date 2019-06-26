@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
    protected $fillable = [
-       'name','email','password'
+       'name','email','password','access_token','platform_uid','platform_type','playform_uid','user_img'
    ];
 
     /**
