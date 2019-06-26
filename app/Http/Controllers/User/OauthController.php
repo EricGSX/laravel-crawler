@@ -51,9 +51,5 @@ class OauthController extends Controller
         $result =$oauth->baiduLogout($access_token);
         dump($result);
     }
-
-    public function username()
-    {
-        return 'name';
-    }
+    
 }
