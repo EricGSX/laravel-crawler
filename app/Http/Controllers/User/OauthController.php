@@ -30,14 +30,7 @@ class OauthController extends Controller
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
         session(['baidu_access_token'=>$token]);
-        $user_data = compact('platform_uid','password','name');
-        $is_remember = boolval(0);
-        DB::enableQueryLog();
-        $result2 = \Auth::attempt($user_data,$is_remember);
-        $result = response()->json(DB::getQueryLog());
-        dump($result2);
-        dd($result);
-        if(\Auth::attempt($user_data,$is_remember)){
+        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],0)){
             return redirect('/posts');
         }else{
 
@@ -51,5 +44,5 @@ class OauthController extends Controller
         $result =$oauth->baiduLogout($access_token);
         dump($result);
     }
-    
+
 }
