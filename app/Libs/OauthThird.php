@@ -29,7 +29,6 @@ class OauthThird
         # 发送CURL，获得Access_Token
         $res           = $this->https_request($url);
         $data          = json_decode($res, true);
-        $this->baiduAccessToken = $data['access_token'];
         return $data['access_token'];
     }
 
@@ -51,6 +50,25 @@ class OauthThird
         return $result;
     }
 
+    public function getGithubCode()
+    {
+        $code = request()->get('code');
+        return $code;
+    }
+
+    public function getGithubAccessToken()
+    {
+        $code = $this->getGithubCode();
+        $redirect_uri  = env('GITHUB_REDIRECT_URI');
+        $client_secret = env('GITHUB_SECRET_KEY');
+        $client_id     = env('GITHUB_CLIENTID');
+        $url           = "https://github.com/login/oauth/access_token?code=$code&client=$client_id&client secret=$client_secret";
+        # 发送CURL，获得Access_Token
+        $res           = $this->https_request($url);
+        $data          = json_decode($res, true);
+        return $res;
+    }
+
     public static function https_request($url, $data = null){
         # 初始化一个cURL会话
         $curl = curl_init();
@@ -67,4 +85,5 @@ class OauthThird
         curl_close($curl);  //释放cURL句柄,关闭一个cURL会话
         return $response;
     }
+
 }

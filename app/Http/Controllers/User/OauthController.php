@@ -43,4 +43,17 @@ class OauthController extends Controller
         dump($result);
     }
 
+    public function githubOauth()
+    {
+        $clientId = env('GITHUB_CLIENTID');
+        header("location:https://github.com/login/oauth/authorize?client_id=$clientId");
+    }
+
+    public function githubCallback()
+    {
+        $oauth = new OauthThird();
+        $token = $oauth->getGithubAccessToken();
+        dd($token);
+    }
+
 }
