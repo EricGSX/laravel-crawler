@@ -32,8 +32,6 @@ class OauthController extends Controller
         session(['baidu_access_token'=>$token]);
         if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],0)){
             return redirect('/posts');
-        }else{
-
         }
     }
 

@@ -2,7 +2,7 @@
 @section('content')
     <div class="col-sm-8">
         <blockquote>
-            <p><img src="{{asset('image/user.jpeg')}}" alt="" class="img-rounded" style="border-radius:500px; height: 40px"> {{$user->name}}
+            <p><img src="{{$user->user_img}}" alt="" class="img-rounded" style="border-radius:500px; height: 40px"> {{$user->name}}
             </p>
 
 
