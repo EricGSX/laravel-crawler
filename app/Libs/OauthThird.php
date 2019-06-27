@@ -58,7 +58,32 @@ class OauthThird
 
     public function getGithubAccessToken()
     {
+        //https://alone88.cn/archives/525.html
         $code = $this->getGithubCode();
+        $ch = curl_init();
+        $data = array(
+            'client_id'=>env('GITHUB_CLIENTID'),
+            'client_secret'=>env('GITHUB_SECRET_KEY'),
+            'code'=>$code,
+            'redirect_uri'=>env('GITHUB_REDIRECT_URI'),
+            'grant_type'=>'authorization_code',
+        );
+        dump($data);
+        $url = "https://github.com/login/oauth/access_token";
+        $res           = $this->https_request($url,$data);
+        dd($res);
+        curl_setopt($ch, CURLOPT_URL,"https://github.com/login/oauth/access_token");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $server_output = curl_exec($ch);
+        var_dump($server_output);
+
+
+
+
+        die;
         $redirect_uri  = env('GITHUB_REDIRECT_URI');
         $client_secret = env('GITHUB_SECRET_KEY');
         $client_id     = env('GITHUB_CLIENTID');
