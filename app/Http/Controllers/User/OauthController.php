@@ -30,7 +30,7 @@ class OauthController extends Controller
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
         session(['baidu_access_token'=>$token]);
-        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],0)){
+        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
             return redirect('/posts');
         }
     }
