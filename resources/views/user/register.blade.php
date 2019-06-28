@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>注册</title>
+    <title>Join US</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 
     <form class="form-signin" method="POST" action="/users/register">
         {{csrf_field()}}
-        <h2 class="form-signin-heading">请注册</h2>
+        <h2 class="form-signin-heading">Join US</h2>
         <label for="name" class="sr-only">名字</label>
         <input type="text" name="name" id="name" class="form-control" placeholder="名字" required autofocus>
         <label for="inputEmail" class="sr-only">邮箱</label>
@@ -45,7 +45,30 @@
         <label class="sr-only">重复密码</label>
         <input type="password" name="password_confirmation" class="form-control" placeholder="重复输入密码" required>
         @include('layout.error')
-        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Create an account</button>
+                <!-- 第三方登陆 -->
+        <div style="text-align: center;line-height: 40px;color: #5a7079;"> -------- 其他方式登陆 -------- </div>
+        <div class="col-md-12">
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="" title="QQ登陆"><img src="{{asset('/image/qq.png')}}" style="width:30px;height:30px;"></a>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="" title="Wechat登陆"><img src="{{asset('/image/wx.png')}}" style="width:30px;height:30px;"></a>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="" title="微博登陆"><img src="{{asset('/image/weibo.png')}}" style="width:30px;height:30px;"></a>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="/oauth/baidu" title="百度登陆"><img src="{{asset('/image/baidu.png')}}" style="width:30px;height:30px;"></a>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="/oauth/gitee" title="码云登录"><img src="{{asset('/image/gitee.png')}}" style="width:30px;height:30px;"></a>
+            </div>
+            <div class="col-sm-2" style="text-align: center;">
+                <a href="/oauth/github" title="Github登录"><img src="{{asset('/image/github.png')}}" style="width:30px;height:30px;"></a>
+            </div>
+        </div>
+        <!--  -->
     </form>
 
 </div> <!-- /container -->

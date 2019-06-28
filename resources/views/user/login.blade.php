@@ -65,7 +65,7 @@
                 <a href="/oauth/baidu" title="百度登陆"><img src="{{asset('/image/baidu.png')}}" style="width:30px;height:30px;"></a>
             </div>
             <div class="col-sm-2" style="text-align: center;">
-                <a href="" title="码云登录"><img src="{{asset('/image/gitee.png')}}" style="width:30px;height:30px;"></a>
+                <a href="/oauth/gitee" title="码云登录"><img src="{{asset('/image/gitee.png')}}" style="width:30px;height:30px;"></a>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="/oauth/github" title="Github登录"><img src="{{asset('/image/github.png')}}" style="width:30px;height:30px;"></a>
