@@ -68,7 +68,7 @@
                 <a href="" title="码云登录"><img src="{{asset('/image/gitee.png')}}" style="width:30px;height:30px;"></a>
             </div>
             <div class="col-sm-2" style="text-align: center;">
-                <a href="" title="Github登录"><img src="{{asset('/image/github.png')}}" style="width:30px;height:30px;"></a>
+                <a href="/oauth/github" title="Github登录"><img src="{{asset('/image/github.png')}}" style="width:30px;height:30px;"></a>
             </div>
         </div>
         <!--  -->

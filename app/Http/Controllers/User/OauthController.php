@@ -54,7 +54,16 @@ class OauthController extends Controller
         $oauth = new OauthThird();
         $token = $oauth->getGithubAccessToken();
         $userinfo = $oauth->getGithubUserinfo($token);
-        dd($userinfo);
+        $platform_uid = $userinfo['id'];
+        $name = $userinfo['login'];
+        $user_img = $userinfo['avatar_url'];
+        $platform_type = 'Github';
+        $password = bcrypt($platform_type);
+        $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
+        session(['baidu_access_token'=>$token]);
+        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
+            return redirect('/posts');
+        }
     }
 
 }
