@@ -68,33 +68,21 @@ class OauthThird
             'redirect_uri'=>env('GITHUB_REDIRECT_URI'),
             'grant_type'=>'authorization_code',
         );
-        dump($data);
         $url = "https://github.com/login/oauth/access_token";
-        $res           = $this->https_request($url,$data);
-        dd($res);
-        curl_setopt($ch, CURLOPT_URL,"https://github.com/login/oauth/access_token");
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,http_build_query($data));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $server_output = curl_exec($ch);
-        var_dump($server_output);
-
-
-
-
-        die;
-        $redirect_uri  = env('GITHUB_REDIRECT_URI');
-        $client_secret = env('GITHUB_SECRET_KEY');
-        $client_id     = env('GITHUB_CLIENTID');
-        $url           = "https://github.com/login/oauth/access_token?code=$code&client=$client_id&client secret=$client_secret";
-        # 发送CURL，获得Access_Token
-        $res           = $this->https_request($url);
-        $data          = json_decode($res, true);
+        $res = $this->https_request($url,$data);
         return $res;
     }
 
-    public static function https_request($url, $data = null){
+    public function getGithubUserinfo($accessToken='')
+    {
+        $access_token = $accessToken;
+        $url  = 'https://api.github.com/user?'.$access_token;
+        $res  = $this->https_request($url,null,true);
+        $result = json_decode($res, true);
+        return $result;
+    }
+
+    public static function https_request($url, $data = null,$ua=null){
         # 初始化一个cURL会话
         $curl = curl_init();
         //设置请求选项, 包括具体的url
@@ -104,6 +92,10 @@ class OauthThird
         if (!empty($data)){
             curl_setopt($curl, CURLOPT_POST, 1);  //设置为post请求类型
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);  //设置具体的post数据
+        }
+        if($ua){
+            $useragent = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11";
+            curl_setopt($curl, CURLOPT_USERAGENT, $useragent);        //模拟常用浏览器的useragent
         }
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($curl);  //执行一个cURL会话并且获取相关回复

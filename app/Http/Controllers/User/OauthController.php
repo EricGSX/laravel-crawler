@@ -53,7 +53,8 @@ class OauthController extends Controller
     {
         $oauth = new OauthThird();
         $token = $oauth->getGithubAccessToken();
-        dd($token);
+        $userinfo = $oauth->getGithubUserinfo($token);
+        dd($userinfo);
     }
 
 }
