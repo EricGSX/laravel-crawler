@@ -139,6 +139,8 @@ Route::group(['prefix'=>'oauth'],function(){
     Route::get('/baidu/logout','User\OauthController@baiduLogout');
     Route::get('/github','User\OauthController@githubOauth');
     Route::get('/github/callback','User\OauthController@githubCallback');
+    Route::get('gitee','User\OauthController@giteeOauth');
+    Route::get('/gitee/callback','User\OauthController@giteeCallback');
 });
 include_once('admin.php');
 

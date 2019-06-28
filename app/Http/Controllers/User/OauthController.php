@@ -66,4 +66,28 @@ class OauthController extends Controller
         }
     }
 
+    public function giteeOauth()
+    {
+        $clientId = env('GITEE_CLIENTID');
+        $redirect_uri = env('GITEE_REDIRECT_URI');
+        header("location:https://gitee.com/oauth/authorize?client_id=$clientId&redirect_uri=$redirect_uri&response_type=code");
+    }
+
+    public function giteeCallback()
+    {
+        $oauth = new OauthThird();
+        $token = $oauth->getGiteeAccessToken();
+        $userinfo = $oauth->getGiteeUserinfo($token);
+        $platform_uid = $userinfo['id'];
+        $name = $userinfo['login'];
+        $user_img = $userinfo['avatar_url'];
+        $platform_type = 'Gitee';
+        $password = bcrypt($platform_type);
+        $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
+        session(['baidu_access_token'=>$token]);
+        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
+            return redirect('/posts');
+        }
+    }
+
 }

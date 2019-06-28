@@ -10,7 +10,7 @@
 namespace App\Libs;
 class OauthThird
 {
-
+    
 	private function getBaiduCode()
 	{
 	    //DOC http://developer.baidu.com/wiki/index.php?title=docs/oauth/rest/file_data_apis_list
@@ -60,14 +60,13 @@ class OauthThird
     {
         //https://alone88.cn/archives/525.html
         $code = $this->getGithubCode();
-        $ch = curl_init();
-        $data = array(
+        $data = [
             'client_id'=>env('GITHUB_CLIENTID'),
             'client_secret'=>env('GITHUB_SECRET_KEY'),
             'code'=>$code,
             'redirect_uri'=>env('GITHUB_REDIRECT_URI'),
             'grant_type'=>'authorization_code',
-        );
+        ];
         $url = "https://github.com/login/oauth/access_token";
         $res = $this->https_request($url,$data);
         return $res;
@@ -78,6 +77,37 @@ class OauthThird
         $access_token = $accessToken;
         $url  = 'https://api.github.com/user?'.$access_token;
         $res  = $this->https_request($url,null,true);
+        $result = json_decode($res, true);
+        return $result;
+    }
+
+    public function getGiteeCode()
+    {
+        $code = request()->get('code');
+        return $code;
+    }
+
+    public function getGiteeAccessToken()
+    {
+        //https://www.whongbin.cn/index/article/detail/id/26.html
+        $code = $this->getGiteeCode();
+        $data = [
+            'client_id'=>env('GITEE_CLIENTID'),
+            'client_secret'=>env('GITEE_SECRET_KEY'),
+            'code'=>$code,
+            'redirect_uri'=>env('GITEE_REDIRECT_URI'),
+            'grant_type'=>'authorization_code',
+        ];
+        $url = "https://gitee.com/oauth/token";
+        $res = $this->https_request($url,$data);
+        return json_decode($res,true)['access_token'];
+    }
+
+    public function getGiteeUserinfo($accessToken='')
+    {
+        $access_token = $accessToken;
+        $url  = 'https://gitee.com/api/v5/user?access_token='.$access_token;
+        $res  = $this->https_request($url);
         $result = json_decode($res, true);
         return $result;
     }
