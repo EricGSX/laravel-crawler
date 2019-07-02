@@ -127,6 +127,14 @@ class OauthThird
         $code = $this->getQqCode();
         $url = "https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=$client_id&client_secret=$client_secret&code=$code&redirect_uri=$redirect_uri";
         $res = $this->https_request($url);
+        return $res;
+    }
+
+    public function getQqOpenID()
+    {
+        $token = $this->getQqAccessToken();
+        $url = "https://graph.qq.com/oauth2.0/me?$token";
+        $res = $this->https_request($url);
         dd($res);
     }
 
