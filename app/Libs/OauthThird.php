@@ -135,13 +135,21 @@ class OauthThird
         $token = $this->getQqAccessToken();
         $url = "https://graph.qq.com/oauth2.0/me?$token";
         $res = $this->https_request($url);
-        var_dump(json_decode($res));
-        dd($res);
+        $callback = $res;
+        if (preg_match('/\"openid\":\"(\w+)\"/i', $callback, $match)) {
+            $openid = $match[1];
+        }
+        return $openid;
     }
 
     public function getQqUserinfo()
     {
-
+        $token = $this->getQqAccessToken();
+        $client_id = env('QQ_APP_ID');
+        $openid = $this->getQqOpenID();
+        $url = "https://graph.qq.com/user/get_user_info?access_token=$token&oauth_consumer_key=$client_id&openid=$openid";
+        $res = $this->https_request($url);
+        dd($res);
     }
 
     public static function https_request($url, $data = null,$ua=null){
