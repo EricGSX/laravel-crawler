@@ -136,6 +136,7 @@ class OauthThird
         $url = "https://graph.qq.com/oauth2.0/me?$token";
         $res = $this->https_request($url);
         $callback = $res;
+        dd($callback);
         if (preg_match('/\"openid\":\"(\w+)\"/i', $callback, $match)) {
             $openid = $match[1];
         }
