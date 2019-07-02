@@ -135,8 +135,12 @@ class OauthThird
         $token = $this->getQqAccessToken();
         $url = "https://graph.qq.com/oauth2.0/me?$token";
         $res = $this->https_request($url);
-        $callback = $res;
-        var_dump($callback);die;
+        $callback = trim(trim($res),'callback');
+        $callback = ltrim($callback,'(');
+        $callback = rtrim($callback,');');
+        var_dump($callback);
+        var_dump(json_decode($callback,TRUE));
+        die;
 
     }
 
