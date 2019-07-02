@@ -143,7 +143,6 @@ class OauthThird
 
     public function getQqUserinfo($token='',$openid=[])
     {
-        dd($openid);
         $token = $token;
         $client_id = $openid['client_id'];
         $openid_str = $openid['openid'];
