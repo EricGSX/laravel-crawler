@@ -103,12 +103,10 @@ class OauthController extends Controller
         $token_str = $oauth->getQqAccessToken();
         $token_arr = explode('&',$token_str);
         $token = ltrim($token_arr[0],'access_token=');
-        var_dump($token_str);
-        var_dump($token_arr);
-        var_dump($token);
         $openid = $oauth->getQqOpenID($token);
         $userinfo = $oauth->getQqUserinfo($token,$openid);
-        dd($userinfo);
+        $userinfo_arr = json_decode($userinfo,TRUE);
+        dd($userinfo_arr);
     }
 
 }
