@@ -139,6 +139,8 @@ class OauthThird
         if (preg_match('/\"openid\":\"(\w+)\"/i', $callback, $match)) {
             $openid = $match[1];
         }
+        var_dump($callback);
+        dd($openid);
         return $openid;
     }
 
