@@ -130,28 +130,25 @@ class OauthThird
         return $res;
     }
 
-    public function getQqOpenID()
+    public function getQqOpenID($token='')
     {
-        $token = $this->getQqAccessToken();
+        $token = $token;
         $url = "https://graph.qq.com/oauth2.0/me?$token";
         $res = $this->https_request($url);
         $callback = trim(trim($res),'callback');
         $callback = ltrim($callback,'(');
         $callback = rtrim($callback,');');
-        var_dump($callback);
-        var_dump(json_decode($callback,TRUE));
-        die;
-
+        return json_decode($callback,TRUE);
     }
 
-    public function getQqUserinfo()
+    public function getQqUserinfo($token='',$openid=[])
     {
-        $token = $this->getQqAccessToken();
-        $client_id = env('QQ_APP_ID');
-        $openid = $this->getQqOpenID();
-        $url = "https://graph.qq.com/user/get_user_info?access_token=$token&oauth_consumer_key=$client_id&openid=$openid";
+        $token = $token;
+        $client_id = $openid['client_id'];
+        $openid_str = $openid['openid'];
+        $url = "https://graph.qq.com/user/get_user_info?access_token=$token&oauth_consumer_key=$client_id&openid=$openid_str";
         $res = $this->https_request($url);
-        dd($res);
+        return $res;
     }
 
     public static function https_request($url, $data = null,$ua=null){
