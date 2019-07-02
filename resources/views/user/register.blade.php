@@ -50,7 +50,7 @@
         <div style="text-align: center;line-height: 40px;color: #5a7079;"> -------- 其他方式登陆 -------- </div>
         <div class="col-md-12">
             <div class="col-sm-2" style="text-align: center;">
-                <a href="" title="QQ登陆"><img src="{{asset('/image/qq.png')}}" style="width:30px;height:30px;"></a>
+                <a href="/oauth/qq" title="QQ登陆"><img src="{{asset('/image/qq.png')}}" style="width:30px;height:30px;"></a>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="" title="Wechat登陆"><img src="{{asset('/image/wx.png')}}" style="width:30px;height:30px;"></a>
