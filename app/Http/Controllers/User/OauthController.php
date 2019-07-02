@@ -106,7 +106,16 @@ class OauthController extends Controller
         $openid = $oauth->getQqOpenID($token);
         $userinfo = $oauth->getQqUserinfo($token,$openid);
         $userinfo_arr = json_decode($userinfo,TRUE);
-        dd($userinfo_arr);
+        $platform_uid = $openid['openid'];
+        $name = $userinfo_arr['nickname'];
+        $user_img = $userinfo_arr['figureurl'];
+        $platform_type = 'QQ';
+        $password = bcrypt($platform_type);
+        $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
+        session(['baidu_access_token'=>$token]);
+        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
+            return redirect('/posts');
+        }
     }
 
 }
