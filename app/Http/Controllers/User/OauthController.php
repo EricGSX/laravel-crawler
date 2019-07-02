@@ -100,7 +100,7 @@ class OauthController extends Controller
     public function qqCallback()
     {
         $oauth = new OauthThird();
-        $token = $oauth->getQqUserinfo();
+        $token = $oauth->getQqOpenID();
     }
 
 }
