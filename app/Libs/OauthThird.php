@@ -133,7 +133,7 @@ class OauthThird
     public function getQqOpenID($token='')
     {
         $token = $token;
-        $url = "https://graph.qq.com/oauth2.0/me?$token";
+        $url = "https://graph.qq.com/oauth2.0/me?access_token=$token";
         $res = $this->https_request($url);
         $callback = trim(trim($res),'callback');
         $callback = ltrim($callback,'(');
