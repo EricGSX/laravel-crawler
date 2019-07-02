@@ -90,4 +90,17 @@ class OauthController extends Controller
         }
     }
 
+    public function qqOauth()
+    {
+        $app_id = env('QQ_APP_ID');
+        $redirect_uri = env('QQ_REDIRECT_URI');
+        header("location:https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=$app_id&redirect_uri=$redirect_uri");
+    }
+
+    public function qqCallback()
+    {
+        $oauth = new OauthThird();
+        $token = $oauth->getQqCode();
+    }
+
 }

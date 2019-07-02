@@ -141,6 +141,8 @@ Route::group(['prefix'=>'oauth'],function(){
     Route::get('/github/callback','User\OauthController@githubCallback');
     Route::get('gitee','User\OauthController@giteeOauth');
     Route::get('/gitee/callback','User\OauthController@giteeCallback');
+    Route::get('/qq','User\OauthController@qqOauth');
+    Route::get('/qq/callback','User\OauthController@qqCallback');
 });
 include_once('admin.php');
 

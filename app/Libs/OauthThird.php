@@ -112,6 +112,22 @@ class OauthThird
         return $result;
     }
 
+    public function getQqCode()
+    {
+        $code = request()->get('code');
+        dd($code);
+    }
+
+    public function getQqAccessToken()
+    {
+
+    }
+
+    public function getQqUserinfo()
+    {
+
+    }
+
     public static function https_request($url, $data = null,$ua=null){
         # 初始化一个cURL会话
         $curl = curl_init();
