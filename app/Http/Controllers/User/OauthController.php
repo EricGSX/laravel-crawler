@@ -101,6 +101,7 @@ class OauthController extends Controller
     {
         $oauth = new OauthThird();
         $token = $oauth->getQqAccessToken();
+        var_dump($token);
         $openid = $oauth->getQqOpenID($token);
         $userinfo = $oauth->getQqUserinfo($token,$openid);
         dd($userinfo);
