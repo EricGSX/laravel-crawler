@@ -114,13 +114,20 @@ class OauthThird
 
     public function getQqCode()
     {
+        //DOC https://wiki.connect.qq.com/%E5%BC%80%E5%8F%91%E6%94%BB%E7%95%A5_server-side
         $code = request()->get('code');
-        dd($code);
+        return $code;
     }
 
     public function getQqAccessToken()
     {
-
+        $client_id = env('QQ_APP_ID');
+        $client_secret = env('QQ_APP_KEY');
+        $redirect_uri = env('QQ_REDIRECT_URI');
+        $code = $this->getQqCode();
+        $url = "https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=$client_id&client_secret=$client_secret&code=$code&redirect_uri=$redirect_uri";
+        $res = $this->https_request($url);
+        dd($res);
     }
 
     public function getQqUserinfo()
