@@ -118,4 +118,14 @@ class OauthController extends Controller
         }
     }
 
+    public function weiboOauth()
+    {
+        header("location:https://api.weibo.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI");
+    }
+
+    public function weiboCallback()
+    {
+        
+    }
+
 }
