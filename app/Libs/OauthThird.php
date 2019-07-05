@@ -175,7 +175,7 @@ class OauthThird
     public function getWeiboUserinfo($accessToken=[])
     {
         $token = $accessToken['access_token'];
-        $uid = $accessToken['2980765271'];
+        $uid = $accessToken['uid'];
         $url = "https://api.weibo.com/2/users/show.json?access_token=$token&uid=$uid";
         $userinfo = $this->https_request($url);
         return $userinfo;
