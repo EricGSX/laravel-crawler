@@ -56,7 +56,7 @@
                 <a href="" title="Wechat登陆"><img src="{{asset('/image/wx.png')}}" style="width:30px;height:30px;"></a>
             </div>
             <div class="col-sm-2" style="text-align: center;">
-                <a href="" title="微博登陆"><img src="{{asset('/image/weibo.png')}}" style="width:30px;height:30px;"></a>
+                <a href="/oauth/weibo" title="微博登陆"><img src="{{asset('/image/weibo.png')}}" style="width:30px;height:30px;"></a>
             </div>
             <div class="col-sm-2" style="text-align: center;">
                 <a href="/oauth/baidu" title="百度登陆"><img src="{{asset('/image/baidu.png')}}" style="width:30px;height:30px;"></a>
