@@ -120,12 +120,16 @@ class OauthController extends Controller
 
     public function weiboOauth()
     {
-        header("location:https://api.weibo.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI");
+        $client_id = env('WEIBO_APP_KEY');
+        $redirect_uri = env('WEIBO_REDIRECT_URI');
+        header("location:https://api.weibo.com/oauth2/authorize?client_id=$client_id&response_type=code&redirect_uri=$redirect_uri");
     }
 
     public function weiboCallback()
     {
-        
+        $oauth = new OauthThird();
+        $token = $oauth->getWeiboAccessToken();
+        dd($token);
     }
 
 }

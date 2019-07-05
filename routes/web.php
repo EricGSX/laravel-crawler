@@ -143,6 +143,8 @@ Route::group(['prefix'=>'oauth'],function(){
     Route::get('/gitee/callback','User\OauthController@giteeCallback');
     Route::get('/qq','User\OauthController@qqOauth');
     Route::get('/qq/callback','User\OauthController@qqCallback');
+    Route::get('/weibo','User\OauthController@weiboOauth');
+    Route::get('/weibo/callback','User\OauthController@weiboCallback');
 });
 include_once('admin.php');
 

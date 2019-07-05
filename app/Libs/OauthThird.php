@@ -151,6 +151,28 @@ class OauthThird
         return $res;
     }
 
+    public function getWeiboCode()
+    {
+        //DOC https://open.weibo.com/wiki/2/users/show
+        $code = request()->get('code');
+        return $code;
+    }
+
+    public function getWeiboAccessToken()
+    {
+        $code = $this->getWeiboCode();
+        $data = [
+            'client_id'=>env('WEIBO_APP_KEY'),
+            'client_secret'=>env('WEIBO_APP_SECRET'),
+            'code'=>$code,
+            'redirect_uri'=>env('WEIBO_REDIRECT_URI'),
+            'grant_type'=>'authorization_code',
+        ];
+        $url = "https://api.weibo.com/oauth2/access_token";
+        $res = $this->https_request($url,$data);
+        return $res;
+    }
+
     public static function https_request($url, $data = null,$ua=null){
         # 初始化一个cURL会话
         $curl = curl_init();
