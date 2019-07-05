@@ -162,14 +162,17 @@ class OauthThird
     {
         $code = $this->getWeiboCode();
         $data = [
-            'client_id'=>env('WEIBO_APP_KEY'),
-            'client_secret'=>env('WEIBO_APP_SECRET'),
-            'code'=>$code,
-            'redirect_uri'=>env('WEIBO_REDIRECT_URI'),
-            'grant_type'=>'authorization_code',
+            //'client_id'=>env('WEIBO_APP_KEY'),
+            //'client_secret'=>env('WEIBO_APP_SECRET'),
+            //'code'=>$code,
+            //'redirect_uri'=>env('WEIBO_REDIRECT_URI'),
+            //'grant_type'=>'authorization_code',
         ];
-        var_dump($data);
-        $url = "https://api.weibo.com/oauth2/access_token";
+        $client_id = env('WEIBO_APP_KEY');
+        $client_secret = env('WEIBO_APP_SECRET');
+        $redirect_uri = env('WEIBO_REDIRECT_URI');
+        //$url = "https://api.weibo.com/oauth2/access_token";
+        $url = "https://api.weibo.com/oauth2/access_token?client_id=$client_id&client_secret=$client_secret&grant_type=authorization_code&code=$code&redirect_uri=$redirect_uri";
         $res = $this->https_request($url,$data);
         return $res;
     }
