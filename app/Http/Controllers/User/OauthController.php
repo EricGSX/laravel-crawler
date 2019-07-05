@@ -29,7 +29,6 @@ class OauthController extends Controller
         $platform_type = 'Baidu';
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
-        session(['baidu_access_token'=>$token]);
         if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
             return redirect('/posts');
         }
@@ -60,7 +59,6 @@ class OauthController extends Controller
         $platform_type = 'Github';
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
-        session(['baidu_access_token'=>$token]);
         if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
             return redirect('/posts');
         }
@@ -84,7 +82,6 @@ class OauthController extends Controller
         $platform_type = 'Gitee';
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
-        session(['baidu_access_token'=>$token]);
         if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
             return redirect('/posts');
         }
@@ -112,7 +109,6 @@ class OauthController extends Controller
         $platform_type = 'QQ';
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
-        session(['baidu_access_token'=>$token]);
         if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
             return redirect('/posts');
         }
@@ -130,7 +126,16 @@ class OauthController extends Controller
         $oauth = new OauthThird();
         $token = $oauth->getWeiboAccessToken();
         $userinfo = $oauth->getWeiboUserinfo($token);
-        dd($userinfo);
+        $userinfo = json_decode($userinfo,TRUE);
+        $platform_uid = $userinfo['idstr'];
+        $name = $userinfo['name'];
+        $user_img = $userinfo['profile_image_url'];
+        $platform_type = 'Weibo';
+        $password = bcrypt($platform_type);
+        $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
+        if(\Auth::attempt(['platform_uid'=>$platform_uid,'password'=>$platform_type],1)){
+            return redirect('/posts');
+        }
     }
 
 }
