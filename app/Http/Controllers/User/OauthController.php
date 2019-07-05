@@ -129,7 +129,7 @@ class OauthController extends Controller
         $userinfo = json_decode($userinfo,TRUE);
         $platform_uid = $userinfo['idstr'];
         $name = $userinfo['name'];
-        $user_img = $userinfo['profile_image_url'];
+        $user_img = str_replace('http:','https:',$userinfo['profile_image_url']);
         $platform_type = 'Weibo';
         $password = bcrypt($platform_type);
         $user = User::updateOrCreate(compact('platform_uid','platform_type'),compact('platform_uid','platform_type','name','user_img','password'));
