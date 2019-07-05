@@ -168,6 +168,7 @@ class OauthThird
             'redirect_uri'=>env('WEIBO_REDIRECT_URI'),
             'grant_type'=>'authorization_code',
         ];
+        var_dump($data);
         $url = "https://api.weibo.com/oauth2/access_token";
         $res = $this->https_request($url,$data);
         return $res;
