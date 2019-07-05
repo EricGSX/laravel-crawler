@@ -129,7 +129,8 @@ class OauthController extends Controller
     {
         $oauth = new OauthThird();
         $token = $oauth->getWeiboAccessToken();
-        dd($token);
+        $userinfo = $oauth->getWeiboUserinfo($token);
+        dd($userinfo);
     }
 
 }

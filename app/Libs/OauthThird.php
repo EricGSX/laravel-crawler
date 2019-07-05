@@ -169,7 +169,16 @@ class OauthThird
         $redirect_uri = env('WEIBO_REDIRECT_URI');
         $url = "https://api.weibo.com/oauth2/access_token?client_id=$client_id&client_secret=$client_secret&grant_type=authorization_code&code=$code&redirect_uri=$redirect_uri";
         $res = $this->https_request($url,$data);
-        return $res;
+        return json_decode($res,true);
+    }
+
+    public function getWeiboUserinfo($accessToken=[])
+    {
+        $token = $accessToken['access_token'];
+        $uid = $accessToken['2980765271'];
+        $url = "https://api.weibo.com/2/users/show.json?access_token=$token&uid=$uid";
+        $userinfo = $this->https_request($url);
+        return $userinfo;
     }
 
     public static function https_request($url, $data = null,$ua=null){
