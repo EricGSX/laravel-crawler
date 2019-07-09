@@ -36,8 +36,8 @@ class WebCrawlerController extends Controller
             ],
         ];
         $obj = new \Oauthconnect\GuoOauth($config);
-        $obj->setPlatForm('gitee');
-        $obj->gitee();
+        $obj->setPlatForm('github');
+        $obj->github();
         //https://www.cnblogs.com/finalanddistance/p/10431535.html
         //$clientId = '7t7tOj4f5cem8I3h48wnEGp2';
         //$clientSecret = 'mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt';
