@@ -30,7 +30,8 @@
             "app\\Libs\\": "app/Libs/"
         },
         "files": [
-            "vendor/qiniu/autoload.php"
+            "vendor/qiniu/autoload.php",
+            "vendor/OauthConnect/autoload.php"
         ]
     },
     "autoload-dev": {

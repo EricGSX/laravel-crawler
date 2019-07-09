@@ -27,7 +27,6 @@ class WebCrawlerController extends Controller
      */
     public function test()
     {
-        require '/../vendor/OauthConnect/autoload.php';
         $config = [
             'GITHUB'=> [
                 'GITHUB_ID' => env('GITHUB_ID'),
