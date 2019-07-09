@@ -19,7 +19,7 @@ use DB;
 use Illuminate\Support\Facades\Session;
 use App\Libs\QiniuCloud;
 use App\Libs\OauthThird;
-require '/../vendor/OauthConnect/autoload.php';
+
 class WebCrawlerController extends Controller
 {
     /**
@@ -27,6 +27,7 @@ class WebCrawlerController extends Controller
      */
     public function test()
     {
+        require '/../vendor/OauthConnect/autoload.php';
         $config = [
             'GITHUB'=> [
                 'GITHUB_ID' => env('GITHUB_ID'),
