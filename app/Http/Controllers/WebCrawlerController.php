@@ -19,7 +19,7 @@ use DB;
 use Illuminate\Support\Facades\Session;
 use App\Libs\QiniuCloud;
 use App\Libs\OauthThird;
-
+require '/../vendor/OauthConnect/autoload.php';
 class WebCrawlerController extends Controller
 {
     /**
@@ -27,6 +27,17 @@ class WebCrawlerController extends Controller
      */
     public function test()
     {
+        $config = [
+            'GITHUB'=> [
+                'GITHUB_ID' => env('GITHUB_ID'),
+                'GITHUB_CLIENTID' => env('GITHUB_CLIENTID'),
+                'GITHUB_SECRET_KEY' => env('GITHUB_SECRET_KEY'),
+                'GITHUB_REDIRECT_URI' => env('GITHUB_REDIRECT_URI'),
+            ],
+        ];
+        $obj = new \Oauthconnect\GuoOauth($config);
+        $obj->setPlatForm('gitee');
+        $obj->gitee();
         //https://www.cnblogs.com/finalanddistance/p/10431535.html
         //$clientId = '7t7tOj4f5cem8I3h48wnEGp2';
         //$clientSecret = 'mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt';
@@ -34,27 +45,27 @@ class WebCrawlerController extends Controller
         //$url = "http://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&scope=email&display=popup";
         //dd($url);
         //header("location:https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=$clientId&redirect_uri=$redirectUri&display=popup");
-        $a = new OauthThird();
-        $token = $a->getBaiduAccessToken();
-        $userinfo = $a->getBaiduUserinfo($token);
-        dd($userinfo);
-        die;
-        $redirect_uri  = 'http://three.com/test';
-        $client_secret = "mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt";
-        $client_id     = "7t7tOj4f5cem8I3h48wnEGp2";
-        $url           = "https://openapi.baidu.com/oauth/2.0/token?grant_type=authorization_code&code=$code&client_id=$client_id&client_secret=$client_secret&redirect_uri=$redirect_uri";
-        # 发送CURL，获得Access_Token
-        $res           = OauthThird::https_request($url);
-        $data          = json_decode($res, true);
-        if (empty($data['access_token'])) {
-            $this->error('百度授权异常！', '/');
-        }
+        //$a = new OauthThird();
+        //$token = $a->getBaiduAccessToken();
+        //$userinfo = $a->getBaiduUserinfo($token);
+        //dd($userinfo);
+        //die;
+        //$redirect_uri  = 'http://three.com/test';
+        //$client_secret = "mFVFDEwxKsEPrG5Eb8GQG5DCm7Kurxmt";
+        //$client_id     = "7t7tOj4f5cem8I3h48wnEGp2";
+        //$url           = "https://openapi.baidu.com/oauth/2.0/token?grant_type=authorization_code&code=$code&client_id=$client_id&client_secret=$client_secret&redirect_uri=$redirect_uri";
+        //# 发送CURL，获得Access_Token
+        //$res           = OauthThird::https_request($url);
+        //$data          = json_decode($res, true);
+        //if (empty($data['access_token'])) {
+        //    $this->error('百度授权异常！', '/');
+        //}
         //var_dump($data['access_token']);die;
         # 发送CURL，获得百度用户的信息
-        $url  = 'https://openapi.baidu.com/rest/2.0/passport/users/getInfo?access_token='.$data['access_token'];
-        $res  = OauthThird::https_request($url);
-        $data2 = json_decode($res, true);
-        dd($data2);
+        //$url  = 'https://openapi.baidu.com/rest/2.0/passport/users/getInfo?access_token='.$data['access_token'];
+        //$res  = OauthThird::https_request($url);
+        //$data2 = json_decode($res, true);
+        //dd($data2);
         //require '/../vendor/qiniu/autoload.php';
         // $accessKey = env('QINIU_AK');
         // $secretKey = env('QINIU_SK');
