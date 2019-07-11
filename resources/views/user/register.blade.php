@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -52,9 +51,9 @@
             <div class="col-sm-2" style="text-align: center;">
                 <a href="/oauth/qq" title="QQ登陆"><img src="{{asset('/image/qq.png')}}" style="width:30px;height:30px;"></a>
             </div>
-            <div class="col-sm-2" style="text-align: center;">
-                <a href="" title="Wechat登陆"><img src="{{asset('/image/wx.png')}}" style="width:30px;height:30px;"></a>
-            </div>
+            {{--<div class="col-sm-2" style="text-align: center;">--}}
+                {{--<a href="" title="Wechat登陆"><img src="{{asset('/image/wx.png')}}" style="width:30px;height:30px;"></a>--}}
+            {{--</div>--}}
             <div class="col-sm-2" style="text-align: center;">
                 <a href="/oauth/weibo" title="微博登陆"><img src="{{asset('/image/weibo.png')}}" style="width:30px;height:30px;"></a>
             </div>
